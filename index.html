@@ -30,7 +30,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .nav-cta { background: var(--violeta-fuerte); color: #fff; padding: 10px 22px; border-radius: 100px; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,247,0.35); }
 
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 40px 80px; max-width: 1100px; margin: 0 auto; position: relative; }
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 40px 80px; max-width: 1100px; margin: 0 auto; position: relative; overflow: hidden; }
 .hero-glow { position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,106,247,0.15) 0%, transparent 70%); pointer-events: none; }
 .hero-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: 32px; }
 .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--violeta); }
@@ -146,6 +146,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .cta-section p { color: var(--gris); font-size: 1rem; margin-bottom: 36px; position: relative; }
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
 
+.btn-ghost.con-icono { display: inline-flex; align-items: center; gap: 9px; }
+.mail-texto { position: relative; margin-top: 22px; font-size: 13.5px; color: var(--gris); }
+.mail-texto a { color: var(--violeta-cl); text-decoration: none; border-bottom: 1px solid rgba(155,140,255,.35); }
+.mail-texto a:hover { border-bottom-color: var(--violeta-cl); }
+.foot-ig { display: inline-flex; align-items: center; gap: 8px; color: var(--gris); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
+.foot-ig:hover { color: var(--violeta-cl); }
 footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .footer-copy { font-size: 13px; color: var(--gris); }
 .footer-dot { display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; }
@@ -361,11 +367,14 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
   <div class="cta-btns">
     <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" class="btn-primary">Escribime por WhatsApp</a>
     <a href="mailto:francodavid1711@gmail.com?subject=Consulta%20por%20una%20p%C3%A1gina%20web&body=Hola%21%20Vi%20tu%20portfolio%20y%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web.%0A%0AMi%20negocio%3A%20%0AQu%C3%A9%20necesito%3A%20%0A" class="btn-ghost">Mandar un mail</a>
+    <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener" class="btn-ghost con-icono"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> Instagram</a>
   </div>
+  <p class="mail-texto">O escribime directo a <a href="mailto:francodavid1711@gmail.com">francodavid1711@gmail.com</a></p>
 </section>
 
 <footer>
   <div class="footer-copy">© 2026 · Portfolio · Diseño web freelance</div>
+  <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener" class="foot-ig"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> @fw_disenioweb</a>
   <div class="footer-dot"><span class="dot"></span> Disponible para nuevos proyectos</div>
 </footer>
 
