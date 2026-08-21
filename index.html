@@ -3,78 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Diseño Web</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>FW · Diseño web freelance — Landing pages, tiendas y ebooks</title>
+<meta name="description" content="Diseño y programo páginas web a medida para negocios y emprendedores: landing pages de cursos, catálogos con carrito, menús digitales y ebooks. Rápidas, hechas desde cero y perfectas en el celular.">
+<meta property="og:title" content="FW · Diseño web freelance">
+<meta property="og:description" content="Páginas web a medida para negocios y emprendedores. Landing pages, tiendas, menús digitales y ebooks.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230A0A0F'/><circle cx='50' cy='50' r='22' fill='%237C6AF7'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
+  /* Color */
   --negro:   #0A0A0F;
   --card:    #14141C;
+  --card-2:  #191922;
   --borde:   #242430;
+  --borde-cl:#2F2F3D;
   --crema:   #F0EDE6;
   --gris:    #8A8A9A;
+  --gris-cl: #A8A8B8;
   --violeta: #7C6AF7;
   --violeta-fuerte: #6A55E8;
   --violeta-cl: #9B8CFF;
+  --violeta-suave: rgba(124,106,247,0.12);
+
+  /* Escala de espaciado — todo el sitio usa estos valores */
+  --s-1: 6px;  --s-2: 12px; --s-3: 18px; --s-4: 24px;
+  --s-5: 32px; --s-6: 44px; --s-7: 64px; --s-8: 96px;
+
+  /* Radios */
+  --r-sm: 12px; --r-md: 20px; --r-lg: 26px; --r-xl: 32px;
+
+  /* Layout */
+  --ancho: 1100px;
+  --pad-x: 40px;
+  --pad-y: 96px;
 }
+
 html { scroll-behavior: smooth; }
-body { background: var(--negro); color: var(--crema); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body {
+  background: var(--negro); color: var(--crema);
+  font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--violeta-cl); outline-offset: 3px; border-radius: 4px; }
 
+.wrap { max-width: var(--ancho); margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
+section { scroll-margin-top: 90px; }
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--borde); }
-.nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--crema); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-.dot { width: 8px; height: 8px; background: var(--violeta); border-radius: 50%; display: inline-block; }
-.nav-links { display: flex; gap: 32px; }
-.nav-links a { color: var(--gris); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+/* ---------- NAV ---------- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--s-3) var(--pad-x);
+  background: rgba(10,10,15,0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borde);
+}
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem;
+  color: var(--crema); text-decoration: none; display: flex; align-items: center; gap: var(--s-1);
+  letter-spacing: -0.3px;
+}
+.nav-logo small { font-weight: 500; font-size: 0.78rem; color: var(--gris); letter-spacing: 0; }
+.dot { width: 8px; height: 8px; background: var(--violeta); border-radius: 50%; display: inline-block; flex: none; }
+.nav-links { display: flex; gap: var(--s-5); }
+.nav-links a { color: var(--gris); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--crema); }
-.nav-cta { background: var(--violeta-fuerte); color: #fff; padding: 10px 22px; border-radius: 100px; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,247,0.35); }
+.nav-cta {
+  background: var(--violeta-fuerte); color: #fff; padding: 10px 22px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; text-decoration: none; transition: transform .2s, box-shadow .2s; white-space: nowrap;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,247,.35); }
 
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 40px 80px; max-width: 1100px; margin: 0 auto; position: relative; overflow: hidden; }
-.hero-glow { position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,106,247,0.15) 0%, transparent 70%); pointer-events: none; }
-.hero-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: 32px; }
-.hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--violeta); }
-.hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 700; line-height: 1.0; letter-spacing: -3px; margin-bottom: 32px; }
+/* ---------- BOTONES ---------- */
+.btn-primary, .btn-ghost {
+  font-family: 'Space Grotesk', sans-serif; font-size: 15px; text-decoration: none;
+  padding: 16px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px;
+  transition: transform .2s, box-shadow .2s, border-color .2s, background .2s; line-height: 1;
+}
+.btn-primary { background: var(--violeta-fuerte); color: #fff; font-weight: 700; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(124,106,247,.35); }
+.btn-ghost { border: 1px solid var(--borde-cl); color: var(--crema); font-weight: 500; }
+.btn-ghost:hover { border-color: var(--violeta); background: var(--violeta-suave); }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding-top: 140px; padding-bottom: var(--s-8); position: relative; overflow: hidden;
+}
+.hero-glow { position: absolute; top: 18%; right: -10%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(124,106,247,.15) 0%, transparent 70%); pointer-events: none; }
+.eyebrow {
+  display: flex; align-items: center; gap: var(--s-2); font-size: 12px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: var(--s-5);
+}
+.eyebrow::before { content: ''; width: 32px; height: 1px; background: currentColor; flex: none; }
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.8rem, 7.5vw, 6.4rem);
+  font-weight: 700; line-height: 1.02; letter-spacing: -3px; margin-bottom: var(--s-5);
+}
 .hero h1 .accent { color: var(--violeta); }
 .hero h1 .accent2 { color: var(--violeta-cl); }
-.hero-desc { max-width: 560px; font-size: 1.1rem; color: var(--gris); line-height: 1.7; margin-bottom: 48px; }
-.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-primary { background: var(--violeta-fuerte); color: #fff; padding: 16px 32px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(124,106,247,0.35); }
-.btn-ghost { border: 1px solid var(--borde); color: var(--crema); padding: 16px 32px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-.btn-ghost:hover { border-color: var(--violeta); background: rgba(124,106,247,0.08); }
-.hero-stats { display: flex; gap: 48px; flex-wrap: wrap; margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--borde); }
-.stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 700; line-height: 1; }
-.stat-num span { color: var(--violeta); }
-.stat-label { font-size: 13px; color: var(--gris); margin-top: 4px; }
+.hero-desc { max-width: 580px; font-size: 1.1rem; color: var(--gris-cl); line-height: 1.7; margin-bottom: var(--s-6); }
+.hero-btns { display: flex; gap: var(--s-2); flex-wrap: wrap; }
 
-/* PROJECTS */
-.projects-section { max-width: 1100px; margin: 0 auto; padding: 80px 40px 120px; }
-.section-label { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-.section-label::before { content: ''; width: 32px; height: 1px; background: var(--gris); }
-.section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -1.5px; margin-bottom: 64px; line-height: 1.1; }
-.projects-grid { display: flex; flex-direction: column; gap: 40px; }
+/* Barra de confianza */
+.trust-bar {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--s-4);
+  margin-top: var(--s-8); padding-top: var(--s-6); border-top: 1px solid var(--borde);
+}
+.trust-item { display: flex; align-items: flex-start; gap: var(--s-2); }
+.trust-check { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--violeta-suave); border: 1px solid rgba(124,106,247,.3); display: grid; place-items: center; margin-top: 2px; }
+.trust-check svg { display: block; }
+.trust-item strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.trust-item span { font-size: 13px; color: var(--gris); line-height: 1.5; }
 
-.project-card { background: var(--card); border: 1px solid var(--borde); border-radius: 24px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s; }
+/* ---------- TITULOS DE SECCION ---------- */
+.section-label { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); margin-bottom: var(--s-2); display: flex; align-items: center; gap: var(--s-2); }
+.section-label::before { content: ''; width: 32px; height: 1px; background: currentColor; flex: none; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: var(--s-4); }
+.section-intro { color: var(--gris-cl); max-width: 620px; font-size: 1rem; margin-bottom: var(--s-7); }
+.section-title.solo { margin-bottom: var(--s-7); }
+
+/* ---------- PROYECTOS ---------- */
+.projects-section { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.projects-grid { display: flex; flex-direction: column; gap: var(--s-6); }
+.project-card {
+  background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-lg); overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+  opacity: 0; transform: translateY(40px);
+  transition: opacity .6s ease, transform .6s ease, border-color .3s;
+}
 .project-card.visible { opacity: 1; transform: translateY(0); }
 .project-card:hover { border-color: var(--violeta); }
 .project-card.flip { direction: rtl; }
 .project-card.flip > * { direction: ltr; }
-
-.project-visual { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 360px; }
+.project-visual { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 380px; padding: var(--s-5); }
 .project-visual.v1 { background: linear-gradient(135deg, #0d001a 0%, #1a0033 50%, #0d001a 100%); }
 .project-visual.v3 { background: linear-gradient(135deg, #0a0d1a 0%, #0f1530 50%, #0a0d1a 100%); }
 .project-visual.v4 { background: linear-gradient(135deg, #0a1a10 0%, #153020 50%, #0a1a10 100%); }
-
-.mock-screen { width: 72%; max-width: 280px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); transform: perspective(800px) rotateY(-8deg) rotateX(4deg); transition: transform 0.4s ease; }
+.mock-screen { width: 78%; max-width: 280px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.6); transform: perspective(800px) rotateY(-8deg) rotateX(4deg); transition: transform .4s ease; }
 .project-card.flip .mock-screen { transform: perspective(800px) rotateY(8deg) rotateX(4deg); }
-.project-card:hover .mock-screen { transform: perspective(800px) rotateY(0deg) rotateX(0deg); }
+.project-card:hover .mock-screen { transform: perspective(800px) rotateY(0) rotateX(0); }
 .mock-bar { background: #1a1a2e; padding: 8px 12px; display: flex; align-items: center; gap: 5px; }
-.mock-dot2 { width: 7px; height: 7px; border-radius: 50%; }
+.mock-dot2 { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 .mock-dot2.r { background: #FF5F57; } .mock-dot2.y { background: #FEBC2E; } .mock-dot2.g { background: #28C840; }
-.mock-url { flex: 1; background: #2a2a40; border-radius: 3px; padding: 3px 8px; font-size: 9px; color: #777; margin-left: 4px; }
+.mock-url { flex: 1; background: #2a2a40; border-radius: 3px; padding: 3px 8px; font-size: 9px; color: #777; margin-left: 4px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
-/* NEONPRO MOCK */
 .mock-neon-header { background: linear-gradient(135deg, #0d001a, #1a0033); padding: 14px; text-align: center; }
 .mock-neon-logo { color: #a78bfa; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
 .mock-neon-h { color: #fff; font-size: 9px; font-weight: 700; margin-top: 6px; line-height: 1.3; }
@@ -85,10 +161,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .mock-neon-txt { font-size: 6px; color: #a78bfa; margin-top: 3px; font-weight: 600; }
 .mock-neon-cta { background: #a78bfa; color: #000; font-size: 7px; font-weight: 800; padding: 5px; text-align: center; margin: 8px; border-radius: 4px; }
 
-/* ARTESANIAS MOCK */
 .mock-arte-header { background: linear-gradient(135deg, #1a0033, #2d0a50); padding: 14px; text-align: center; }
 .mock-arte-logo { color: #e879f9; font-size: 11px; font-weight: 800; }
-.mock-arte-sub { color: rgba(232,121,249,0.7); font-size: 7px; margin-top: 2px; }
+.mock-arte-sub { color: rgba(232,121,249,.7); font-size: 7px; margin-top: 2px; }
 .mock-arte-body { background: #0d001a; padding: 10px; }
 .mock-arte-card { background: #150025; border-radius: 6px; padding: 8px; margin-bottom: 5px; border: 1px solid #2a0050; display: flex; gap: 6px; align-items: center; }
 .mock-arte-emoji { font-size: 16px; }
@@ -96,115 +171,201 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .mock-arte-price { font-size: 6px; color: #888; margin-top: 1px; }
 .mock-arte-btn { background: #e879f9; color: #000; font-size: 5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; margin-top: 3px; display: inline-block; }
 
-/* EBOOK MOCK */
 .mock-ebook-cover { background: linear-gradient(135deg, #2d5a3d, #4a7c59); padding: 14px; text-align: center; }
 .mock-ebook-emoji { font-size: 18px; }
 .mock-ebook-title { color: #fff; font-size: 9px; font-weight: 800; font-family: serif; margin-top: 3px; }
-.mock-ebook-sub { color: rgba(255,255,255,0.7); font-size: 6px; margin-top: 1px; }
+.mock-ebook-sub { color: rgba(255,255,255,.7); font-size: 6px; margin-top: 1px; }
 .mock-ebook-body { background: #fdf8f2; padding: 8px; }
 .mock-ebook-item { background: #fff; border-radius: 5px; padding: 6px; margin-bottom: 4px; border: 1px solid #e0d5c8; display: flex; gap: 5px; align-items: center; }
 .mock-ebook-item-emoji { font-size: 12px; }
 .mock-ebook-item-text { font-size: 6px; color: #3e2723; font-weight: 600; }
 .mock-ebook-item-sub { font-size: 5px; color: #6d6d6d; }
 
-.project-badge { position: absolute; top: 18px; right: 18px; background: var(--violeta-fuerte); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
-.project-card.flip .project-badge { left: 18px; right: auto; }
+.project-badge { position: absolute; top: var(--s-3); right: var(--s-3); background: var(--violeta-fuerte); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+.project-card.flip .project-badge { left: var(--s-3); right: auto; }
+.project-info { padding: var(--s-6); display: flex; flex-direction: column; justify-content: center; }
+.project-num { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: var(--s-2); }
+.project-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.35rem, 2.4vw, 1.75rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: var(--s-1); }
+.project-cliente { font-size: 13px; color: var(--gris); margin-bottom: var(--s-4); }
 
-.project-info { padding: 44px; display: flex; flex-direction: column; justify-content: center; }
-.project-num { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: 14px; }
-.project-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 14px; }
-.project-desc { color: var(--gris); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
-.project-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 28px; }
-.tag { background: rgba(124,106,247,0.12); border: 1px solid rgba(124,106,247,0.25); color: var(--violeta); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; }
-.project-link { display: inline-flex; align-items: center; gap: 8px; color: var(--crema); text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; border-bottom: 1px solid var(--borde); padding-bottom: 3px; transition: border-color 0.2s, color 0.2s; width: fit-content; }
+/* Mini-caso: problema → solución → resultado */
+.caso { display: flex; flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-4); }
+.caso-fila { display: grid; grid-template-columns: 78px 1fr; gap: var(--s-2); align-items: start; }
+.caso-tag { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gris); padding-top: 3px; }
+.caso-fila p { font-size: 13.5px; color: var(--gris-cl); line-height: 1.6; }
+.caso-fila.resultado .caso-tag { color: var(--violeta-cl); }
+.caso-fila.resultado p { color: var(--crema); }
+
+.project-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: var(--s-4); }
+.tag { background: var(--violeta-suave); border: 1px solid rgba(124,106,247,.25); color: var(--violeta); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 100px; }
+.project-link { display: inline-flex; align-items: center; gap: 8px; color: var(--crema); text-decoration: none; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px; border-bottom: 1px solid var(--borde-cl); padding-bottom: 3px; transition: border-color .2s, color .2s; width: fit-content; }
 .project-link:hover { border-color: var(--violeta-cl); color: var(--violeta-cl); }
 .project-link:hover svg { transform: translate(3px,-3px); }
-.project-link svg { transition: transform 0.2s; }
+.project-link svg { transition: transform .2s; }
 
-/* SKILLS */
-.skills-section { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); padding: 80px 40px; }
-.skills-inner { max-width: 1100px; margin: 0 auto; }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-top: 48px; }
-.skill-card { background: var(--card); border: 1px solid var(--borde); border-radius: 16px; padding: 24px; transition: border-color 0.2s, transform 0.2s; }
+/* ---------- BANDA CTA INTERMEDIA ---------- */
+.banda { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); background: var(--card); }
+.banda-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); flex-wrap: wrap; padding-top: var(--s-6); padding-bottom: var(--s-6); }
+.banda-texto h3 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.2rem, 2.6vw, 1.6rem); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+.banda-texto p { color: var(--gris); font-size: 14px; }
+
+/* ---------- SERVICIOS / PAQUETES ---------- */
+.servicios-section { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-3); }
+.plan { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-md); padding: var(--s-5); display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+.plan:hover { border-color: var(--violeta); transform: translateY(-4px); }
+.plan.destacado { border-color: var(--violeta); background: linear-gradient(160deg, #191428 0%, var(--card) 60%); }
+.plan-flag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--violeta-cl); margin-bottom: var(--s-2); }
+.plan h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.4px; margin-bottom: var(--s-1); }
+.plan-para { font-size: 13px; color: var(--gris); margin-bottom: var(--s-4); min-height: 40px; }
+.plan-precio { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: -1px; margin-bottom: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px solid var(--borde); }
+.plan-precio small { display: block; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: var(--gris); letter-spacing: 0; margin-top: 4px; }
+.plan ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--s-5); flex: 1; }
+.plan li { font-size: 13.5px; color: var(--gris-cl); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+.plan li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--violeta); margin-top: 7px; }
+.plan-btn { text-align: center; justify-content: center; padding: 13px 24px; font-size: 14px; }
+.nota-extras { margin-top: var(--s-4); font-size: 13px; color: var(--gris); }
+.nota-extras strong { color: var(--crema); font-weight: 600; }
+
+/* ---------- SKILLS ---------- */
+.skills-section { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--s-2); }
+.skill-card { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-sm); padding: var(--s-4); transition: border-color .2s, transform .2s; }
 .skill-card:hover { border-color: var(--violeta); transform: translateY(-4px); }
-.skill-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.skill-icon { font-size: 1.7rem; margin-bottom: var(--s-2); }
 .skill-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 5px; }
-.skill-desc { font-size: 12px; color: var(--gris); }
+.skill-desc { font-size: 12px; color: var(--gris); line-height: 1.5; }
 
-/* PROCESO */
-.proceso-section { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
-.proceso-steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 48px; }
-.proceso-step { padding: 28px 22px; background: var(--card); border: 1px solid var(--borde); border-radius: 18px; }
-.paso-num-grande { font-family: 'Space Grotesk', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--borde); line-height: 1; margin-bottom: 14px; letter-spacing: -2px; }
+/* ---------- PROCESO ---------- */
+.proceso-section { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.proceso-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s-3); }
+.proceso-step { padding: var(--s-5) var(--s-4); background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-md); }
+.paso-num-grande { font-family: 'Space Grotesk', sans-serif; font-size: 3.2rem; font-weight: 800; color: var(--borde-cl); line-height: 1; margin-bottom: var(--s-2); letter-spacing: -2px; }
 .proceso-step h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 7px; }
 .proceso-step p { font-size: 13px; color: var(--gris); line-height: 1.6; }
 
-/* CTA */
-.cta-section { margin: 0 auto 80px; background: linear-gradient(135deg, #12121E 0%, #1A1A30 100%); border: 1px solid var(--borde); border-radius: 32px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden; max-width: 1020px; }
-.cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(124,106,247,0.14) 0%, transparent 70%); pointer-events: none; }
-.cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 18px; position: relative; }
-.cta-section p { color: var(--gris); font-size: 1rem; margin-bottom: 36px; position: relative; }
-.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+/* ---------- OPINIONES ---------- */
+.opiniones-section { border-top: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.opiniones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-3); }
+.opinion { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-md); padding: var(--s-5); display: flex; flex-direction: column; }
+.opinion-comillas { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; line-height: 1; color: var(--violeta); opacity: .5; margin-bottom: var(--s-2); }
+.opinion p { font-size: 14.5px; color: var(--crema); line-height: 1.7; flex: 1; margin-bottom: var(--s-4); }
+.opinion-autor { display: flex; align-items: center; gap: var(--s-2); padding-top: var(--s-3); border-top: 1px solid var(--borde); }
+.opinion-inicial { width: 36px; height: 36px; flex: none; border-radius: 50%; background: var(--violeta-suave); border: 1px solid rgba(124,106,247,.3); display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: var(--violeta-cl); }
+.opinion-nombre { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; }
+.opinion-negocio { font-size: 12px; color: var(--gris); }
 
-.btn-ghost.con-icono { display: inline-flex; align-items: center; gap: 9px; }
-.mail-texto { position: relative; margin-top: 22px; font-size: 13.5px; color: var(--gris); }
+/* ---------- CTA FINAL ---------- */
+.cta-section {
+  margin: 0 auto var(--s-8); background: linear-gradient(135deg, #12121E 0%, #1A1A30 100%);
+  border: 1px solid var(--borde); border-radius: var(--r-xl); padding: var(--s-8) var(--s-7);
+  text-align: center; position: relative; overflow: hidden; max-width: 1020px;
+}
+.cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(124,106,247,.14) 0%, transparent 70%); pointer-events: none; }
+.cta-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.9rem); font-weight: 700; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: var(--s-3); position: relative; }
+.cta-section > p { color: var(--gris-cl); font-size: 1rem; margin-bottom: var(--s-6); position: relative; max-width: 520px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; gap: var(--s-2); justify-content: center; flex-wrap: wrap; position: relative; }
+.mail-texto { position: relative; margin-top: var(--s-4); font-size: 13.5px; color: var(--gris); }
 .mail-texto a { color: var(--violeta-cl); text-decoration: none; border-bottom: 1px solid rgba(155,140,255,.35); }
 .mail-texto a:hover { border-bottom-color: var(--violeta-cl); }
+
+/* ---------- FOOTER ---------- */
+footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--s-3); }
+.footer-copy { font-size: 13px; color: var(--gris); }
 .foot-ig { display: inline-flex; align-items: center; gap: 8px; color: var(--gris); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
 .foot-ig:hover { color: var(--violeta-cl); }
-footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-copy { font-size: 13px; color: var(--gris); }
 .footer-dot { display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; }
 
-@media (max-width: 768px) {
-  nav { padding: 16px 20px; }
+/* ---------- BARRA WHATSAPP FIJA (SOLO CELULAR) ---------- */
+.wa-fija { display: none; }
+
+@media (max-width: 900px) {
   .nav-links { display: none; }
-  .hero, .projects-section, .proceso-section { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 768px) {
+  :root { --pad-x: 20px; --pad-y: 64px; --s-8: 64px; --s-7: 48px; }
+  nav { padding: 14px var(--pad-x); }
+  .hero { padding-top: 120px; min-height: auto; }
+  .hero h1 { letter-spacing: -1.5px; }
+  .hero-btns .btn-primary, .hero-btns .btn-ghost { flex: 1; justify-content: center; min-width: 150px; }
   .project-card { grid-template-columns: 1fr !important; direction: ltr !important; }
-  .project-visual { min-height: 240px; }
-  .project-info { padding: 28px 20px; }
-  .skills-section { padding: 60px 20px; }
-  .cta-section { margin: 0 20px 60px; padding: 44px 24px; }
-  footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+  .project-visual { min-height: 250px; padding: var(--s-4); }
+  .project-info { padding: var(--s-5) var(--s-4); }
+  .caso-fila { grid-template-columns: 1fr; gap: 2px; }
+  .plan-para { min-height: 0; }
+  .cta-section { margin-left: var(--pad-x); margin-right: var(--pad-x); padding: var(--s-6) var(--s-4); }
+  .cta-btns .btn-primary, .cta-btns .btn-ghost { width: 100%; justify-content: center; }
+  footer { flex-direction: column; align-items: flex-start; }
+
+  body { padding-bottom: 76px; }
+  .wa-fija {
+    display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+    padding: 12px var(--pad-x) calc(12px + env(safe-area-inset-bottom));
+    background: rgba(10,10,15,.92); backdrop-filter: blur(12px); border-top: 1px solid var(--borde);
+  }
+  .wa-fija a { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+    background: var(--violeta-fuerte); color: #fff; text-decoration: none; padding: 15px;
+    border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .project-card { opacity: 1; transform: none; }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo"><span class="dot"></span>Portfolio</a>
+  <a href="#" class="nav-logo"><span class="dot"></span>FW <small>· diseño web</small></a>
   <div class="nav-links">
     <a href="#proyectos">Proyectos</a>
-    <a href="#skills">Skills</a>
-    <a href="#proceso">Proceso</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Cómo trabajo</a>
+    <a href="#opiniones">Opiniones</a>
     <a href="#contacto">Contacto</a>
   </div>
   <a href="#contacto" class="nav-cta">Hablemos</a>
 </nav>
 
-<section class="hero">
+<!-- ================= HERO ================= -->
+<section class="hero wrap">
   <div class="hero-glow"></div>
-  <div class="hero-eyebrow">Diseño web freelance</div>
+  <div class="eyebrow">Diseño web freelance</div>
   <h1>Páginas web<br>que <span class="accent">conectan</span><br>con tu <span class="accent2">cliente.</span></h1>
-  <p class="hero-desc">Creo sitios web para negocios y emprendedores: landing pages de cursos, menús digitales, tiendas, ebooks y portfolios. Rápidos, lindos y que se ven bien en el celular.</p>
+  <p class="hero-desc">Diseño y programo sitios a medida para negocios y emprendedores: landing pages de cursos, catálogos con carrito, menús digitales y ebooks. Hechos desde cero, rápidos y pensados para el celular.</p>
   <div class="hero-btns">
     <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-    <a href="#contacto" class="btn-ghost">Consultá precio</a>
+    <a href="#servicios" class="btn-ghost">Servicios y precios</a>
   </div>
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">3<span>+</span></div><div class="stat-label">Proyectos terminados</div></div>
-    <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">Adaptado al celular</div></div>
-    <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Ideas para tu negocio</div></div>
+
+  <div class="trust-bar">
+    <div class="trust-item">
+      <span class="trust-check"><svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.5L5.5 11L12 3.5" stroke="#9B8CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div><strong>Diseño a medida</strong><span>Cada página se arma desde cero, no uso plantillas.</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-check"><svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.5L5.5 11L12 3.5" stroke="#9B8CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div><strong>Perfecto en el celular</strong><span>Donde entra la mayoría de tus clientes.</span></div>
+    </div>
+    <div class="trust-item">
+      <span class="trust-check"><svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.5L5.5 11L12 3.5" stroke="#9B8CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div><strong>Publicación incluida</strong><span>Te la dejo online y funcionando, con QR si lo necesitás.</span></div>
+    </div>
   </div>
 </section>
 
-<section class="projects-section" id="proyectos">
+<!-- ================= PROYECTOS ================= -->
+<section class="projects-section wrap" id="proyectos">
   <div class="section-label">Proyectos</div>
-  <h2 class="section-title">Lo que hice<br>hasta ahora.</h2>
+  <h2 class="section-title">Trabajos reales,<br>online ahora mismo.</h2>
+  <p class="section-intro">Estos son sitios que están publicados y funcionando. En cada uno te cuento qué necesitaba el cliente y cómo lo resolví.</p>
+
   <div class="projects-grid">
 
     <!-- PROYECTO 1: NEONPRO -->
-    <div class="project-card" data-reveal>
+    <article class="project-card" data-reveal>
       <div class="project-visual v1">
         <div class="project-badge">✓ Online</div>
         <div class="mock-screen">
@@ -232,19 +393,35 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
       <div class="project-info">
         <div class="project-num">Proyecto 01</div>
         <h3>Landing page de curso — NeonPro</h3>
-        <p class="project-desc">Página de ventas completa para un curso de letreros LED y resina epóxica. Diseño oscuro con acento violeta, sección de resultados con galería, FAQ y botón de compra conectado a Hotmart.</p>
+        <div class="project-cliente">Curso online de letreros LED y resina epóxica</div>
+
+        <div class="caso">
+          <div class="caso-fila">
+            <div class="caso-tag">El desafío</div>
+            <p>Vender un curso online sin tienda propia: el interesado tenía que entender la propuesta y poder comprar en la misma visita.</p>
+          </div>
+          <div class="caso-fila">
+            <div class="caso-tag">Qué hice</div>
+            <p>Una página de ventas de scroll único: promesa clara arriba, galería de resultados, sección de FAQ que responde las dudas típicas antes de comprar y botón de pago conectado a Hotmart.</p>
+          </div>
+          <div class="caso-fila resultado">
+            <div class="caso-tag">Resultado</div>
+            <p>Un solo link para compartir en redes que lleva de la curiosidad al pago sin salir de la página.</p>
+          </div>
+        </div>
+
         <div class="project-tags">
           <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Landing page</span><span class="tag">Hotmart</span><span class="tag">GitHub Pages</span>
         </div>
-        <a href="https://principalapex0-dotcom.github.io/neonflex/" target="_blank" class="project-link">
+        <a href="https://principalapex0-dotcom.github.io/neonflex/" target="_blank" rel="noopener" class="project-link">
           Ver proyecto en vivo
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
       </div>
-    </div>
+    </article>
 
-    <!-- PROYECTO 2: ARTESANIAS -->
-    <div class="project-card flip" data-reveal>
+    <!-- PROYECTO 2: CREA & ENCANTA -->
+    <article class="project-card flip" data-reveal>
       <div class="project-visual v3">
         <div class="project-badge">✓ Online</div>
         <div class="mock-screen">
@@ -254,7 +431,7 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
           </div>
           <div>
             <div class="mock-arte-header">
-              <div class="mock-arte-logo">Crea & Encanta ✨</div>
+              <div class="mock-arte-logo">Crea &amp; Encanta ✨</div>
               <div class="mock-arte-sub">Cursos · Ebooks · Manualidades</div>
             </div>
             <div class="mock-arte-body">
@@ -280,20 +457,36 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
       </div>
       <div class="project-info">
         <div class="project-num">Proyecto 02</div>
-        <h3>Tienda de cursos digitales — Crea & Encanta</h3>
-        <p class="project-desc">Página principal para una tienda de cursos de artesanías y manualidades. Catálogo de productos con detalle expandible, integración con Hotmart y diseño oscuro con acento violeta.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Tienda</span><span class="tag">Hotmart</span><span class="tag">GitHub Pages</span>
+        <h3>Tienda de cursos digitales — Crea &amp; Encanta</h3>
+        <div class="project-cliente">Marca de cursos, ebooks y manualidades</div>
+
+        <div class="caso">
+          <div class="caso-fila">
+            <div class="caso-tag">El desafío</div>
+            <p>Varios productos digitales dispersos: cada consulta terminaba en mandar links sueltos y explicar precios uno por uno.</p>
+          </div>
+          <div class="caso-fila">
+            <div class="caso-tag">Qué hice</div>
+            <p>Un catálogo con fichas expandibles, precio y descuento visibles, y compra directa por Hotmart en cada producto.</p>
+          </div>
+          <div class="caso-fila resultado">
+            <div class="caso-tag">Resultado</div>
+            <p>Todo el catálogo en un solo link para la bio de Instagram, y el cliente puede comparar y comprar sin preguntar.</p>
+          </div>
         </div>
-        <a href="https://novabrands.github.io/artesanias/" target="_blank" class="project-link">
+
+        <div class="project-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Catálogo</span><span class="tag">Hotmart</span><span class="tag">GitHub Pages</span>
+        </div>
+        <a href="https://novabrands.github.io/artesanias/" target="_blank" rel="noopener" class="project-link">
           Ver proyecto en vivo
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
       </div>
-    </div>
+    </article>
 
     <!-- PROYECTO 3: EBOOK -->
-    <div class="project-card" data-reveal>
+    <article class="project-card" data-reveal>
       <div class="project-visual v4">
         <div class="project-badge">✓ Online</div>
         <div class="mock-screen">
@@ -318,30 +511,119 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
       <div class="project-info">
         <div class="project-num">Proyecto 03</div>
         <h3>Ebook interactivo — Belleza Natural</h3>
-        <p class="project-desc">Ebook digital con 34 recetas completas de cuidado personal. Índice navegable, pasos detallados, sección de propiedades y bonus de masajes. Diseño editorial pensado para leer desde el celular.</p>
+        <div class="project-cliente">34 recetas de cuidado personal</div>
+
+        <div class="caso">
+          <div class="caso-fila">
+            <div class="caso-tag">El desafío</div>
+            <p>Entregar 34 recetas de forma cómoda de leer en el celular, sin obligar al lector a descargar un PDF pesado.</p>
+          </div>
+          <div class="caso-fila">
+            <div class="caso-tag">Qué hice</div>
+            <p>Un ebook web con índice navegable, cada receta con pasos y propiedades, fotos reales y una sección bonus de masajes. Diseño editorial mobile first.</p>
+          </div>
+          <div class="caso-fila resultado">
+            <div class="caso-tag">Resultado</div>
+            <p>Se abre desde cualquier link, sin descargas ni apps, y se actualiza sin volver a enviar el archivo.</p>
+          </div>
+        </div>
+
         <div class="project-tags">
           <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Diseño editorial</span><span class="tag">Mobile first</span>
         </div>
-        <a href="https://principalapex0-dotcom.github.io/mascarillas/" target="_blank" class="project-link">
+        <a href="https://principalapex0-dotcom.github.io/mascarillas/" target="_blank" rel="noopener" class="project-link">
           Ver proyecto en vivo
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
 
+<!-- ================= BANDA CTA ================= -->
+<section class="banda">
+  <div class="wrap banda-inner">
+    <div class="banda-texto">
+      <h3>¿Te imaginás tu negocio así?</h3>
+      <p>Contame qué necesitás y te digo cómo lo resolvería. Sin compromiso.</p>
+    </div>
+    <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-primary">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.18 1.37z"/></svg>
+      Escribime por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ================= SERVICIOS / PAQUETES ================= -->
+<section class="servicios-section wrap" id="servicios">
+  <div class="section-label">Servicios</div>
+  <h2 class="section-title">Qué puedo hacer<br>por tu negocio.</h2>
+  <p class="section-intro">Precios pensados para emprendedores y negocios de barrio. Todo incluye el diseño desde cero, los ajustes hasta que te guste y la publicación online.</p>
+
+  <div class="planes">
+
+    <div class="plan">
+      <div class="plan-flag">Para empezar</div>
+      <h3>Landing page</h3>
+      <p class="plan-para">Una página para presentar un producto, curso o servicio y recibir consultas.</p>
+      <div class="plan-precio">Desde $200.000 <small>Precio final, sin mensualidad</small></div>
+      <ul>
+        <li>Diseño a medida, hasta 6 secciones</li>
+        <li>Botón de WhatsApp con mensaje listo</li>
+        <li>Formulario de contacto a tu mail</li>
+        <li>Adaptada a celular y computadora</li>
+        <li>Publicación online incluida</li>
+      </ul>
+      <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Landing%20page.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener" class="btn-ghost plan-btn">Consultar</a>
+    </div>
+
+    <div class="plan destacado">
+      <div class="plan-flag">★ El más pedido</div>
+      <h3>Catálogo o tienda</h3>
+      <p class="plan-para">Para negocios con varios productos: dietéticas, gastronomía, artesanías, cursos.</p>
+      <div class="plan-precio">Desde $350.000 <small>Precio final, sin mensualidad</small></div>
+      <ul>
+        <li>Todo lo de la Landing page</li>
+        <li>Catálogo con fichas de producto y categorías</li>
+        <li>Carrito o pedido directo por WhatsApp</li>
+        <li>Integración con Hotmart o pasarela de pago</li>
+        <li>Código QR para pegar en el local</li>
+      </ul>
+      <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Cat%C3%A1logo%20o%20tienda.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener" class="btn-primary plan-btn">Consultar</a>
+    </div>
+
+    <div class="plan">
+      <div class="plan-flag">Contenido</div>
+      <h3>Ebook o menú digital</h3>
+      <p class="plan-para">Contenido largo que se lee cómodo desde el celular, sin descargar nada.</p>
+      <div class="plan-precio">Desde $150.000 <small>Precio final, sin mensualidad</small></div>
+      <ul>
+        <li>Índice navegable por capítulos o secciones</li>
+        <li>Diseño editorial a medida del contenido</li>
+        <li>Fotos e imágenes optimizadas</li>
+        <li>Link único para vender o compartir</li>
+        <li>Código QR incluido</li>
+      </ul>
+      <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Ebook%20o%20men%C3%BA%20digital.%20Te%20cuento%3A%20" target="_blank" rel="noopener" class="btn-ghost plan-btn">Consultar</a>
+    </div>
+
+  </div>
+
+  <p class="nota-extras"><strong>Extras opcionales:</strong> dominio propio (tunegocio.com.ar) · mantenimiento mensual desde $25.000 · textos y fotos · más idiomas. Se cotizan aparte según lo que necesites.<br><strong>Forma de pago:</strong> 50% para arrancar y 50% al publicar. Incluye 2 rondas de cambios.</p>
+</section>
+
+<!-- ================= SKILLS ================= -->
 <section class="skills-section" id="skills">
-  <div class="skills-inner">
+  <div class="wrap">
     <div class="section-label">Habilidades</div>
-    <h2 class="section-title">Lo que sé hacer.</h2>
+    <h2 class="section-title solo">Lo que sé hacer.</h2>
     <div class="skills-grid">
-      <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">HTML & CSS</div><div class="skill-desc">Páginas desde cero, sin templates genéricos.</div></div>
+      <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">HTML &amp; CSS</div><div class="skill-desc">Páginas desde cero, sin templates genéricos.</div></div>
       <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div><div class="skill-desc">Carritos, formularios y elementos interactivos.</div></div>
       <div class="skill-card"><div class="skill-icon">📱</div><div class="skill-name">Mobile First</div><div class="skill-desc">Todo se ve perfecto en celular y desktop.</div></div>
       <div class="skill-card"><div class="skill-icon">🚀</div><div class="skill-name">GitHub Pages</div><div class="skill-desc">Publicación gratis con dominio personalizado.</div></div>
-      <div class="skill-card"><div class="skill-icon">🛒</div><div class="skill-name">Hotmart & Tiendas</div><div class="skill-desc">Integración con plataformas de venta.</div></div>
+      <div class="skill-card"><div class="skill-icon">🛒</div><div class="skill-name">Hotmart &amp; Tiendas</div><div class="skill-desc">Integración con plataformas de venta.</div></div>
       <div class="skill-card"><div class="skill-icon">📧</div><div class="skill-name">Formularios</div><div class="skill-desc">Pedidos que llegan directo a tu mail.</div></div>
       <div class="skill-card"><div class="skill-icon">📲</div><div class="skill-name">QR + link</div><div class="skill-desc">Tu página desde un QR para el local.</div></div>
       <div class="skill-card"><div class="skill-icon">📖</div><div class="skill-name">Ebooks digitales</div><div class="skill-desc">Diseño editorial interactivo y navegable.</div></div>
@@ -349,38 +631,105 @@ footer { border-top: 1px solid var(--borde); padding: 28px 40px; display: flex; 
   </div>
 </section>
 
-<section class="proceso-section" id="proceso">
+<!-- ================= PROCESO ================= -->
+<section class="proceso-section wrap" id="proceso">
   <div class="section-label">Cómo trabajo</div>
   <h2 class="section-title">Simple y sin vueltas.</h2>
+  <p class="section-intro">No hace falta que sepas nada de tecnología. Vos me contás qué querés y yo me encargo del resto.</p>
   <div class="proceso-steps">
-    <div class="proceso-step"><div class="paso-num-grande">01</div><h4>Me contás tu idea</h4><p>Me explicás qué necesitás: landing page, menú, tienda, ebook o lo que sea.</p></div>
-    <div class="proceso-step"><div class="paso-num-grande">02</div><h4>Te muestro un diseño</h4><p>En pocos días tenés una primera versión para ver y pedirle cambios.</p></div>
+    <div class="proceso-step"><div class="paso-num-grande">01</div><h4>Me contás tu idea</h4><p>Por WhatsApp me explicás qué necesitás: landing, menú, tienda, ebook o lo que sea.</p></div>
+    <div class="proceso-step"><div class="paso-num-grande">02</div><h4>Te muestro un diseño</h4><p>En pocos días tenés una primera versión online para ver desde tu celular y pedir cambios.</p></div>
     <div class="proceso-step"><div class="paso-num-grande">03</div><h4>Ajustamos juntos</h4><p>Modificamos colores, textos y secciones hasta que quede exactamente como querés.</p></div>
-    <div class="proceso-step"><div class="paso-num-grande">04</div><h4>La publicamos</h4><p>La subimos online con un link o con tu dominio propio. QR incluido si lo necesitás.</p></div>
+    <div class="proceso-step"><div class="paso-num-grande">04</div><h4>La publicamos</h4><p>La dejo online con tu link o tu dominio propio, y te explico cómo usarla. QR incluido.</p></div>
   </div>
 </section>
 
+<!-- ================= OPINIONES =================
+     Testimonios reales de clientes. Si podés sumarles el nombre del negocio y el rubro,
+     descomentá la línea <div class="opinion-negocio"> de cada uno y completala:
+     un testimonio con negocio identificable genera bastante más confianza que solo el nombre.
+================================================= -->
+<section class="opiniones-section" id="opiniones">
+  <div class="wrap">
+    <div class="section-label">Opiniones</div>
+    <h2 class="section-title solo">Lo que dicen<br>mis clientes.</h2>
+    <div class="opiniones-grid">
+
+      <div class="opinion">
+        <div class="opinion-comillas">"</div>
+        <p>Antes no teníamos una página donde mostrar todo lo que ofrecemos. El trabajo quedó muy prolijo y nos ayudó a presentar nuestro negocio de una manera completamente diferente.</p>
+        <div class="opinion-autor">
+          <div class="opinion-inicial">C</div>
+          <div>
+            <div class="opinion-nombre">Catalina</div>
+            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="opinion">
+        <div class="opinion-comillas">"</div>
+        <p>Le contamos nuestra idea y logró llevarla a una página funcional y atractiva. Estamos muy contentos con el resultado final.</p>
+        <div class="opinion-autor">
+          <div class="opinion-inicial">N</div>
+          <div>
+            <div class="opinion-nombre">Néstor</div>
+            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="opinion">
+        <div class="opinion-comillas">"</div>
+        <p>Nos ayudó a mostrar nuestros productos de una manera mucho más profesional. Además, estuvo atento a nuestras sugerencias y fue haciendo los cambios que necesitábamos.</p>
+        <div class="opinion-autor">
+          <div class="opinion-inicial">L</div>
+          <div>
+            <div class="opinion-nombre">Laura</div>
+            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
 <section class="cta-section" id="contacto">
   <div class="cta-glow"></div>
   <h2>¿Tu negocio necesita<br>una página web?</h2>
-  <p>Consultá sin compromiso. Precios accesibles para emprendedores y negocios locales.</p>
+  <p>Escribime y charlamos sin compromiso. Te respondo qué se puede hacer y cuánto sale, sin vueltas.</p>
   <div class="cta-btns">
-    <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" class="btn-primary">Escribime por WhatsApp</a>
+    <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web.%0A%0AMi%20negocio%3A%20%0AQu%C3%A9%20necesito%3A%20" target="_blank" rel="noopener" class="btn-primary">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.18 1.37z"/></svg>
+      Escribime por WhatsApp
+    </a>
     <a href="mailto:francodavid1711@gmail.com?subject=Consulta%20por%20una%20p%C3%A1gina%20web&body=Hola%21%20Vi%20tu%20portfolio%20y%20quer%C3%ADa%20consultarte%20por%20una%20p%C3%A1gina%20web.%0A%0AMi%20negocio%3A%20%0AQu%C3%A9%20necesito%3A%20%0A" class="btn-ghost">Mandar un mail</a>
-    <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener" class="btn-ghost con-icono"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> Instagram</a>
+    <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener" class="btn-ghost"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> Instagram</a>
   </div>
   <p class="mail-texto">O escribime directo a <a href="mailto:francodavid1711@gmail.com">francodavid1711@gmail.com</a></p>
 </section>
 
 <footer>
-  <div class="footer-copy">© 2026 · Portfolio · Diseño web freelance</div>
+  <div class="footer-copy">© 2026 · FW · Diseño web freelance</div>
   <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener" class="foot-ig"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> @fw_disenioweb</a>
   <div class="footer-dot"><span class="dot"></span> Disponible para nuevos proyectos</div>
 </footer>
 
+<!-- Barra fija de WhatsApp — solo se ve en celular -->
+<div class="wa-fija">
+  <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.44-.72-2.9-1.14-4.74-4.1-4.88-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.18 1.37z"/></svg>
+    Consultar por WhatsApp
+  </a>
+</div>
+
 <script>
 const cards = document.querySelectorAll('[data-reveal]');
-const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
 cards.forEach(c => obs.observe(c));
 </script>
 </body>
