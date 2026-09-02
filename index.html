@@ -214,15 +214,18 @@ nav {
 
 /* ---------- SERVICIOS / PAQUETES ---------- */
 .servicios-section { padding-top: var(--s-8); padding-bottom: var(--s-8); }
-.planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-3); }
+.planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--s-3); }
 .plan { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-md); padding: var(--s-5); display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
 .plan:hover { border-color: var(--violeta); transform: translateY(-4px); }
 .plan.destacado { border-color: var(--violeta); background: linear-gradient(160deg, #191428 0%, var(--card) 60%); }
 .plan-flag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--violeta-cl); margin-bottom: var(--s-2); }
-.plan h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.4px; margin-bottom: var(--s-1); }
-.plan-para { font-size: 13px; color: var(--gris); margin-bottom: var(--s-4); min-height: 40px; }
+.plan h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.4px; margin-bottom: var(--s-1); line-height: 1.2; min-height: 2.4em; }
+.plan-para { font-size: 13px; color: var(--gris); margin-bottom: var(--s-4); min-height: 80px; }
 .plan-precio { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: -1px; margin-bottom: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px solid var(--borde); }
 .plan-precio small { display: block; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: var(--gris); letter-spacing: 0; margin-top: 4px; }
+.precio-antes { display: flex; align-items: center; gap: var(--s-2); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0; margin-bottom: 5px; }
+.precio-antes s { color: var(--gris); text-decoration-thickness: 1px; }
+.precio-off { flex: none; background: var(--violeta-suave); border: 1px solid rgba(124,106,247,0.35); color: var(--violeta-cl); border-radius: 100px; padding: 2px 9px; font-size: 11px; font-weight: 600; letter-spacing: .5px; }
 .plan-entrega { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--gris-cl); margin-bottom: var(--s-3); }
 .plan-entrega svg { width: 15px; height: 15px; flex: none; stroke: var(--violeta-cl); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .aviso-fundador { display: inline-flex; align-items: center; gap: var(--s-2); background: var(--violeta-suave); border: 1px solid rgba(124,106,247,0.35); border-radius: 100px; padding: 7px var(--s-3); font-size: 13px; color: var(--violeta-cl); margin-bottom: var(--s-6); }
@@ -317,6 +320,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
   .project-info { padding: var(--s-5) var(--s-4); }
   .caso-fila { grid-template-columns: 1fr; gap: 2px; }
   .plan-para { min-height: 0; }
+  .plan h3 { min-height: 0; }
   .cta-section { margin-left: var(--pad-x); margin-right: var(--pad-x); padding: var(--s-6) var(--s-4); }
   .cta-btns .btn-primary, .cta-btns .btn-ghost { width: 100%; justify-content: center; }
   footer { flex-direction: column; align-items: flex-start; }
@@ -586,7 +590,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
   <h2 class="section-title">Qué puedo hacer<br>por tu negocio.</h2>
   <p class="section-intro">Precios pensados para emprendedores y negocios de barrio. Todo incluye el diseño desde cero, los ajustes hasta que te guste y la publicación online.</p>
 
-  <div class="aviso-fundador"><strong>Precio fundador</strong> · para mis primeros clientes</div>
+  <div class="aviso-fundador"><strong>50% OFF</strong> · precio para mis primeros clientes</div>
 
   <div class="planes">
 
@@ -595,8 +599,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Landing page</h3>
       <p class="plan-para">Una página para presentar un producto, curso o servicio y recibir consultas.</p>
       <div class="plan-precio">
+        <span class="precio-antes"><s>$40.000</s> <span class="precio-off">50% OFF</span></span>
         Desde $20.000
-        <small>Precio fundador · precio final, sin mensualidad</small>
+        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 2 a 4 días</div>
       <ul>
@@ -609,18 +614,38 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Landing%20page.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn-ghost plan-btn">Consultar</a>
     </div>
 
+    <div class="plan">
+      <div class="plan-flag">Para mostrar</div>
+      <h3>Catálogo interactivo</h3>
+      <p class="plan-para">Para mostrar tus productos y que te consulten uno por uno, sin carrito.</p>
+      <div class="plan-precio">
+        <span class="precio-antes"><s>$80.000</s> <span class="precio-off">50% OFF</span></span>
+        Desde $40.000
+        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
+      </div>
+      <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 3 a 5 días</div>
+      <ul>
+        <li>Todo lo de la Landing page</li>
+        <li>Fichas con foto, precio y descripción</li>
+        <li>Categorías y buscador, hasta 20 productos</li>
+        <li>Consulta por WhatsApp en cada producto</li>
+        <li>Código QR para pegar en el local</li>
+      </ul>
+      <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Cat%C3%A1logo%20interactivo.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn-ghost plan-btn">Consultar</a>
+    </div>
+
     <div class="plan destacado">
       <div class="plan-flag">★ El más pedido</div>
       <h3>Catálogo o tienda</h3>
       <p class="plan-para">Para negocios con varios productos: dietéticas, gastronomía, artesanías, cursos.</p>
       <div class="plan-precio">
+        <span class="precio-antes"><s>$180.000</s> <span class="precio-off">50% OFF</span></span>
         Desde $90.000
-        <small>Precio fundador · precio final, sin mensualidad</small>
+        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 4 a 7 días</div>
       <ul>
-        <li>Todo lo de la Landing page</li>
-        <li>Catálogo con fichas y categorías, hasta 20 productos</li>
+        <li>Todo lo del Catálogo interactivo</li>
         <li>Carrito o pedido directo por WhatsApp</li>
         <li>Integración con Hotmart o pasarela de pago</li>
         <li>Código QR para pegar en el local</li>
@@ -633,8 +658,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Ebook o menú digital</h3>
       <p class="plan-para">Contenido largo que se lee cómodo desde el celular, sin descargar nada.</p>
       <div class="plan-precio">
+        <span class="precio-antes"><s>$30.000</s> <span class="precio-off">50% OFF</span></span>
         Desde $15.000
-        <small>Precio fundador · precio final, sin mensualidad</small>
+        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 1 a 2 días</div>
       <ul>
