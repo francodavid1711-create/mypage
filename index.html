@@ -223,12 +223,22 @@ nav {
 .plan-para { font-size: 13px; color: var(--gris); margin-bottom: var(--s-4); min-height: 40px; }
 .plan-precio { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: -1px; margin-bottom: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px solid var(--borde); }
 .plan-precio small { display: block; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: var(--gris); letter-spacing: 0; margin-top: 4px; }
+.plan-entrega { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--gris-cl); margin-bottom: var(--s-3); }
+.plan-entrega svg { width: 15px; height: 15px; flex: none; stroke: var(--violeta-cl); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.aviso-fundador { display: inline-flex; align-items: center; gap: var(--s-2); background: var(--violeta-suave); border: 1px solid rgba(124,106,247,0.35); border-radius: 100px; padding: 7px var(--s-3); font-size: 13px; color: var(--violeta-cl); margin-bottom: var(--s-6); }
+.aviso-fundador strong { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--crema); }
 .plan ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--s-5); flex: 1; }
 .plan li { font-size: 13.5px; color: var(--gris-cl); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
 .plan li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--violeta); margin-top: 7px; }
 .plan-btn { text-align: center; justify-content: center; padding: 13px 24px; font-size: 14px; }
 .nota-extras { margin-top: var(--s-4); font-size: 13px; color: var(--gris); }
 .nota-extras strong { color: var(--crema); font-weight: 600; }
+.extras-titulo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; margin-top: var(--s-6); margin-bottom: var(--s-3); }
+.extras-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--s-2); }
+.extra { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-sm); padding: var(--s-3) var(--s-4); }
+.extra-precio { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: -.5px; margin-bottom: 4px; }
+.extra-precio span { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: var(--gris); letter-spacing: 0; }
+.extra-desc { font-size: 12px; color: var(--gris); line-height: 1.55; }
 
 /* ---------- SKILLS ---------- */
 .skills-section { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
@@ -246,6 +256,17 @@ nav {
 .paso-num-grande { font-family: 'Space Grotesk', sans-serif; font-size: 3.2rem; font-weight: 800; color: var(--borde-cl); line-height: 1; margin-bottom: var(--s-2); letter-spacing: -2px; }
 .proceso-step h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 7px; }
 .proceso-step p { font-size: 13px; color: var(--gris); line-height: 1.6; }
+
+/* ---------- SEGURIDAD ---------- */
+.seguridad-section { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); background: var(--card); }
+.seg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-3); }
+.seg-card { display: flex; gap: var(--s-3); background: var(--negro); border: 1px solid var(--borde); border-radius: var(--r-md); padding: var(--s-4); transition: border-color .2s; }
+.seg-card:hover { border-color: var(--violeta); }
+.seg-icono { flex: none; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: var(--r-sm); background: var(--violeta-suave); color: var(--violeta-cl); }
+.seg-icono svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.seg-card h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+.seg-card p { font-size: 13px; color: var(--gris); line-height: 1.6; }
+.nota-seguridad { margin-top: var(--s-5); font-size: 13px; color: var(--gris); line-height: 1.7; border-left: 2px solid var(--violeta); padding-left: var(--s-3); }
 
 /* ---------- OPINIONES ---------- */
 .opiniones-section { border-top: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
@@ -326,6 +347,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
     <a href="#proyectos">Proyectos</a>
     <a href="#servicios">Servicios</a>
     <a href="#proceso">Cómo trabajo</a>
+    <a href="#seguridad">Seguridad</a>
     <a href="#opiniones">Opiniones</a>
     <a href="#contacto">Contacto</a>
   </div>
@@ -564,13 +586,19 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
   <h2 class="section-title">Qué puedo hacer<br>por tu negocio.</h2>
   <p class="section-intro">Precios pensados para emprendedores y negocios de barrio. Todo incluye el diseño desde cero, los ajustes hasta que te guste y la publicación online.</p>
 
+  <div class="aviso-fundador"><strong>Precio fundador</strong> · para mis primeros clientes</div>
+
   <div class="planes">
 
     <div class="plan">
       <div class="plan-flag">Para empezar</div>
       <h3>Landing page</h3>
       <p class="plan-para">Una página para presentar un producto, curso o servicio y recibir consultas.</p>
-      <div class="plan-precio">Desde $200.000 <small>Precio final, sin mensualidad</small></div>
+      <div class="plan-precio">
+        Desde $20.000
+        <small>Precio fundador · precio final, sin mensualidad</small>
+      </div>
+      <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 2 a 4 días</div>
       <ul>
         <li>Diseño a medida, hasta 6 secciones</li>
         <li>Botón de WhatsApp con mensaje listo</li>
@@ -585,10 +613,14 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <div class="plan-flag">★ El más pedido</div>
       <h3>Catálogo o tienda</h3>
       <p class="plan-para">Para negocios con varios productos: dietéticas, gastronomía, artesanías, cursos.</p>
-      <div class="plan-precio">Desde $350.000 <small>Precio final, sin mensualidad</small></div>
+      <div class="plan-precio">
+        Desde $90.000
+        <small>Precio fundador · precio final, sin mensualidad</small>
+      </div>
+      <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 4 a 7 días</div>
       <ul>
         <li>Todo lo de la Landing page</li>
-        <li>Catálogo con fichas de producto y categorías</li>
+        <li>Catálogo con fichas y categorías, hasta 20 productos</li>
         <li>Carrito o pedido directo por WhatsApp</li>
         <li>Integración con Hotmart o pasarela de pago</li>
         <li>Código QR para pegar en el local</li>
@@ -600,7 +632,11 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <div class="plan-flag">Contenido</div>
       <h3>Ebook o menú digital</h3>
       <p class="plan-para">Contenido largo que se lee cómodo desde el celular, sin descargar nada.</p>
-      <div class="plan-precio">Desde $150.000 <small>Precio final, sin mensualidad</small></div>
+      <div class="plan-precio">
+        Desde $15.000
+        <small>Precio fundador · precio final, sin mensualidad</small>
+      </div>
+      <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 1 a 2 días</div>
       <ul>
         <li>Índice navegable por capítulos o secciones</li>
         <li>Diseño editorial a medida del contenido</li>
@@ -613,7 +649,27 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
 
   </div>
 
-  <p class="nota-extras"><strong>Extras opcionales:</strong> dominio propio (tunegocio.com.ar) · mantenimiento mensual desde $25.000 · textos y fotos · más idiomas. Se cotizan aparte según lo que necesites.<br><strong>Forma de pago:</strong> 50% para arrancar y 50% al publicar. Incluye 2 rondas de cambios.</p>
+  <h3 class="extras-titulo">Extras opcionales</h3>
+  <div class="extras-grid">
+    <div class="extra">
+      <div class="extra-precio">$10.000</div>
+      <div class="extra-desc">Cada 20 productos más en el catálogo, ya cargados y con sus fotos.</div>
+    </div>
+    <div class="extra">
+      <div class="extra-precio">$15.000</div>
+      <div class="extra-desc">Bloque de hasta 5 cambios (textos, imágenes, precios), una vez usadas las 2 rondas incluidas.</div>
+    </div>
+    <div class="extra">
+      <div class="extra-precio">Desde $10.000 <span>/ mes</span></div>
+      <div class="extra-desc">Mantenimiento mensual, totalmente opcional. Sin él la página sigue funcionando igual.</div>
+    </div>
+    <div class="extra">
+      <div class="extra-precio">A cotizar</div>
+      <div class="extra-desc">Dominio propio (tunegocio.com.ar), textos y fotos, más idiomas o funciones nuevas.</div>
+    </div>
+  </div>
+
+  <p class="nota-extras"><strong>Forma de pago:</strong> 50% para arrancar y 50% al publicar. Incluye 2 rondas de cambios.</p>
 </section>
 
 <!-- ================= SKILLS ================= -->
@@ -644,6 +700,69 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
     <div class="proceso-step"><div class="paso-num-grande">02</div><h4>Te muestro un diseño</h4><p>En pocos días tenés una primera versión online para ver desde tu celular y pedir cambios.</p></div>
     <div class="proceso-step"><div class="paso-num-grande">03</div><h4>Ajustamos juntos</h4><p>Modificamos colores, textos y secciones hasta que quede exactamente como querés.</p></div>
     <div class="proceso-step"><div class="paso-num-grande">04</div><h4>La publicamos</h4><p>La dejo online con tu link o tu dominio propio, y te explico cómo usarla. QR incluido.</p></div>
+  </div>
+</section>
+
+<!-- ================= SEGURIDAD ================= -->
+<section class="seguridad-section" id="seguridad">
+  <div class="wrap">
+    <div class="section-label">Seguridad</div>
+    <h2 class="section-title">Tu página, sin<br>puertas abiertas.</h2>
+    <p class="section-intro">La mayoría de los sitios de negocios chicos se hackean por el mismo motivo: están armados con plantillas y plugins que nadie actualiza. Yo no trabajo así.</p>
+
+    <div class="seg-grid">
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></div>
+        <div>
+          <h4>HTTPS con candado</h4>
+          <p>Todo lo que se manda entre tu página y el visitante viaja cifrado. El navegador no la marca como "no segura" y Google la posiciona mejor.</p>
+        </div>
+      </div>
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3.5v5c0 4.4-3.3 8.4-8 9.5-4.7-1.1-8-5.1-8-9.5v-5L12 3z"></path><path d="M9.5 12.5l1.8 1.8 3.6-3.6"></path></svg></div>
+        <div>
+          <h4>Sin WordPress ni plugins</h4>
+          <p>Los hackeos más comunes entran por plugins viejos sin actualizar. Tu página va escrita a mano: no hay plugin que mantener ni agujero que tapar.</p>
+        </div>
+      </div>
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12v6c0 1.7 3.1 3 7 3"></path><path d="M16.5 17.5l4.5 4.5"></path><path d="M21 17.5l-4.5 4.5"></path></svg></div>
+        <div>
+          <h4>Sin base de datos ni logins</h4>
+          <p>No hay panel de administración ni contraseñas que robar. Menos piezas dando vueltas es, sencillamente, menos por dónde entrar.</p>
+        </div>
+      </div>
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle></svg></div>
+        <div>
+          <h4>Reglas de seguridad activas</h4>
+          <p>La página le declara al navegador exactamente qué código tiene permitido ejecutar. Si alguien intentara inyectar algo de afuera, queda bloqueado solo.</p>
+        </div>
+      </div>
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2"></rect><path d="M2.5 10h19"></path><path d="M6.5 14.5h4"></path></svg></div>
+        <div>
+          <h4>Los pagos no pasan por tu página</h4>
+          <p>Los cobros van por Mercado Pago o Hotmart, que tienen certificación bancaria. Ningún dato de tarjeta se guarda ni pasa por tu sitio.</p>
+        </div>
+      </div>
+
+      <div class="seg-card">
+        <div class="seg-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"></path><path d="M20.5 4v5h-5"></path><path d="M12 8v4l2.5 2"></path></svg></div>
+        <div>
+          <h4>Respaldo de cada versión</h4>
+          <p>Guardo el historial completo de cambios. Si algo se rompe o no te convence, vuelvo a la versión anterior en minutos, sin rehacer nada.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="nota-seguridad">Nada de esto es un extra que se cobra aparte: viene incluido en todos los paquetes, porque para mí es parte de entregar una página bien hecha.</p>
   </div>
 </section>
 
