@@ -146,6 +146,7 @@ nav {
 .project-visual.v1 { background: linear-gradient(135deg, #0d001a 0%, #1a0033 50%, #0d001a 100%); }
 .project-visual.v3 { background: linear-gradient(135deg, #0a0d1a 0%, #0f1530 50%, #0a0d1a 100%); }
 .project-visual.v4 { background: linear-gradient(135deg, #0a1a10 0%, #153020 50%, #0a1a10 100%); }
+.project-visual.v5 { background: linear-gradient(135deg, #1a0d06 0%, #33170c 50%, #1a0d06 100%); }
 .mock-screen { width: 78%; max-width: 280px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.6); transform: perspective(800px) rotateY(-8deg) rotateX(4deg); transition: transform .4s ease; }
 .project-card.flip .mock-screen { transform: perspective(800px) rotateY(8deg) rotateX(4deg); }
 .project-card:hover .mock-screen { transform: perspective(800px) rotateY(0) rotateX(0); }
@@ -174,15 +175,35 @@ nav {
 .mock-arte-price { font-size: 6px; color: #888; margin-top: 1px; }
 .mock-arte-btn { background: #e879f9; color: #000; font-size: 5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; margin-top: 3px; display: inline-block; }
 
-.mock-ebook-cover { background: linear-gradient(135deg, #2d5a3d, #4a7c59); padding: 14px; text-align: center; }
-.mock-ebook-emoji { font-size: 18px; }
-.mock-ebook-title { color: #fff; font-size: 9px; font-weight: 800; font-family: serif; margin-top: 3px; }
-.mock-ebook-sub { color: rgba(255,255,255,.7); font-size: 6px; margin-top: 1px; }
-.mock-ebook-body { background: #fdf8f2; padding: 8px; }
-.mock-ebook-item { background: #fff; border-radius: 5px; padding: 6px; margin-bottom: 4px; border: 1px solid #e0d5c8; display: flex; gap: 5px; align-items: center; }
-.mock-ebook-item-emoji { font-size: 12px; }
-.mock-ebook-item-text { font-size: 6px; color: #3e2723; font-weight: 600; }
-.mock-ebook-item-sub { font-size: 5px; color: #6d6d6d; }
+.mock-diete-header { background: linear-gradient(135deg, #1b3b26, #2d5a3d); padding: 12px; }
+.mock-diete-logo { color: #fff; font-size: 11px; font-weight: 800; }
+.mock-diete-sub { color: rgba(255,255,255,.7); font-size: 6px; margin-top: 2px; }
+.mock-diete-search { background: rgba(255,255,255,.14); border-radius: 4px; margin-top: 8px; padding: 4px 6px; font-size: 6px; color: rgba(255,255,255,.75); }
+.mock-diete-body { background: #f6f8f4; padding: 8px; }
+.mock-diete-chips { display: flex; gap: 4px; margin-bottom: 6px; }
+.mock-diete-chip { background: #e4ece2; color: #2d5a3d; font-size: 5px; font-weight: 700; padding: 3px 6px; border-radius: 100px; }
+.mock-diete-chip.on { background: #2d5a3d; color: #fff; }
+.mock-diete-card { background: #fff; border: 1px solid #dfe6dc; border-radius: 5px; padding: 6px; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
+.mock-diete-emoji { font-size: 13px; }
+.mock-diete-name { font-size: 6.5px; color: #1b3b26; font-weight: 700; }
+.mock-diete-precio { font-size: 7.5px; color: #2d5a3d; font-weight: 800; margin-top: 1px; }
+.mock-diete-precio span { font-size: 5px; color: #7a8a76; font-weight: 600; }
+.mock-diete-kilo { font-size: 5px; color: #7a8a76; }
+.mock-diete-add { margin-left: auto; flex: none; background: #2d5a3d; color: #fff; font-size: 5px; font-weight: 800; padding: 3px 6px; border-radius: 3px; }
+
+.mock-gringos-header { background: linear-gradient(135deg, #3a1508, #6b2a10); padding: 12px; text-align: center; }
+.mock-gringos-logo { color: #ffd9a0; font-size: 10px; font-weight: 800; letter-spacing: .5px; }
+.mock-gringos-sub { color: rgba(255,217,160,.7); font-size: 6px; margin-top: 2px; }
+.mock-gringos-tabs { display: flex; gap: 4px; margin-top: 8px; justify-content: center; }
+.mock-gringos-tab { font-size: 5.5px; font-weight: 700; color: #ffd9a0; border: 1px solid rgba(255,217,160,.35); border-radius: 100px; padding: 3px 7px; }
+.mock-gringos-tab.on { background: #ffd9a0; color: #3a1508; border-color: #ffd9a0; }
+.mock-gringos-body { background: #fff8f0; padding: 8px; }
+.mock-gringos-card { background: #fff; border: 1px solid #f0e0cc; border-radius: 5px; padding: 6px; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
+.mock-gringos-emoji { font-size: 13px; }
+.mock-gringos-name { font-size: 6.5px; color: #3a1508; font-weight: 700; }
+.mock-gringos-desc { font-size: 5px; color: #9a7a5c; margin-top: 1px; }
+.mock-gringos-add { margin-left: auto; flex: none; background: #6b2a10; color: #fff; font-size: 5px; font-weight: 800; padding: 3px 6px; border-radius: 3px; }
+.mock-gringos-cart { background: #25D366; color: #06331a; font-size: 6px; font-weight: 800; text-align: center; padding: 6px; border-radius: 100px; margin-top: 6px; }
 
 .project-badge { position: absolute; top: var(--s-3); right: var(--s-3); background: var(--violeta-fuerte); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
 .project-card.flip .project-badge { left: var(--s-3); right: auto; }
@@ -514,53 +535,144 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       </div>
     </article>
 
-    <!-- PROYECTO 3: EBOOK -->
+    <!-- PROYECTO 3: DIETETICA SANAMENTE -->
     <article class="project-card" data-reveal>
       <div class="project-visual v4">
-        <div class="project-badge">✓ Online</div>
+        <div class="project-badge">&#10003; Online</div>
         <div class="mock-screen">
           <div class="mock-bar">
             <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
-            <div class="mock-url">principalapex0-dotcom.github.io/mascarillas</div>
+            <div class="mock-url">dieteticasanamente.com.ar</div>
           </div>
           <div>
-            <div class="mock-ebook-cover">
-              <div class="mock-ebook-emoji">🌿</div>
-              <div class="mock-ebook-title">Belleza Natural</div>
-              <div class="mock-ebook-sub">Mascarillas · Baños · Bebidas</div>
+            <div class="mock-diete-header">
+              <div class="mock-diete-logo">Sanamente &#127807;</div>
+              <div class="mock-diete-sub">Dietética · 11 de Septiembre 421, Pilar</div>
+              <div class="mock-diete-search">&#128269; Buscar producto…</div>
             </div>
-            <div class="mock-ebook-body">
-              <div class="mock-ebook-item"><div class="mock-ebook-item-emoji">🍯</div><div><div class="mock-ebook-item-text">Mascarilla Miel + Cúrcuma</div><div class="mock-ebook-item-sub">Antiinflamatoria · 10–15 min</div></div></div>
-              <div class="mock-ebook-item"><div class="mock-ebook-item-emoji">🌺</div><div><div class="mock-ebook-item-text">Chía + Hibiscus + Naranja</div><div class="mock-ebook-item-sub">Bebida antioxidante</div></div></div>
-              <div class="mock-ebook-item"><div class="mock-ebook-item-emoji">💎</div><div><div class="mock-ebook-item-text">Bonus: Masaje Gua Sha</div><div class="mock-ebook-item-sub">Drenante · Microcirculación</div></div></div>
+            <div class="mock-diete-body">
+              <div class="mock-diete-chips">
+                <div class="mock-diete-chip on">Frutos secos</div>
+                <div class="mock-diete-chip">Cereales</div>
+                <div class="mock-diete-chip">Yerba</div>
+              </div>
+              <div class="mock-diete-card">
+                <div class="mock-diete-emoji">&#127792;</div>
+                <div>
+                  <div class="mock-diete-name">Almendras</div>
+                  <div class="mock-diete-precio">$1.500 <span>/ 100 g</span></div>
+                  <div class="mock-diete-kilo">$15.000 el kilo</div>
+                </div>
+                <div class="mock-diete-add">Agregar</div>
+              </div>
+              <div class="mock-diete-card">
+                <div class="mock-diete-emoji">&#127806;</div>
+                <div>
+                  <div class="mock-diete-name">Avena arrollada</div>
+                  <div class="mock-diete-precio">$320 <span>/ 100 g</span></div>
+                  <div class="mock-diete-kilo">$3.200 el kilo</div>
+                </div>
+                <div class="mock-diete-add">Agregar</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="project-info">
         <div class="project-num">Proyecto 03</div>
-        <h3>Ebook interactivo — Belleza Natural</h3>
-        <div class="project-cliente">34 recetas de cuidado personal</div>
+        <h3>Catálogo con carrito — Dietética Sanamente</h3>
+        <div class="project-cliente">Dietética de barrio en Pilar · más de 230 productos</div>
 
         <div class="caso">
           <div class="caso-fila">
             <div class="caso-tag">El desafío</div>
-            <p>Entregar 34 recetas de forma cómoda de leer en el celular, sin obligar al lector a descargar un PDF pesado.</p>
+            <p>Un local con más de 230 productos a granel donde cada precio se consultaba por WhatsApp, uno por uno.</p>
           </div>
           <div class="caso-fila">
             <div class="caso-tag">Qué hice</div>
-            <p>Un ebook web con índice navegable, cada receta con pasos y propiedades, fotos reales y una sección bonus de masajes. Diseño editorial mobile first.</p>
+            <p>Catálogo con buscador y categorías, precios por 100 g y por kilo, y carrito que arma el pedido y lo manda por WhatsApp. Los productos salen de una planilla de Google que el dueño edita él mismo.</p>
           </div>
           <div class="caso-fila resultado">
             <div class="caso-tag">Resultado</div>
-            <p>Se abre desde cualquier link, sin descargas ni apps, y se actualiza sin volver a enviar el archivo.</p>
+            <p>El cliente ve todo el catálogo sin preguntar, y el local cambia precios sin tocar una línea de código. Con dominio propio.</p>
           </div>
         </div>
 
         <div class="project-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Diseño editorial</span><span class="tag">Mobile first</span>
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Carrito</span><span class="tag">Google Sheets</span><span class="tag">Dominio propio</span>
         </div>
-        <a href="https://principalapex0-dotcom.github.io/mascarillas/" target="_blank" rel="noopener noreferrer" class="project-link">
+        <a href="https://dieteticasanamente.com.ar/" target="_blank" rel="noopener noreferrer" class="project-link">
+          Ver proyecto en vivo
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- PROYECTO 4: HELADERIA LOS GRINGOS -->
+    <article class="project-card flip" data-reveal>
+      <div class="project-visual v5">
+        <div class="project-badge">&#10003; Online</div>
+        <div class="mock-screen">
+          <div class="mock-bar">
+            <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
+            <div class="mock-url">heladerialosgringos.com.ar</div>
+          </div>
+          <div>
+            <div class="mock-gringos-header">
+              <div class="mock-gringos-logo">HELADERÍA LOS GRINGOS</div>
+              <div class="mock-gringos-sub">Helados · Pizzas · Bebidas</div>
+              <div class="mock-gringos-tabs">
+                <div class="mock-gringos-tab on">Helados</div>
+                <div class="mock-gringos-tab">Pizzas</div>
+                <div class="mock-gringos-tab">Bebidas</div>
+              </div>
+            </div>
+            <div class="mock-gringos-body">
+              <div class="mock-gringos-card">
+                <div class="mock-gringos-emoji">&#127848;</div>
+                <div>
+                  <div class="mock-gringos-name">Pote 1 kg</div>
+                  <div class="mock-gringos-desc">Elegí hasta 4 gustos</div>
+                </div>
+                <div class="mock-gringos-add">Agregar</div>
+              </div>
+              <div class="mock-gringos-card">
+                <div class="mock-gringos-emoji">&#127829;</div>
+                <div>
+                  <div class="mock-gringos-name">Muzzarella grande</div>
+                  <div class="mock-gringos-desc">8 porciones · hasta 2 gustos</div>
+                </div>
+                <div class="mock-gringos-add">Agregar</div>
+              </div>
+              <div class="mock-gringos-cart">Pedir por WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-info">
+        <div class="project-num">Proyecto 04</div>
+        <h3>Carta digital con pedidos — Heladería Los Gringos</h3>
+        <div class="project-cliente">Heladería y pizzería en Peruzzotti</div>
+
+        <div class="caso">
+          <div class="caso-fila">
+            <div class="caso-tag">El desafío</div>
+            <p>Una carta larga de helados, pizzas y bebidas que se explicaba por teléfono y con fotos sueltas de la cartelera.</p>
+          </div>
+          <div class="caso-fila">
+            <div class="caso-tag">Qué hice</div>
+            <p>Carta digital separada en helados, pizzas y bebidas, con más de 60 gustos, carrito para armar el pedido y envío directo por WhatsApp al local.</p>
+          </div>
+          <div class="caso-fila resultado">
+            <div class="caso-tag">Resultado</div>
+            <p>El pedido llega escrito y completo, sin ir y venir preguntando gustos. Con dominio propio y QR para pegar en el mostrador.</p>
+          </div>
+        </div>
+
+        <div class="project-tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Carta digital</span><span class="tag">Carrito</span><span class="tag">Dominio propio</span>
+        </div>
+        <a href="https://heladerialosgringos.com.ar/" target="_blank" rel="noopener noreferrer" class="project-link">
           Ver proyecto en vivo
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H6M12 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
