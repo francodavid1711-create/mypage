@@ -97,6 +97,23 @@ nav {
   padding-top: 140px; padding-bottom: var(--s-8); position: relative; overflow: hidden;
 }
 .hero-glow { position: absolute; top: 18%; right: -10%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(124,106,247,.15) 0%, transparent 70%); pointer-events: none; }
+/* Grilla sutil de fondo, se desvanece hacia los bordes */
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, #000 30%, transparent 75%);
+          mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, #000 30%, transparent 75%);
+}
+.hero { isolation: isolate; }
+.disponible {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+  font-size: 13px; color: var(--gris-cl); padding: 6px 14px 6px 10px; margin-bottom: var(--s-5);
+  border: 1px solid var(--borde-cl); border-radius: 100px; background: rgba(20,20,28,.6);
+}
+.disponible i { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #3DDC84; flex: none; }
+.disponible i::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid #3DDC84; opacity: 0; animation: pulso 2.4s ease-out infinite; }
+@keyframes pulso { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(1.6); opacity: 0; } }
 .eyebrow {
   display: flex; align-items: center; gap: var(--s-2); font-size: 12px; font-weight: 600;
   letter-spacing: 3px; text-transform: uppercase; color: var(--violeta); margin-bottom: var(--s-5);
@@ -104,8 +121,9 @@ nav {
 .eyebrow::before { content: ''; width: 32px; height: 1px; background: currentColor; flex: none; }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.8rem, 7.5vw, 6.4rem);
-  font-weight: 700; line-height: 1.02; letter-spacing: -3px; margin-bottom: var(--s-5);
+  font-weight: 700; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: var(--s-5);
 }
+h1, h2, h3 { text-wrap: balance; }
 .hero h1 .accent { color: var(--violeta); }
 .hero h1 .accent2 { color: var(--violeta-cl); }
 .hero-desc { max-width: 580px; font-size: 1.1rem; color: var(--gris-cl); line-height: 1.7; margin-bottom: var(--s-6); }
@@ -147,63 +165,14 @@ nav {
 .project-visual.v3 { background: linear-gradient(135deg, #0a0d1a 0%, #0f1530 50%, #0a0d1a 100%); }
 .project-visual.v4 { background: linear-gradient(135deg, #0a1a10 0%, #153020 50%, #0a1a10 100%); }
 .project-visual.v5 { background: linear-gradient(135deg, #1a0d06 0%, #33170c 50%, #1a0d06 100%); }
-.mock-screen { width: 78%; max-width: 280px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.6); transform: perspective(800px) rotateY(-8deg) rotateX(4deg); transition: transform .4s ease; }
+.mock-screen { width: 78%; max-width: 260px; background: #1a1a2e; border-radius: 18px; border: 1px solid rgba(255,255,255,.08); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.6); transform: perspective(800px) rotateY(-8deg) rotateX(4deg); transition: transform .4s ease; }
 .project-card.flip .mock-screen { transform: perspective(800px) rotateY(8deg) rotateX(4deg); }
 .project-card:hover .mock-screen { transform: perspective(800px) rotateY(0) rotateX(0); }
 .mock-bar { background: #1a1a2e; padding: 8px 12px; display: flex; align-items: center; gap: 5px; }
 .mock-dot2 { width: 7px; height: 7px; border-radius: 50%; flex: none; }
 .mock-dot2.r { background: #FF5F57; } .mock-dot2.y { background: #FEBC2E; } .mock-dot2.g { background: #28C840; }
+.mock-shot { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: top; }
 .mock-url { flex: 1; background: #2a2a40; border-radius: 3px; padding: 3px 8px; font-size: 9px; color: #777; margin-left: 4px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-
-.mock-neon-header { background: linear-gradient(135deg, #0d001a, #1a0033); padding: 14px; text-align: center; }
-.mock-neon-logo { color: #a78bfa; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
-.mock-neon-h { color: #fff; font-size: 9px; font-weight: 700; margin-top: 6px; line-height: 1.3; }
-.mock-neon-body { background: #0a0010; padding: 10px; }
-.mock-neon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-.mock-neon-item { background: #150025; border-radius: 5px; padding: 7px; border: 1px solid #2a0050; text-align: center; }
-.mock-neon-emoji { font-size: 14px; }
-.mock-neon-txt { font-size: 6px; color: #a78bfa; margin-top: 3px; font-weight: 600; }
-.mock-neon-cta { background: #a78bfa; color: #000; font-size: 7px; font-weight: 800; padding: 5px; text-align: center; margin: 8px; border-radius: 4px; }
-
-.mock-arte-header { background: linear-gradient(135deg, #1a0033, #2d0a50); padding: 14px; text-align: center; }
-.mock-arte-logo { color: #e879f9; font-size: 11px; font-weight: 800; }
-.mock-arte-sub { color: rgba(232,121,249,.7); font-size: 7px; margin-top: 2px; }
-.mock-arte-body { background: #0d001a; padding: 10px; }
-.mock-arte-card { background: #150025; border-radius: 6px; padding: 8px; margin-bottom: 5px; border: 1px solid #2a0050; display: flex; gap: 6px; align-items: center; }
-.mock-arte-emoji { font-size: 16px; }
-.mock-arte-name { font-size: 7px; color: #e879f9; font-weight: 700; }
-.mock-arte-price { font-size: 6px; color: #888; margin-top: 1px; }
-.mock-arte-btn { background: #e879f9; color: #000; font-size: 5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; margin-top: 3px; display: inline-block; }
-
-.mock-diete-header { background: linear-gradient(135deg, #1b3b26, #2d5a3d); padding: 12px; }
-.mock-diete-logo { color: #fff; font-size: 11px; font-weight: 800; }
-.mock-diete-sub { color: rgba(255,255,255,.7); font-size: 6px; margin-top: 2px; }
-.mock-diete-search { background: rgba(255,255,255,.14); border-radius: 4px; margin-top: 8px; padding: 4px 6px; font-size: 6px; color: rgba(255,255,255,.75); }
-.mock-diete-body { background: #f6f8f4; padding: 8px; }
-.mock-diete-chips { display: flex; gap: 4px; margin-bottom: 6px; }
-.mock-diete-chip { background: #e4ece2; color: #2d5a3d; font-size: 5px; font-weight: 700; padding: 3px 6px; border-radius: 100px; }
-.mock-diete-chip.on { background: #2d5a3d; color: #fff; }
-.mock-diete-card { background: #fff; border: 1px solid #dfe6dc; border-radius: 5px; padding: 6px; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
-.mock-diete-emoji { font-size: 13px; }
-.mock-diete-name { font-size: 6.5px; color: #1b3b26; font-weight: 700; }
-.mock-diete-precio { font-size: 7.5px; color: #2d5a3d; font-weight: 800; margin-top: 1px; }
-.mock-diete-precio span { font-size: 5px; color: #7a8a76; font-weight: 600; }
-.mock-diete-kilo { font-size: 5px; color: #7a8a76; }
-.mock-diete-add { margin-left: auto; flex: none; background: #2d5a3d; color: #fff; font-size: 5px; font-weight: 800; padding: 3px 6px; border-radius: 3px; }
-
-.mock-gringos-header { background: linear-gradient(135deg, #3a1508, #6b2a10); padding: 12px; text-align: center; }
-.mock-gringos-logo { color: #ffd9a0; font-size: 10px; font-weight: 800; letter-spacing: .5px; }
-.mock-gringos-sub { color: rgba(255,217,160,.7); font-size: 6px; margin-top: 2px; }
-.mock-gringos-tabs { display: flex; gap: 4px; margin-top: 8px; justify-content: center; }
-.mock-gringos-tab { font-size: 5.5px; font-weight: 700; color: #ffd9a0; border: 1px solid rgba(255,217,160,.35); border-radius: 100px; padding: 3px 7px; }
-.mock-gringos-tab.on { background: #ffd9a0; color: #3a1508; border-color: #ffd9a0; }
-.mock-gringos-body { background: #fff8f0; padding: 8px; }
-.mock-gringos-card { background: #fff; border: 1px solid #f0e0cc; border-radius: 5px; padding: 6px; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
-.mock-gringos-emoji { font-size: 13px; }
-.mock-gringos-name { font-size: 6.5px; color: #3a1508; font-weight: 700; }
-.mock-gringos-desc { font-size: 5px; color: #9a7a5c; margin-top: 1px; }
-.mock-gringos-add { margin-left: auto; flex: none; background: #6b2a10; color: #fff; font-size: 5px; font-weight: 800; padding: 3px 6px; border-radius: 3px; }
-.mock-gringos-cart { background: #25D366; color: #06331a; font-size: 6px; font-weight: 800; text-align: center; padding: 6px; border-radius: 100px; margin-top: 6px; }
 
 .project-badge { position: absolute; top: var(--s-3); right: var(--s-3); background: var(--violeta-fuerte); color: #fff; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
 .project-card.flip .project-badge { left: var(--s-3); right: auto; }
@@ -266,10 +235,12 @@ nav {
 
 /* ---------- SKILLS ---------- */
 .skills-section { border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--s-2); }
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-2); }
+@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 .skill-card { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-sm); padding: var(--s-4); transition: border-color .2s, transform .2s; }
 .skill-card:hover { border-color: var(--violeta); transform: translateY(-4px); }
-.skill-icon { font-size: 1.7rem; margin-bottom: var(--s-2); }
+.skill-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: var(--r-sm); background: var(--violeta-suave); color: var(--violeta-cl); margin-bottom: var(--s-3); }
+.skill-icon svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .skill-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 5px; }
 .skill-desc { font-size: 12px; color: var(--gris); line-height: 1.5; }
 
@@ -296,7 +267,8 @@ nav {
 .opiniones-section { border-top: 1px solid var(--borde); padding-top: var(--s-8); padding-bottom: var(--s-8); }
 .opiniones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-3); }
 .opinion { background: var(--card); border: 1px solid var(--borde); border-radius: var(--r-md); padding: var(--s-5); display: flex; flex-direction: column; }
-.opinion-comillas { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; line-height: 1; color: var(--violeta); opacity: .5; margin-bottom: var(--s-2); }
+.opinion-comillas { color: var(--violeta-cl); opacity: .6; margin-bottom: var(--s-3); }
+.opinion-comillas svg { display: block; width: 26px; height: 20px; fill: currentColor; }
 .opinion p { font-size: 14.5px; color: var(--crema); line-height: 1.7; flex: 1; margin-bottom: var(--s-4); }
 .opinion-autor { display: flex; align-items: center; gap: var(--s-2); padding-top: var(--s-3); border-top: 1px solid var(--borde); }
 .opinion-inicial { width: 36px; height: 36px; flex: none; border-radius: 50%; background: var(--violeta-suave); border: 1px solid rgba(124,106,247,.3); display: grid; place-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: var(--violeta-cl); }
@@ -318,7 +290,14 @@ nav {
 .mail-texto a:hover { border-bottom-color: var(--violeta-cl); }
 
 /* ---------- FOOTER ---------- */
-footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--s-3); }
+footer { border-top: 1px solid var(--borde); }
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: var(--s-6); padding-top: var(--s-7); padding-bottom: var(--s-6); }
+.footer-marca p { font-size: 13.5px; color: var(--gris); max-width: 300px; margin-top: var(--s-2); line-height: 1.6; }
+.footer-col h4 { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: var(--s-3); }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: var(--gris-cl); text-decoration: none; font-size: 14px; transition: color .2s; }
+.footer-col a:hover { color: var(--crema); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--s-3); padding-top: var(--s-4); padding-bottom: var(--s-4); border-top: 1px solid var(--borde); }
 .footer-copy { font-size: 13px; color: var(--gris); }
 .foot-ig { display: inline-flex; align-items: center; gap: 8px; color: var(--gris); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
 .foot-ig:hover { color: var(--violeta-cl); }
@@ -337,14 +316,17 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
   .hero h1 { letter-spacing: -1.5px; }
   .hero-btns .btn-primary, .hero-btns .btn-ghost { flex: 1; justify-content: center; min-width: 150px; }
   .project-card { grid-template-columns: 1fr !important; direction: ltr !important; }
-  .project-visual { min-height: 250px; padding: var(--s-4); }
+  .project-visual { min-height: 250px; padding: var(--s-5) var(--s-4); }
+  .mock-screen { max-width: 220px; }
   .project-info { padding: var(--s-5) var(--s-4); }
   .caso-fila { grid-template-columns: 1fr; gap: 2px; }
   .plan-para { min-height: 0; }
   .plan h3 { min-height: 0; }
   .cta-section { margin-left: var(--pad-x); margin-right: var(--pad-x); padding: var(--s-6) var(--s-4); }
   .cta-btns .btn-primary, .cta-btns .btn-ghost { width: 100%; justify-content: center; }
-  footer { flex-direction: column; align-items: flex-start; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: var(--s-5); padding-top: var(--s-6); }
+  .footer-marca { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 
   body { padding-bottom: 76px; }
   .wa-fija {
@@ -381,8 +363,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
 
 <!-- ================= HERO ================= -->
 <section class="hero wrap">
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-glow"></div>
-  <div class="eyebrow">Diseño web freelance</div>
+  <div class="disponible"><i></i>Diseño web freelance · Disponible para nuevos proyectos</div>
   <h1>Páginas web<br>que <span class="accent">conectan</span><br>con tu <span class="accent2">cliente.</span></h1>
   <p class="hero-desc">Diseño y programo sitios a medida para negocios y emprendedores: landing pages de cursos, catálogos con carrito, menús digitales y ebooks. Hechos desde cero, rápidos y pensados para el celular.</p>
   <div class="hero-btns">
@@ -423,21 +406,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
             <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
             <div class="mock-url">principalapex0-dotcom.github.io/neonflex</div>
           </div>
-          <div>
-            <div class="mock-neon-header">
-              <div class="mock-neon-logo">NEONPRO</div>
-              <div class="mock-neon-h">Creá letreros LED y resina epóxica para tu propio negocio</div>
-            </div>
-            <div class="mock-neon-body">
-              <div class="mock-neon-grid">
-                <div class="mock-neon-item"><div class="mock-neon-emoji">💡</div><div class="mock-neon-txt">Letreros LED</div></div>
-                <div class="mock-neon-item"><div class="mock-neon-emoji">🖼️</div><div class="mock-neon-txt">Resina epóxica</div></div>
-                <div class="mock-neon-item"><div class="mock-neon-emoji">🎉</div><div class="mock-neon-txt">Para eventos</div></div>
-                <div class="mock-neon-item"><div class="mock-neon-emoji">🏪</div><div class="mock-neon-txt">Para negocios</div></div>
-              </div>
-              <div class="mock-neon-cta">QUIERO APRENDER →</div>
-            </div>
-          </div>
+          <img class="mock-shot" src="img/neonpro.jpg" alt="Captura de la landing page de NeonPro en el celular" width="560" height="840" loading="lazy">
         </div>
       </div>
       <div class="project-info">
@@ -479,30 +448,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
             <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
             <div class="mock-url">novabrands.github.io/artesanias</div>
           </div>
-          <div>
-            <div class="mock-arte-header">
-              <div class="mock-arte-logo">Crea &amp; Encanta ✨</div>
-              <div class="mock-arte-sub">Cursos · Ebooks · Manualidades</div>
-            </div>
-            <div class="mock-arte-body">
-              <div class="mock-arte-card">
-                <div class="mock-arte-emoji">💎</div>
-                <div>
-                  <div class="mock-arte-name">Diseña y Crea con Resina</div>
-                  <div class="mock-arte-price">$74.00 → $37.00 USD</div>
-                  <div class="mock-arte-btn">Comprar Ahora</div>
-                </div>
-              </div>
-              <div class="mock-arte-card">
-                <div class="mock-arte-emoji">🧼</div>
-                <div>
-                  <div class="mock-arte-name">Jabones DIY: Pack 7x1</div>
-                  <div class="mock-arte-price">$21.99 USD</div>
-                  <div class="mock-arte-btn">Comprar Ahora</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <img class="mock-shot" src="img/crea-encanta.jpg" alt="Captura de la tienda de Crea &amp; Encanta en el celular" width="560" height="840" loading="lazy">
         </div>
       </div>
       <div class="project-info">
@@ -544,38 +490,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
             <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
             <div class="mock-url">dieteticasanamente.com.ar</div>
           </div>
-          <div>
-            <div class="mock-diete-header">
-              <div class="mock-diete-logo">Sanamente &#127807;</div>
-              <div class="mock-diete-sub">Dietética · 11 de Septiembre 421, Pilar</div>
-              <div class="mock-diete-search">&#128269; Buscar producto…</div>
-            </div>
-            <div class="mock-diete-body">
-              <div class="mock-diete-chips">
-                <div class="mock-diete-chip on">Frutos secos</div>
-                <div class="mock-diete-chip">Cereales</div>
-                <div class="mock-diete-chip">Yerba</div>
-              </div>
-              <div class="mock-diete-card">
-                <div class="mock-diete-emoji">&#127792;</div>
-                <div>
-                  <div class="mock-diete-name">Almendras</div>
-                  <div class="mock-diete-precio">$1.500 <span>/ 100 g</span></div>
-                  <div class="mock-diete-kilo">$15.000 el kilo</div>
-                </div>
-                <div class="mock-diete-add">Agregar</div>
-              </div>
-              <div class="mock-diete-card">
-                <div class="mock-diete-emoji">&#127806;</div>
-                <div>
-                  <div class="mock-diete-name">Avena arrollada</div>
-                  <div class="mock-diete-precio">$320 <span>/ 100 g</span></div>
-                  <div class="mock-diete-kilo">$3.200 el kilo</div>
-                </div>
-                <div class="mock-diete-add">Agregar</div>
-              </div>
-            </div>
-          </div>
+          <img class="mock-shot" src="img/sanamente.jpg" alt="Captura del catÃ¡logo de DietÃ©tica Sanamente en el celular" width="560" height="840" loading="lazy">
         </div>
       </div>
       <div class="project-info">
@@ -617,36 +532,7 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
             <div class="mock-dot2 r"></div><div class="mock-dot2 y"></div><div class="mock-dot2 g"></div>
             <div class="mock-url">heladerialosgringos.com.ar</div>
           </div>
-          <div>
-            <div class="mock-gringos-header">
-              <div class="mock-gringos-logo">HELADERÍA LOS GRINGOS</div>
-              <div class="mock-gringos-sub">Helados · Pizzas · Bebidas</div>
-              <div class="mock-gringos-tabs">
-                <div class="mock-gringos-tab on">Helados</div>
-                <div class="mock-gringos-tab">Pizzas</div>
-                <div class="mock-gringos-tab">Bebidas</div>
-              </div>
-            </div>
-            <div class="mock-gringos-body">
-              <div class="mock-gringos-card">
-                <div class="mock-gringos-emoji">&#127848;</div>
-                <div>
-                  <div class="mock-gringos-name">Pote 1 kg</div>
-                  <div class="mock-gringos-desc">Elegí hasta 4 gustos</div>
-                </div>
-                <div class="mock-gringos-add">Agregar</div>
-              </div>
-              <div class="mock-gringos-card">
-                <div class="mock-gringos-emoji">&#127829;</div>
-                <div>
-                  <div class="mock-gringos-name">Muzzarella grande</div>
-                  <div class="mock-gringos-desc">8 porciones · hasta 2 gustos</div>
-                </div>
-                <div class="mock-gringos-add">Agregar</div>
-              </div>
-              <div class="mock-gringos-cart">Pedir por WhatsApp</div>
-            </div>
-          </div>
+          <img class="mock-shot" src="img/los-gringos.jpg" alt="Captura de la carta digital de HeladerÃ­a Los Gringos en el celular" width="560" height="840" loading="lazy">
         </div>
       </div>
       <div class="project-info">
@@ -711,9 +597,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Landing page</h3>
       <p class="plan-para">Una página para presentar un producto, curso o servicio y recibir consultas.</p>
       <div class="plan-precio">
-        <span class="precio-antes"><s>$40.000</s> <span class="precio-off">50% OFF</span></span>
+        <span class="precio-antes"><s>$40.000</s></span>
         Desde $20.000
-        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
+        <small>Pago único, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 2 a 4 días</div>
       <ul>
@@ -731,9 +617,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Catálogo interactivo</h3>
       <p class="plan-para">Para mostrar tus productos y que te consulten uno por uno, sin carrito.</p>
       <div class="plan-precio">
-        <span class="precio-antes"><s>$80.000</s> <span class="precio-off">50% OFF</span></span>
+        <span class="precio-antes"><s>$80.000</s></span>
         Desde $40.000
-        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
+        <small>Pago único, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 3 a 5 días</div>
       <ul>
@@ -751,9 +637,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Catálogo o tienda</h3>
       <p class="plan-para">Para negocios con varios productos: dietéticas, gastronomía, artesanías, cursos.</p>
       <div class="plan-precio">
-        <span class="precio-antes"><s>$180.000</s> <span class="precio-off">50% OFF</span></span>
+        <span class="precio-antes"><s>$180.000</s></span>
         Desde $90.000
-        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
+        <small>Pago único, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 4 a 7 días</div>
       <ul>
@@ -770,9 +656,9 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
       <h3>Ebook o menú digital</h3>
       <p class="plan-para">Contenido largo que se lee cómodo desde el celular, sin descargar nada.</p>
       <div class="plan-precio">
-        <span class="precio-antes"><s>$30.000</s> <span class="precio-off">50% OFF</span></span>
+        <span class="precio-antes"><s>$30.000</s></span>
         Desde $15.000
-        <small>Precio para mis primeros clientes · precio final, sin mensualidad</small>
+        <small>Pago único, sin mensualidad</small>
       </div>
       <div class="plan-entrega"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>Entrega en 1 a 2 días</div>
       <ul>
@@ -816,14 +702,14 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
     <div class="section-label">Habilidades</div>
     <h2 class="section-title solo">Lo que sé hacer.</h2>
     <div class="skills-grid">
-      <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">HTML &amp; CSS</div><div class="skill-desc">Páginas desde cero, sin templates genéricos.</div></div>
-      <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">JavaScript</div><div class="skill-desc">Carritos, formularios y elementos interactivos.</div></div>
-      <div class="skill-card"><div class="skill-icon">📱</div><div class="skill-name">Mobile First</div><div class="skill-desc">Todo se ve perfecto en celular y desktop.</div></div>
-      <div class="skill-card"><div class="skill-icon">🚀</div><div class="skill-name">GitHub Pages</div><div class="skill-desc">Publicación gratis con dominio personalizado.</div></div>
-      <div class="skill-card"><div class="skill-icon">🛒</div><div class="skill-name">Hotmart &amp; Tiendas</div><div class="skill-desc">Integración con plataformas de venta.</div></div>
-      <div class="skill-card"><div class="skill-icon">📧</div><div class="skill-name">Formularios</div><div class="skill-desc">Pedidos que llegan directo a tu mail.</div></div>
-      <div class="skill-card"><div class="skill-icon">📲</div><div class="skill-name">QR + link</div><div class="skill-desc">Tu página desde un QR para el local.</div></div>
-      <div class="skill-card"><div class="skill-icon">📖</div><div class="skill-name">Ebooks digitales</div><div class="skill-desc">Diseño editorial interactivo y navegable.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5"></path><path d="M16 7l5 5-5 5"></path><path d="M13.5 4l-3 16"></path></svg></div><div class="skill-name">HTML &amp; CSS</div><div class="skill-desc">Páginas desde cero, sin templates genéricos.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H12L11 22l8.5-11.5H12L13 2z"></path></svg></div><div class="skill-name">JavaScript</div><div class="skill-desc">Carritos, formularios y elementos interactivos.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg></div><div class="skill-name">Mobile First</div><div class="skill-desc">Todo se ve perfecto en celular y desktop.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></div><div class="skill-name">GitHub Pages</div><div class="skill-desc">Publicación gratis con dominio personalizado.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.1L21 8H6.3"></path><circle cx="9.5" cy="20" r="1.3"></circle><circle cx="17" cy="20" r="1.3"></circle></svg></div><div class="skill-name">Hotmart &amp; Tiendas</div><div class="skill-desc">Integración con plataformas de venta.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 6.5l8.5 6.5 8.5-6.5"></path></svg></div><div class="skill-name">Formularios</div><div class="skill-desc">Pedidos que llegan directo a tu mail.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.2"></rect><rect x="14" y="3" width="7" height="7" rx="1.2"></rect><rect x="3" y="14" width="7" height="7" rx="1.2"></rect><path d="M14 14h3v3h-3z"></path><path d="M20 14v.01"></path><path d="M17 20h4v-3"></path><path d="M14 20v.01"></path></svg></div><div class="skill-name">QR + link</div><div class="skill-desc">Tu página desde un QR para el local.</div></div>
+      <div class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.2 4.5 3.5 4.5v14c3.7 0 6.5.5 8.5 2 2-1.5 4.8-2 8.5-2v-14c-3.7 0-6.5.5-8.5 2z"></path><path d="M12 6.5v14"></path></svg></div><div class="skill-name">Ebooks digitales</div><div class="skill-desc">Diseño editorial interactivo y navegable.</div></div>
     </div>
   </div>
 </section>
@@ -916,37 +802,37 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
     <div class="opiniones-grid">
 
       <div class="opinion">
-        <div class="opinion-comillas">"</div>
+        <div class="opinion-comillas" aria-hidden="true"><svg viewBox="0 0 26 20"><path d="M0 20V12.4C0 5.6 3.4 1.5 10.2 0l1.3 2.7C8 3.9 6.2 6.3 5.9 9.6H11V20H0zm15 0V12.4C15 5.6 18.4 1.5 25.2 0l1.3 2.7c-3.5 1.2-5.3 3.6-5.6 6.9H26V20H15z"/></svg></div>
         <p>Antes no teníamos una página donde mostrar todo lo que ofrecemos. El trabajo quedó muy prolijo y nos ayudó a presentar nuestro negocio de una manera completamente diferente.</p>
         <div class="opinion-autor">
           <div class="opinion-inicial">C</div>
           <div>
             <div class="opinion-nombre">Catalina</div>
-            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+            <div class="opinion-negocio">NeonPro · Cursos de letreros LED y resina</div>
           </div>
         </div>
       </div>
 
       <div class="opinion">
-        <div class="opinion-comillas">"</div>
+        <div class="opinion-comillas" aria-hidden="true"><svg viewBox="0 0 26 20"><path d="M0 20V12.4C0 5.6 3.4 1.5 10.2 0l1.3 2.7C8 3.9 6.2 6.3 5.9 9.6H11V20H0zm15 0V12.4C15 5.6 18.4 1.5 25.2 0l1.3 2.7c-3.5 1.2-5.3 3.6-5.6 6.9H26V20H15z"/></svg></div>
         <p>Le contamos nuestra idea y logró llevarla a una página funcional y atractiva. Estamos muy contentos con el resultado final.</p>
         <div class="opinion-autor">
           <div class="opinion-inicial">N</div>
           <div>
             <div class="opinion-nombre">Néstor</div>
-            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+            <div class="opinion-negocio">Heladería Los Gringos · Dietética Sanamente</div>
           </div>
         </div>
       </div>
 
       <div class="opinion">
-        <div class="opinion-comillas">"</div>
+        <div class="opinion-comillas" aria-hidden="true"><svg viewBox="0 0 26 20"><path d="M0 20V12.4C0 5.6 3.4 1.5 10.2 0l1.3 2.7C8 3.9 6.2 6.3 5.9 9.6H11V20H0zm15 0V12.4C15 5.6 18.4 1.5 25.2 0l1.3 2.7c-3.5 1.2-5.3 3.6-5.6 6.9H26V20H15z"/></svg></div>
         <p>Nos ayudó a mostrar nuestros productos de una manera mucho más profesional. Además, estuvo atento a nuestras sugerencias y fue haciendo los cambios que necesitábamos.</p>
         <div class="opinion-autor">
           <div class="opinion-inicial">L</div>
           <div>
             <div class="opinion-nombre">Laura</div>
-            <!-- <div class="opinion-negocio">Nombre del negocio · Rubro</div> -->
+            <div class="opinion-negocio">Crea &amp; Encanta · Cursos y manualidades</div>
           </div>
         </div>
       </div>
@@ -972,9 +858,34 @@ footer { border-top: 1px solid var(--borde); padding: var(--s-4) var(--pad-x); d
 </section>
 
 <footer>
+  <div class="wrap footer-top">
+    <div class="footer-marca">
+      <a href="#" class="nav-logo"><span class="dot"></span>FW <small>· diseño web</small></a>
+      <p>Páginas web a medida para negocios y emprendedores. Hechas desde cero, rápidas y pensadas para el celular.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Cómo trabajo</a></li>
+        <li><a href="#opiniones">Opiniones</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/5491126921627" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        <li><a href="mailto:francodavid1711@gmail.com">Mail</a></li>
+        <li><a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
   <div class="footer-copy">© 2026 · FW · Diseño web freelance</div>
   <a href="https://www.instagram.com/fw_disenioweb/" target="_blank" rel="noopener noreferrer" class="foot-ig"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg> @fw_disenioweb</a>
   <div class="footer-dot"><span class="dot"></span> Disponible para nuevos proyectos</div>
+  </div>
 </footer>
 
 <!-- Barra fija de WhatsApp — solo se ve en celular -->
