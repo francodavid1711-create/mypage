@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'">
+<meta name="robots" content="noindex">
+<title>Contame tu proyecto · FW diseño web</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230A0A0F'/><circle cx='50' cy='50' r='22' fill='%237C6AF7'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --negro:#0A0A0F; --card:#14141C; --borde:#242430; --crema:#F0EDE6; --gris:#8A8A9A; --gris-cl:#A8A8B8; --violeta:#7C6AF7; --violeta-cl:#9B8CFF; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, sans-serif; background: var(--negro); color: var(--crema); line-height: 1.5;
+  background-image: radial-gradient(800px 600px at 100% 0%, rgba(124,106,247,.16), transparent 60%); min-height: 100vh; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 120px; }
+.marca { display: inline-flex; align-items: center; gap: 8px; color: var(--gris-cl); font-size: 14px; text-decoration: none; }
+.marca i { width: 8px; height: 8px; border-radius: 50%; background: var(--violeta); }
+.marca b { font-family: 'Space Grotesk'; color: var(--crema); font-size: 18px; }
+h1 { font-family: 'Space Grotesk'; font-weight: 600; font-size: clamp(2rem, 7vw, 2.8rem); letter-spacing: -1px; line-height: 1.05; margin: 32px 0 12px; }
+h1 span { color: var(--violeta-cl); }
+.intro { color: var(--gris-cl); font-size: 15px; margin-bottom: 32px; }
+fieldset { border: 1px solid var(--borde); background: var(--card); border-radius: 20px; padding: 22px; margin-bottom: 16px; }
+legend { font-family: 'Space Grotesk'; font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--violeta-cl); padding: 0 8px; }
+label { display: block; font-size: 14px; font-weight: 500; margin: 14px 0 6px; }
+label:first-of-type { margin-top: 4px; }
+label small { color: var(--gris); font-weight: 400; }
+input[type=text], input[type=tel], textarea, select { width: 100%; background: var(--negro); border: 1px solid var(--borde); color: var(--crema);
+  border-radius: 12px; padding: 12px 14px; font: inherit; font-size: 15px; }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--violeta); }
+textarea { min-height: 84px; resize: vertical; }
+.opciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.opciones label { margin: 0; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--borde); border-radius: 100px;
+  padding: 8px 14px; font-weight: 400; font-size: 14px; cursor: pointer; color: var(--gris-cl); }
+.opciones input { accent-color: var(--violeta); }
+.opciones label:has(input:checked) { border-color: var(--violeta); color: var(--crema); background: rgba(124,106,247,.12); }
+.enviar { position: fixed; left: 0; right: 0; bottom: 0; padding: 14px 20px 18px; background: linear-gradient(transparent, var(--negro) 35%); }
+.enviar button { display: block; width: 100%; max-width: 600px; margin: 0 auto; border: 0; border-radius: 100px; background: var(--violeta);
+  color: #fff; font-family: 'Space Grotesk'; font-weight: 600; font-size: 17px; padding: 16px; cursor: pointer; }
+.error { color: #F87171; font-size: 13px; margin-top: 6px; display: none; }
+.error.ver { display: block; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="marca" href="../"><i></i><b>FW</b> · diseño web</a>
+  <h1>Contame tu <span>proyecto.</span></h1>
+  <p class="intro">Son 2 minutos. Al final se abre WhatsApp con todo ya escrito, vos solo apretás enviar y te respondo con una idea y un precio.</p>
+
+  <form id="brief" novalidate>
+    <fieldset>
+      <legend>Tu negocio</legend>
+      <label for="nombre">Tu nombre</label>
+      <input type="text" id="nombre" autocomplete="name" required>
+      <p class="error" id="errNombre">Poné tu nombre así sé con quién hablo.</p>
+      <label for="negocio">Nombre del negocio o marca</label>
+      <input type="text" id="negocio" required>
+      <p class="error" id="errNegocio">Poné el nombre del negocio.</p>
+      <label for="rubro">¿A qué se dedica? <small>(ej: dietética, heladería, cursos, ropa)</small></label>
+      <input type="text" id="rubro">
+      <label for="redes">Instagram o web actual <small>(si tenés)</small></label>
+      <input type="text" id="redes" placeholder="@tunegocio">
+    </fieldset>
+
+    <fieldset>
+      <legend>Qué necesitás</legend>
+      <div class="opciones" id="tipo">
+        <label><input type="radio" name="tipo" value="Landing page"> Landing page</label>
+        <label><input type="radio" name="tipo" value="Catálogo interactivo"> Catálogo</label>
+        <label><input type="radio" name="tipo" value="Catálogo o tienda con carrito"> Tienda con carrito</label>
+        <label><input type="radio" name="tipo" value="Ebook o menú digital"> Ebook o menú</label>
+        <label><input type="radio" name="tipo" value="No sé, quiero que me asesores"> No sé, asesorame</label>
+      </div>
+      <label for="cantidad">¿Cuántos productos o servicios más o menos?</label>
+      <select id="cantidad">
+        <option value="">Elegí una opción</option>
+        <option>Menos de 20</option><option>Entre 20 y 60</option><option>Entre 60 y 150</option><option>Más de 150</option><option>No aplica</option>
+      </select>
+      <label for="objetivo">¿Qué querés que haga la gente cuando entre?</label>
+      <textarea id="objetivo" placeholder="Ej: que vean los precios y me manden el pedido por WhatsApp"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Lo que ya tenés</legend>
+      <div class="opciones">
+        <label><input type="checkbox" name="tiene" value="Logo"> Logo</label>
+        <label><input type="checkbox" name="tiene" value="Fotos de productos"> Fotos</label>
+        <label><input type="checkbox" name="tiene" value="Lista de precios"> Lista de precios</label>
+        <label><input type="checkbox" name="tiene" value="Dominio propio"> Dominio</label>
+        <label><input type="checkbox" name="tiene" value="Colores de marca"> Colores de marca</label>
+      </div>
+      <label for="gusta">¿Alguna página que te guste? <small>(link o descripción)</small></label>
+      <input type="text" id="gusta">
+    </fieldset>
+
+    <fieldset>
+      <legend>Tiempos</legend>
+      <label for="cuando">¿Para cuándo la necesitás?</label>
+      <select id="cuando">
+        <option value="">Elegí una opción</option>
+        <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option>
+      </select>
+      <label for="extra">¿Algo más que quieras contarme?</label>
+      <textarea id="extra"></textarea>
+    </fieldset>
+
+    <div class="enviar"><button type="submit">Enviar por WhatsApp →</button></div>
+  </form>
+</main>
+<script src="brief.js"></script>
+</body>
+</html>
