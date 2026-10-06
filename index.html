@@ -224,6 +224,16 @@ h1, h2, h3 { text-wrap: balance; }
 .plan li { font-size: 13.5px; color: var(--gris-cl); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
 .plan li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--violeta); margin-top: 7px; }
 .plan-btn { text-align: center; justify-content: center; padding: 13px 24px; font-size: 14px; }
+.plan-mant { margin-top: var(--s-3); display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); flex-wrap: wrap; background: linear-gradient(120deg, #191428 0%, var(--card) 55%); border: 1px solid rgba(124,106,247,0.35); border-radius: var(--r-md); padding: var(--s-5); }
+.plan-mant h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.4px; margin-bottom: var(--s-1); }
+.plan-mant-texto { flex: 1 1 380px; }
+.plan-mant-texto > p { font-size: 13px; color: var(--gris); margin-bottom: var(--s-3); }
+.plan-mant ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px var(--s-4); }
+.plan-mant li { font-size: 13.5px; color: var(--gris-cl); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+.plan-mant li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--violeta); margin-top: 7px; }
+.plan-mant-precio { flex: 0 1 220px; display: flex; flex-direction: column; gap: var(--s-3); }
+.plan-mant-precio .plan-precio { margin: 0; padding: 0; border: 0; }
+.plan-mant-precio .plan-precio span { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400; color: var(--gris); letter-spacing: 0; }
 .nota-extras { margin-top: var(--s-4); font-size: 13px; color: var(--gris); }
 .nota-extras strong { color: var(--crema); font-weight: 600; }
 .extras-titulo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; margin-top: var(--s-6); margin-bottom: var(--s-3); }
@@ -322,6 +332,8 @@ footer { border-top: 1px solid var(--borde); }
   .caso-fila { grid-template-columns: 1fr; gap: 2px; }
   .plan-para { min-height: 0; }
   .plan h3 { min-height: 0; }
+  .plan.destacado { order: -1; }
+  .plan-mant-precio { flex-basis: 100%; }
   .cta-section { margin-left: var(--pad-x); margin-right: var(--pad-x); padding: var(--s-6) var(--s-4); }
   .cta-btns .btn-primary, .cta-btns .btn-ghost { width: 100%; justify-content: center; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: var(--s-5); padding-top: var(--s-6); }
@@ -588,7 +600,7 @@ footer { border-top: 1px solid var(--borde); }
   <h2 class="section-title">Qué puedo hacer<br>por tu negocio.</h2>
   <p class="section-intro">Precios pensados para emprendedores y negocios de barrio. Todo incluye el diseño desde cero, los ajustes hasta que te guste y la publicación online.</p>
 
-  <div class="aviso-fundador"><strong>50% OFF</strong> · precio para mis primeros clientes</div>
+  <div class="aviso-fundador"><strong>Precio de lanzamiento</strong> · solo 3 lugares por mes</div>
 
   <div class="planes">
 
@@ -673,6 +685,24 @@ footer { border-top: 1px solid var(--borde); }
 
   </div>
 
+  <div class="plan-mant">
+    <div class="plan-mant-texto">
+      <div class="plan-flag">Sumalo a cualquier paquete</div>
+      <h3>Web + mantenimiento</h3>
+      <p>Vos te ocupás de tu negocio y yo de que la página esté siempre al día.</p>
+      <ul>
+        <li>Hasta 5 cambios por mes: precios, textos y fotos</li>
+        <li>Soporte por WhatsApp</li>
+        <li>Revisión mensual de que todo funcione</li>
+        <li>Lo cancelás cuando quieras: la página sigue funcionando igual</li>
+      </ul>
+    </div>
+    <div class="plan-mant-precio">
+      <div class="plan-precio">$15.000 <span>/ mes</span><small>Además del paquete elegido</small></div>
+      <a href="https://wa.me/5491126921627?text=%C2%A1Hola%21%20Me%20interesa%20el%20plan%20Web%20%2B%20mantenimiento.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn-primary plan-btn">Consultar</a>
+    </div>
+  </div>
+
   <h3 class="extras-titulo">Extras opcionales</h3>
   <div class="extras-grid">
     <div class="extra">
@@ -682,10 +712,6 @@ footer { border-top: 1px solid var(--borde); }
     <div class="extra">
       <div class="extra-precio">$15.000</div>
       <div class="extra-desc">Bloque de hasta 5 cambios (textos, imágenes, precios), una vez usadas las 2 rondas incluidas.</div>
-    </div>
-    <div class="extra">
-      <div class="extra-precio">Desde $10.000 <span>/ mes</span></div>
-      <div class="extra-desc">Mantenimiento mensual, totalmente opcional. Sin él la página sigue funcionando igual.</div>
     </div>
     <div class="extra">
       <div class="extra-precio">A cotizar</div>
