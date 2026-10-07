@@ -1,6 +1,6 @@
 // Arma el mensaje con las respuestas y abre WhatsApp. No se guarda nada en ningún servidor.
 (function () {
-  var WHATSAPP = '5491126921627';
+  var WHATSAPP = '5491126474340';
   var $ = function (id) { return document.getElementById(id); };
   var valor = function (id) { return $(id).value.trim(); };
 
