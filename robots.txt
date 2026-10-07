@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /material/
+Disallow: /brief/
+Sitemap: https://xn--fwdiseoweb-y9a.com.ar/sitemap.xml
