@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mamma Nicoletta · Muestra</title>
+<meta name="description" content="Muestra de página web para Mamma Nicoletta, hecha por FW Diseño Web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#2E7D46;--c2:#1F3B2A;--c3:#E6F2E8;--fondo:#FFFCF5;--texto:#1d1b19;--gris:#6b665f;--linea:#e7e2da;--blanco:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.45;-webkit-font-smoothing:antialiased;padding-bottom:90px}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.aviso{background:#1d1b19;color:#f4f1ec;font-size:13px;text-align:center;padding:8px 12px}
+.aviso b{color:#fff}.aviso a{color:#fff;text-decoration:underline}
+.portada{background:var(--c2);color:#fff;padding:34px 0 30px;position:relative;overflow:hidden}
+.portada::after{content:"🍝";position:absolute;right:-10px;bottom:-30px;font-size:180px;opacity:.13;transform:rotate(-12deg);pointer-events:none}
+.marca{display:flex;align-items:center;gap:14px}
+.logo{width:64px;height:64px;border-radius:50%;background:var(--c1);display:grid;place-items:center;font-size:32px;flex:none;box-shadow:0 0 0 4px rgba(255,255,255,.15)}
+h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(30px,7vw,46px);line-height:1.05;letter-spacing:-.01em}
+.rubro{font-size:13px;text-transform:uppercase;letter-spacing:.12em;opacity:.75;margin-bottom:4px}
+.lema{margin-top:16px;font-size:17px;max-width:520px;opacity:.92}
+.datos{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.dato{background:rgba(255,255,255,.12);border-radius:999px;padding:6px 12px;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.estado{font-weight:600}.estado.abierto::before,.estado.cerrado::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block}
+.estado.cerrado::before{background:#f87171}
+.botones{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px}
+.btn-1{background:var(--c1);color:#fff}.btn-2{background:rgba(255,255,255,.14);color:#fff}
+.chips{position:sticky;top:0;z-index:20;background:var(--fondo);border-bottom:1px solid var(--linea)}
+.chips .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.chips .wrap::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;border-radius:999px;background:var(--blanco);border:1px solid var(--linea);font-size:14px;font-weight:500;white-space:nowrap;text-decoration:none}
+.chip.activo{background:var(--c2);border-color:var(--c2);color:#fff}
+.destacados{margin:22px 0 4px}
+.destacados h2,.cat h2{font-family:"Playfair Display",Georgia,serif;font-size:24px;margin-bottom:12px;color:var(--c2)}
+.promo-fila{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.promo{flex:0 0 250px;background:var(--c1);color:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.promo .em{font-size:30px}.promo b{font-size:17px}.promo p{font-size:13.5px;opacity:.9;flex:1}
+.promo .pie{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.promo .precio{font-weight:700;font-size:18px;color:#fff}
+[hidden]{display:none!important}
+.promo button{background:#fff;color:var(--c2);border-radius:10px;padding:8px 14px;font-weight:600;font-size:14px}
+.cat{padding-top:24px}
+.item{display:flex;gap:14px;align-items:flex-start;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;padding:14px;margin-bottom:10px}
+.item .em{width:56px;height:56px;border-radius:14px;background:var(--c3);display:grid;place-items:center;font-size:28px;flex:none}
+.item .info{flex:1;min-width:0}
+.item h3{font-size:16px;font-weight:600}
+.item p{font-size:13.5px;color:var(--gris);margin-top:2px}
+.variantes{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.var{border:1px solid var(--linea);border-radius:999px;padding:4px 10px;font-size:13px;background:var(--fondo)}
+.var.sel{border-color:var(--c1);background:var(--c3);color:var(--c2);font-weight:600}
+.item .pie{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px}
+.precio{font-weight:700;font-size:16px;color:var(--c2)}
+.cant{display:flex;align-items:center;gap:2px;background:var(--c3);border-radius:10px}
+.cant button{width:36px;height:36px;font-size:20px;font-weight:600;color:var(--c2)}
+.cant span{min-width:22px;text-align:center;font-weight:600}
+.agregar{background:var(--c1);color:#fff;border-radius:10px;padding:8px 16px;font-weight:600;font-size:14px}
+.incluye{margin:34px 0 10px;background:var(--blanco);border:1px dashed var(--c1);border-radius:16px;padding:18px}
+.incluye h2{font-size:17px;margin-bottom:8px}
+.incluye ul{padding-left:18px;font-size:14.5px;color:var(--gris)}
+.incluye li{margin:3px 0}
+footer{margin-top:24px;padding:22px 0 30px;border-top:1px solid var(--linea);font-size:13.5px;color:var(--gris)}
+footer .legal{display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:10px}
+footer .legal button{text-decoration:underline;color:var(--gris);font-size:13.5px}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--fondo) 30%);display:none}
+.barra.ver{display:block}
+.barra button{width:100%;max-width:828px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;background:var(--c2);color:#fff;border-radius:14px;padding:15px 18px;font-weight:600;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.burbuja{background:var(--c1);border-radius:999px;padding:2px 9px;margin-right:8px;font-size:14px}
+.fondo-modal{position:fixed;inset:0;background:rgba(20,18,16,.55);z-index:40;display:none;align-items:flex-end;justify-content:center}
+.fondo-modal.ver{display:flex}
+.modal{background:var(--blanco);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:20px 18px 24px}
+@media(min-width:640px){.fondo-modal{align-items:center}.modal{border-radius:22px}}
+.modal h2{font-size:20px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.cerrar{font-size:26px;line-height:1;color:var(--gris);padding:4px 8px}
+.linea-pedido{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--linea);font-size:15px}
+.linea-pedido small{display:block;color:var(--gris)}
+.linea-pedido .cant{flex:none}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin:14px 0}
+.campo{margin-top:12px}
+.campo label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.campo input,.campo textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--linea);border-radius:10px;background:var(--fondo)}
+.opciones{display:flex;gap:8px}
+.opciones button{flex:1;padding:10px;border:1px solid var(--linea);border-radius:10px;font-weight:500}
+.opciones button.sel{border-color:var(--c1);background:var(--c3);color:var(--c2);font-weight:600}
+.enviar{width:100%;margin-top:18px;background:#25d366;color:#fff;border-radius:12px;padding:15px;font-weight:700;font-size:16px}
+.wa{background:#e5ddd5;border-radius:14px;padding:14px;margin:12px 0}
+.wa pre{background:#dcf8c6;border-radius:10px 10px 2px 10px;padding:12px;font:14px/1.45 Inter,sans-serif;white-space:pre-wrap;margin-left:auto;max-width:92%;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.nota{font-size:14px;color:var(--gris);margin-top:6px}
+.fw{display:block;text-align:center;margin-top:16px;background:#5B4BD6;color:#fff;border-radius:12px;padding:14px;font-weight:700;text-decoration:none}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#1d1b19;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;z-index:50;display:none;max-width:90vw;text-align:center}
+</style>
+</head>
+<body>
+<div class="aviso"><b>Muestra gratuita</b> hecha por <a href="https://xn--fwdiseoweb-y9a.com.ar/" target="_blank" rel="noopener">FW Diseño Web</a> para Mamma Nicoletta · productos y precios de ejemplo</div>
+
+<header class="portada">
+  <div class="wrap">
+    <div class="marca">
+      <div class="logo" aria-hidden="true">🍝</div>
+      <div><div class="rubro">Fábrica de pastas frescas · Pilar</div><h1>Mamma Nicoletta</h1></div>
+    </div>
+    <p class="lema">Nuestras pastas son sinónimo de hogar, familia y buena comida, como esos domingos en lo de la Nona.</p>
+    <div class="datos">
+      <span class="dato estado" id="estado" hidden></span>
+      <a class="dato" href="https://www.google.com/maps/search/?api=1&amp;query=Mamma+Nicoletta+Chacabuco+576+Pilar" target="_blank" rel="noopener">📍 Chacabuco 576, Pilar</a>
+      <span class="dato" id="horario">🕒 </span>
+    </div>
+    <div class="botones">
+      <a class="btn btn-1" href="#carta">Ver la carta</a>
+      <a class="btn btn-2" href="https://www.google.com/maps/search/?api=1&amp;query=Mamma+Nicoletta+Chacabuco+576+Pilar" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </div>
+</header>
+
+<nav class="chips" aria-label="Categorías"><div class="wrap" id="chips"></div></nav>
+
+<main class="wrap" id="carta">
+  <section class="destacados" id="destacados" hidden><h2>Promos</h2><div class="promo-fila" id="promos"></div></section>
+  <div id="categorias"></div>
+  <section class="incluye">
+    <h2>✨ Lo que tendría tu página final</h2>
+    <ul>
+      <li>Tu dominio propio (por ejemplo <b id="dom"></b>) y código QR para el mostrador</li>
+      <li>Fotos reales de tus productos y tus precios, que cambiás vos cuando quieras</li>
+      <li>Los pedidos te llegan escritos y completos a tu WhatsApp</li>
+      <li>Parte legal incluida: términos, privacidad, cookies y botón de arrepentimiento</li>
+      <li>Lista para aparecer en Google</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <button data-legal>Términos y condiciones</button>
+      <button data-legal>Política de privacidad</button>
+      <button data-legal>Política de cookies</button>
+      <button data-legal>Botón de arrepentimiento</button>
+    </div>
+    <p>© Mamma Nicoletta · Página hecha por <a href="https://xn--fwdiseoweb-y9a.com.ar/" target="_blank" rel="noopener">FW Diseño Web</a></p>
+  </div>
+</footer>
+
+<div class="barra" id="barra"><button id="abrirCarrito"><span><span class="burbuja" id="cuenta">0</span>Ver pedido</span><span id="totalBarra">$0</span></button></div>
+
+<div class="fondo-modal" id="mCarrito" role="dialog" aria-modal="true" aria-labelledby="tCarrito">
+  <div class="modal">
+    <h2 id="tCarrito">Tu pedido <button class="cerrar" data-cerrar aria-label="Cerrar">×</button></h2>
+    <div id="lineas"></div>
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <div class="campo"><label>¿Cómo lo querés?</label>
+      <div class="opciones" id="entrega"><button class="sel" data-v="Retiro en el local">Retiro en el local</button><button data-v="Envío a domicilio">Envío a domicilio</button></div>
+    </div>
+    <div class="campo"><label for="nombre">Tu nombre</label><input id="nombre" autocomplete="off" placeholder="Ej.: Laura"></div>
+    <div class="campo" id="campoDir" hidden><label for="dir">Dirección</label><input id="dir" autocomplete="off" placeholder="Calle, número y entre calles"></div>
+    <div class="campo"><label for="nota">Aclaraciones</label><textarea id="nota" rows="2" placeholder="Ej.: sin cebolla, pago en efectivo"></textarea></div>
+    <button class="enviar" id="enviar">Enviar pedido por WhatsApp</button>
+  </div>
+</div>
+
+<div class="fondo-modal" id="mDemo" role="dialog" aria-modal="true" aria-labelledby="tDemo">
+  <div class="modal">
+    <h2 id="tDemo">Así te llegaría el pedido <button class="cerrar" data-cerrar aria-label="Cerrar">×</button></h2>
+    <p class="nota">En tu página real, este mensaje le llega directo al WhatsApp de <b>Mamma Nicoletta</b>. Como esto es una muestra, <b>no se envió a nadie</b>.</p>
+    <div class="wa"><pre id="mensaje"></pre></div>
+    <a class="fw" id="quiero" target="_blank" rel="noopener">Quiero esta página para mi negocio</a>
+    <p class="nota" style="text-align:center">Te responde Franco, de FW Diseño Web</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script id="datos" type="application/json">{"slug": "mamma-nicoletta", "nombre": "Mamma Nicoletta", "rubro": "Fábrica de pastas frescas · Pilar", "emoji": "🍝", "lema": "Nuestras pastas son sinónimo de hogar, familia y buena comida, como esos domingos en lo de la Nona.", "direccion": "Chacabuco 576, Pilar", "mapa": "Mamma Nicoletta Chacabuco 576 Pilar", "horario_texto": "", "dominio": "mammanicoletta.com.ar", "fuente": "Playfair+Display:wght@700", "colores": {"principal": "#2E7D46", "oscuro": "#1F3B2A", "suave": "#E6F2E8", "fondo": "#FFFCF5"}, "promos": [{"e": "🍝", "n": "Combo domingo", "d": "48 ravioles de ricota + salsa bolognesa 250 g + queso rallado", "p": 11200}, {"e": "🧀", "n": "Sorrentinos + 4 quesos", "d": "15 sorrentinos caprese + salsa 4 quesos 250 g", "p": 13900}], "categorias": [{"e": "🥟", "n": "Ravioles", "items": [{"n": "Ravioles de ricota", "d": "Caja de 48 unidades", "p": 5400}, {"n": "Ravioles de pollo y verdura", "d": "Caja de 48 unidades", "p": 5400}, {"n": "Ravioles de carne y verdura", "d": "Caja de 48 unidades", "p": 5600}]}, {"e": "🌕", "n": "Sorrentinos", "items": [{"n": "Sorrentinos caprese", "d": "Muzzarella, tomate y albahaca · 15 unidades", "p": 10800}, {"n": "Sorrentinos de jamón y muzzarella", "d": "15 unidades", "p": 10800}, {"n": "Sorrentinos de calabaza", "d": "15 unidades", "p": 10800}]}, {"e": "🍝", "n": "Pastas", "items": [{"n": "Tallarines al huevo", "v": [{"n": "500 g", "p": 3500}, {"n": "1 kg", "p": 6600}]}, {"n": "Ñoquis de papa", "v": [{"n": "500 g", "p": 3200}, {"n": "1 kg", "p": 6000}]}, {"n": "Fusiles caseros", "v": [{"n": "500 g", "p": 3500}, {"n": "1 kg", "p": 6600}]}, {"n": "Canelones de verdura", "d": "Bandeja de 6, con salsa", "p": 9000}, {"n": "Lasaña de carne", "d": "Porción individual", "p": 7500}]}, {"e": "🥫", "n": "Salsas caseras", "items": [{"n": "Salsa bolognesa", "v": [{"n": "250 g", "p": 4000}, {"n": "1 kg", "p": 14000}]}, {"n": "Salsa 4 quesos", "v": [{"n": "250 g", "p": 3600}, {"n": "500 g", "p": 6300}, {"n": "1 kg", "p": 12600}]}, {"n": "Salsa fileto", "v": [{"n": "250 g", "p": 2800}, {"n": "500 g", "p": 5000}]}, {"e": "🧀", "n": "Queso rallado", "d": "100 g", "p": 2200}]}]}</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('datos').textContent);
+const $ = s => document.querySelector(s);
+const plata = n => '$' + Math.round(n).toLocaleString('es-AR');
+const carrito = {}; // clave -> {nombre, variante, precio, cant}
+let entrega = 'Retiro en el local';
+
+$('#dom').textContent = D.dominio;
+
+// Abierto / cerrado según el horario cargado
+if (D.horario) {
+  const ahora = new Date(new Date().toLocaleString('en-US', {timeZone: 'America/Argentina/Buenos_Aires'}));
+  const franjas = D.horario[ahora.getDay()] || [];
+  const min = ahora.getHours() * 60 + ahora.getMinutes();
+  const aMin = t => { const [h, m] = t.split(':'); return +h * 60 + +m; };
+  const abierto = franjas.some(([a, c]) => min >= aMin(a) && min < aMin(c));
+  const est = $('#estado');
+  est.hidden = false;
+  est.classList.add(abierto ? 'abierto' : 'cerrado');
+  est.textContent = abierto ? 'Abierto ahora' : 'Cerrado ahora';
+}
+if (!D.horario_texto) $('#horario').remove();
+
+// Promos
+if (D.promos && D.promos.length) {
+  $('#destacados').hidden = false;
+  $('#promos').innerHTML = D.promos.map((p, i) => `
+    <div class="promo"><span class="em">${p.e}</span><b>${esc(p.n)}</b><p>${esc(p.d || '')}</p>
+    <div class="pie"><span class="precio">${plata(p.p)}</span><button data-promo="${i}">Agregar</button></div></div>`).join('');
+}
+
+// Categorías y productos
+$('#chips').innerHTML = (D.promos && D.promos.length ? '<a class="chip" href="#destacados">🔥 Promos</a>' : '') +
+  D.categorias.map((c, i) => `<a class="chip" href="#cat${i}">${c.e} ${esc(c.n)}</a>`).join('');
+$('#categorias').innerHTML = D.categorias.map((c, ci) => `
+  <section class="cat" id="cat${ci}"><h2>${c.e} ${esc(c.n)}</h2>
+  ${c.items.map((it, ii) => `
+    <article class="item" data-item="${ci}-${ii}">
+      <div class="em" aria-hidden="true">${it.e || c.e}</div>
+      <div class="info"><h3>${esc(it.n)}</h3>${it.d ? `<p>${esc(it.d)}</p>` : ''}
+        ${it.v ? `<div class="variantes">${it.v.map((v, vi) => `<button class="var${vi ? '' : ' sel'}" data-var="${vi}">${esc(v.n)}</button>`).join('')}</div>` : ''}
+        <div class="pie"><span class="precio">${plata(it.v ? it.v[0].p : it.p)}</span><span class="control"></span></div>
+      </div>
+    </article>`).join('')}
+  </section>`).join('');
+
+function esc(s){ return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+
+function itemDe(el){ const [ci, ii] = el.dataset.item.split('-').map(Number); return D.categorias[ci].items[ii]; }
+function claveDe(el){
+  const it = itemDe(el); const sel = el.querySelector('.var.sel');
+  const vi = sel ? +sel.dataset.var : -1;
+  return {clave: el.dataset.item + ':' + vi, it, v: vi >= 0 ? it.v[vi] : null};
+}
+function pintarItem(el){
+  const {clave, it, v} = claveDe(el);
+  el.querySelector('.precio').textContent = plata(v ? v.p : it.p);
+  const n = carrito[clave] ? carrito[clave].cant : 0;
+  el.querySelector('.control').innerHTML = n
+    ? `<span class="cant"><button data-menos aria-label="Quitar uno">−</button><span>${n}</span><button data-mas aria-label="Agregar uno">+</button></span>`
+    : `<button class="agregar" data-mas>Agregar</button>`;
+}
+function sumar(clave, nombre, variante, precio, delta){
+  const l = carrito[clave] || (carrito[clave] = {nombre, variante, precio, cant: 0});
+  l.cant += delta;
+  if (l.cant <= 0) delete carrito[clave];
+  actualizar();
+}
+function actualizar(){
+  document.querySelectorAll('.item').forEach(pintarItem);
+  const ls = Object.values(carrito);
+  const cant = ls.reduce((a, l) => a + l.cant, 0);
+  const total = ls.reduce((a, l) => a + l.cant * l.precio, 0);
+  $('#barra').classList.toggle('ver', cant > 0);
+  $('#cuenta').textContent = cant;
+  $('#totalBarra').textContent = $('#total').textContent = plata(total);
+  $('#lineas').innerHTML = Object.entries(carrito).map(([k, l]) => `
+    <div class="linea-pedido"><div>${esc(l.nombre)}${l.variante ? `<small>${esc(l.variante)}</small>` : ''}<small>${plata(l.precio)} c/u</small></div>
+    <span class="cant"><button data-l="${k}" data-d="-1" aria-label="Quitar uno">−</button><span>${l.cant}</span><button data-l="${k}" data-d="1" aria-label="Agregar uno">+</button></span></div>`).join('');
+  if (!cant) cerrar();
+}
+
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('button, [data-cerrar]');
+  if (!b) { if (ev.target.classList.contains('fondo-modal')) cerrar(); return; }
+  const el = b.closest('.item');
+  if (b.dataset.var !== undefined && el) {
+    el.querySelectorAll('.var').forEach(x => x.classList.toggle('sel', x === b)); pintarItem(el); return;
+  }
+  if (el && (b.hasAttribute('data-mas') || b.hasAttribute('data-menos'))) {
+    const {clave, it, v} = claveDe(el);
+    sumar(clave, it.n, v ? v.n : '', v ? v.p : it.p, b.hasAttribute('data-mas') ? 1 : -1);
+    if (b.hasAttribute('data-mas')) aviso('Agregado: ' + it.n);
+    return;
+  }
+  if (b.dataset.promo !== undefined) { const p = D.promos[+b.dataset.promo]; sumar('promo' + b.dataset.promo, p.n, '', p.p, 1); aviso('Agregado: ' + p.n); return; }
+  if (b.dataset.l) { const l = carrito[b.dataset.l]; sumar(b.dataset.l, l.nombre, l.variante, l.precio, +b.dataset.d); return; }
+  if (b.dataset.v) {
+    entrega = b.dataset.v;
+    document.querySelectorAll('#entrega button').forEach(x => x.classList.toggle('sel', x === b));
+    $('#campoDir').hidden = entrega !== 'Envío a domicilio'; return;
+  }
+  if (b.hasAttribute('data-legal')) { aviso('En tu página final esta sección va completa, con los datos de tu negocio.'); return; }
+  if (b.hasAttribute('data-cerrar')) { cerrar(); return; }
+});
+$('#abrirCarrito').onclick = () => abrir('#mCarrito');
+$('#enviar').onclick = () => {
+  const ls = Object.values(carrito);
+  let m = `¡Hola ${D.nombre}! Quiero hacer este pedido:\n\n`;
+  ls.forEach(l => { m += `• ${l.cant} x ${l.nombre}${l.variante ? ' (' + l.variante + ')' : ''}: ${plata(l.cant * l.precio)}\n`; });
+  m += `\nTotal: ${plata(ls.reduce((a, l) => a + l.cant * l.precio, 0))}\n${entrega}`;
+  const nom = $('#nombre').value.trim(), dir = $('#dir').value.trim(), nota = $('#nota').value.trim();
+  if (entrega === 'Envío a domicilio' && dir) m += `: ${dir}`;
+  if (nom) m += `\nA nombre de: ${nom}`;
+  if (nota) m += `\nAclaración: ${nota}`;
+  $('#mensaje').textContent = m;
+  $('#quiero').href = 'https://wa.me/5491126474340?text=' + encodeURIComponent(`¡Hola Franco! Vi la muestra que armaste para ${D.nombre} y me interesa la página.`);
+  cerrar(); abrir('#mDemo');
+};
+function abrir(s){ $(s).classList.add('ver'); document.body.style.overflow = 'hidden'; }
+function cerrar(){ document.querySelectorAll('.fondo-modal').forEach(m => m.classList.remove('ver')); document.body.style.overflow = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrar(); });
+let t; function aviso(txt){ const x = $('#toast'); x.textContent = txt; x.style.display = 'block'; clearTimeout(t); t = setTimeout(() => x.style.display = 'none', 1800); }
+
+// Chip activo según la sección visible
+const chips = [...document.querySelectorAll('.chip')];
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) chips.forEach(c => c.classList.toggle('activo', c.getAttribute('href') === '#' + e.target.id));
+}), {rootMargin: '-130px 0px -60% 0px'});
+document.querySelectorAll('.cat, #destacados:not([hidden])').forEach(s => obs.observe(s));
+
+actualizar();
+})();
+</script>
+</body>
+</html>
