@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Política de seguridad de contenido: la página no ejecuta ningún script propio. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'none'">
+<!-- Política de seguridad de contenido: solo corre el script propio del cuestionario (brief/brief.js). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'">
 <title>FW Diseño Web · Catálogos, tiendas online y cartas digitales en Pilar</title>
 <meta name="description" content="Páginas web a medida para negocios de Pilar y todo el país: catálogos con carrito, tiendas online, cartas digitales con QR y ebooks. Pedidos por WhatsApp, pago único y sin mensualidad.">
 <meta property="og:title" content="FW Diseño Web · Páginas web que venden por vos">
@@ -126,34 +126,29 @@ header.top {
 .trabajo .ver { margin-top: auto; padding-top: 22px; font-size: 15px; font-weight: 600; color: var(--acento); text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
 .trabajo .ver:hover { text-decoration: underline; }
 
-/* Precios */
-.planes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; align-items: stretch; }
-.plan { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--r); padding: 30px 28px; display: flex; flex-direction: column; }
-.plan.destacado { border: 2px solid var(--acento); box-shadow: var(--sombra); }
-.plan-tipo { font-size: 13px; font-weight: 600; color: var(--gris); }
-.plan.destacado .plan-tipo { color: var(--acento); }
-.plan h3 { font-size: 22px; margin-top: 6px; }
-.plan .para { font-size: 15px; color: var(--gris); margin-top: 8px; min-height: 72px; }
-.precio { margin-top: 22px; font-family: 'Space Grotesk'; font-weight: 600; color: var(--tinta); font-size: 38px; letter-spacing: -0.02em; line-height: 1; }
-.precio small { display: block; font-family: 'Inter'; font-weight: 500; font-size: 13px; color: var(--gris); letter-spacing: 0; margin-bottom: 6px; }
-.precio-nota { font-size: 14px; color: var(--gris); margin-top: 8px; }
-.plan ul { list-style: none; margin: 22px 0 26px; padding-top: 22px; border-top: 1px solid var(--borde); display: grid; gap: 10px; font-size: 15px; }
-.plan li, .mant li { display: flex; gap: 10px; align-items: flex-start; }
-.plan li::before, .mant li::before { content: ''; flex: none; width: 16px; height: 16px; margin-top: 4px; border-radius: 50%; background: var(--acento-cl) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2L11.5 5.7' fill='none' stroke='%235B4BD6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
-.plan .btn { margin-top: auto; }
-
-.mant { margin-top: 20px; background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--r); padding: 30px 28px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
-.mant ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-top: 18px; font-size: 15px; }
-.mant .derecha { text-align: right; }
-.mant .precio span { font-size: 18px; color: var(--gris); font-family: 'Inter'; font-weight: 500; }
-.mant .btn { margin-top: 16px; }
-
-.extras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
-.extra { border: 1px dashed var(--borde); border-radius: var(--r); padding: 22px 24px; font-size: 15px; }
-.extra b { display: block; font-family: 'Space Grotesk'; font-size: 20px; color: var(--tinta); margin-bottom: 4px; }
-.condiciones { margin-top: 28px; font-size: 15px; color: var(--gris); }
-.condiciones b { color: var(--tinta); }
-.condiciones a { color: var(--acento); }
+/* Presupuesto (cuestionario, el mismo que /brief) */
+.presu { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+.presu-texto { position: sticky; top: 100px; }
+.presu-datos { list-style: none; display: grid; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--borde); font-size: 15px; }
+.presu-datos li { display: flex; gap: 10px; align-items: flex-start; }
+.presu-datos li::before { content: ''; flex: none; width: 16px; height: 16px; margin-top: 4px; border-radius: 50%; background: var(--acento-cl) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2L11.5 5.7' fill='none' stroke='%235B4BD6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
+.presu-datos b { color: var(--tinta); font-weight: 600; }
+.brief fieldset { border: 1px solid var(--borde); background: var(--superficie); border-radius: var(--r); padding: 22px 24px 24px; margin-bottom: 16px; }
+.brief legend { font-family: 'Space Grotesk'; font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--acento); padding: 0 8px; margin-left: -8px; }
+.brief label { display: block; font-size: 15px; font-weight: 500; color: var(--tinta); margin: 16px 0 6px; }
+.brief legend + label, .brief legend + .opciones { margin-top: 4px; }
+.brief label small { color: var(--gris); font-weight: 400; }
+.brief input[type=text], .brief textarea, .brief select { width: 100%; background: var(--fondo); border: 1px solid var(--borde); color: var(--tinta); border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 16px; }
+.brief input:focus, .brief textarea:focus, .brief select:focus { outline: none; border-color: var(--acento); background: var(--superficie); }
+.brief textarea { min-height: 84px; resize: vertical; }
+.brief .opciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.brief .opciones label { margin: 0; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--borde); border-radius: 100px; padding: 8px 14px; font-weight: 400; font-size: 15px; color: var(--texto); cursor: pointer; }
+.brief .opciones input { accent-color: var(--acento); }
+.brief .opciones label:has(input:checked) { border-color: var(--acento); color: var(--tinta); background: var(--acento-cl); }
+.brief .error { color: #C2410C; font-size: 14px; margin-top: 6px; display: none; }
+.brief .error.ver { display: block; }
+.brief button { width: 100%; border: 0; cursor: pointer; padding: 17px 24px; font-size: 17px; }
+.brief .aviso { font-size: 14px; color: var(--gris); text-align: center; margin-top: 12px; }
 
 /* Qué incluye */
 .incluye { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; margin-top: 52px; }
@@ -207,12 +202,12 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   .telefono { width: 200px; }
   .telefono.uno { left: 0; right: auto; }
   .telefono.dos { left: 170px; right: auto; }
-  .planes, .opiniones { grid-template-columns: 1fr; max-width: 560px; }
-  .plan .para { min-height: 0; }
+  .opiniones { grid-template-columns: 1fr; max-width: 560px; }
+  .presu { grid-template-columns: 1fr; gap: 36px; max-width: 640px; }
+  .presu-texto { position: static; }
   .incluye { grid-template-columns: 1fr 1fr; }
   .pasos { grid-template-columns: 1fr 1fr; }
   .contacto { grid-template-columns: 1fr; padding: 48px 32px; }
-  .extras { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   body { font-size: 16px; }
@@ -230,9 +225,7 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   .top .btn { padding: 10px 14px; font-size: 14px; }
   .trabajo-imagen { height: 250px; }
   .incluye, .pasos { grid-template-columns: 1fr; }
-  .mant { grid-template-columns: 1fr; }
-  .mant ul { grid-template-columns: 1fr; }
-  .mant .derecha { text-align: left; }
+  .brief fieldset { padding: 18px 18px 20px; }
   .contacto { padding: 40px 24px; border-radius: 18px; }
   .pie .wrap { grid-template-columns: 1fr 1fr; }
   .pie .wrap > div:first-child { grid-column: 1 / -1; }
@@ -250,12 +243,12 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
     <a href="#" class="logo"><i></i>FW <span>Diseño Web</span></a>
     <nav class="menu" aria-label="Secciones">
       <a href="#trabajos">Trabajos</a>
-      <a href="#precios">Precios</a>
+      <a href="#presupuesto">Presupuesto</a>
       <a href="#incluye">Qué incluye</a>
       <a href="#proceso">Cómo trabajo</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a href="#contacto" class="btn btn-principal">Pedir presupuesto</a>
+    <a href="#presupuesto" class="btn btn-principal">Pedir presupuesto</a>
   </div>
 </header>
 
@@ -269,7 +262,7 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
       <p class="bajada">Diseño y programo catálogos con carrito, tiendas online, cartas digitales y ebooks. Hechos desde cero, pensados para el celular y listos en 2 a 7 días.</p>
       <div class="botones">
         <a href="#trabajos" class="btn btn-principal">Ver trabajos</a>
-        <a href="#precios" class="btn btn-secundario">Ver precios</a>
+        <a href="#presupuesto" class="btn btn-secundario">Pedir presupuesto</a>
       </div>
       <ul class="confianza">
         <li><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pago único, sin mensualidad</li>
@@ -358,88 +351,80 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   </div>
 </section>
 
-<!-- ================= PRECIOS ================= -->
-<section class="seccion" id="precios">
-  <div class="wrap">
-    <div class="etiqueta">Precios</div>
-    <h2 class="titulo">Precios claros, pago único.</h2>
-    <p class="intro">El valor final depende de la cantidad de productos y de las funciones que necesites. Tomo 3 proyectos por mes para dedicarle a cada uno el tiempo que lleva.</p>
-
-    <div class="planes">
-      <div class="plan">
-        <div class="plan-tipo">Para mostrar</div>
-        <h3>Catálogo interactivo</h3>
-        <p class="para">Tus productos con foto y precio, y que te consulten uno por uno.</p>
-        <div class="precio"><small>Desde</small>$25.000</div>
-        <div class="precio-nota">Entrega en 3 a 5 días</div>
-        <ul>
-          <li>Diseño a medida para celular y computadora</li>
-          <li>Fichas con foto, precio y descripción</li>
-          <li>Categorías y buscador, hasta 20 productos</li>
-          <li>Consulta por WhatsApp en cada producto</li>
-          <li>Código QR para el local</li>
-        </ul>
-        <a href="https://wa.me/5491126474340?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Cat%C3%A1logo%20interactivo.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Consultar</a>
-      </div>
-
-      <div class="plan destacado">
-        <div class="plan-tipo">El más pedido</div>
-        <h3>Catálogo o tienda</h3>
-        <p class="para">Para negocios con muchos productos: dietéticas, gastronomía, artesanías, cursos.</p>
-        <div class="precio"><small>Desde</small>$80.000</div>
-        <div class="precio-nota">Entrega en 4 a 7 días</div>
-        <ul>
-          <li>Todo lo del Catálogo interactivo</li>
-          <li>Carrito o pedido directo por WhatsApp</li>
-          <li>Cobros con Mercado Pago o Hotmart</li>
-          <li>Precios editables desde una planilla</li>
-          <li>Código QR para el local</li>
-        </ul>
-        <a href="https://wa.me/5491126474340?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Cat%C3%A1logo%20o%20tienda.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-principal">Consultar</a>
-      </div>
-
-      <div class="plan">
-        <div class="plan-tipo">Contenido</div>
-        <h3>Ebook o menú digital</h3>
-        <p class="para">Contenido largo que se lee cómodo desde el celular, sin descargar nada.</p>
-        <div class="precio"><small>Desde</small>$15.000</div>
-        <div class="precio-nota">Entrega en 1 a 2 días</div>
-        <ul>
-          <li>Índice navegable por secciones</li>
-          <li>Diseño editorial a medida</li>
-          <li>Fotos e imágenes optimizadas</li>
-          <li>Un link único para vender o compartir</li>
-          <li>Código QR incluido</li>
-        </ul>
-        <a href="https://wa.me/5491126474340?text=%C2%A1Hola%21%20Me%20interesa%20el%20paquete%20de%20Ebook%20o%20men%C3%BA%20digital.%20Te%20cuento%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Consultar</a>
-      </div>
+<!-- ================= PRESUPUESTO ================= -->
+<section class="seccion" id="presupuesto">
+  <div class="wrap presu">
+    <div class="presu-texto">
+      <div class="etiqueta">Presupuesto</div>
+      <h2 class="titulo">Contame tu proyecto.</h2>
+      <p class="intro">Cada negocio es distinto, así que no trabajo con planes cerrados. Son 2 minutos: al final se abre WhatsApp con todo ya escrito, vos solo apretás enviar y te respondo con una idea y un precio exacto.</p>
+      <ul class="presu-datos">
+        <li><span><b>Pago único:</b> 50% para arrancar y 50% al publicar.</span></li>
+        <li><span><b>2 rondas de cambios</b> incluidas.</span></li>
+        <li><span><b>Lista en 2 a 7 días</b>, según el tamaño.</span></li>
+        <li><span>Tomo <b>3 proyectos por mes</b> para dedicarle a cada uno el tiempo que lleva.</span></li>
+      </ul>
     </div>
 
-    <div class="mant">
-      <div>
-        <div class="plan-tipo">Opcional, para cualquier plan</div>
-        <h3 style="font-size:22px;margin-top:6px">Web + mantenimiento</h3>
-        <ul>
-          <li>Hasta 5 cambios por mes: precios, textos y fotos</li>
-          <li>Soporte por WhatsApp</li>
-          <li>Revisión mensual de que todo funcione</li>
-          <li>Lo cancelás cuando quieras</li>
-        </ul>
-      </div>
-      <div class="derecha">
-        <div class="precio">$20.000 <span>/ mes</span></div>
-        <div class="precio-nota">El primer mes es gratis</div>
-        <a href="https://wa.me/5491126474340?text=%C2%A1Hola%21%20Me%20interesa%20el%20plan%20Web%20%2B%20mantenimiento.%20Te%20cuento%20de%20mi%20negocio%3A%20" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Consultar</a>
-      </div>
-    </div>
+    <form id="brief" class="brief" novalidate>
+      <fieldset>
+        <legend>Tu negocio</legend>
+        <label for="nombre">Tu nombre</label>
+        <input type="text" id="nombre" autocomplete="name" required>
+        <p class="error" id="errNombre">Poné tu nombre así sé con quién hablo.</p>
+        <label for="negocio">Nombre del negocio o marca</label>
+        <input type="text" id="negocio" autocomplete="organization" required>
+        <p class="error" id="errNegocio">Poné el nombre del negocio.</p>
+        <label for="rubro">¿A qué se dedica? <small>(ej: dietética, heladería, cursos, ropa)</small></label>
+        <input type="text" id="rubro">
+        <label for="redes">Instagram o web actual <small>(si tenés)</small></label>
+        <input type="text" id="redes" placeholder="@tunegocio">
+      </fieldset>
 
-    <div class="extras">
-      <div class="extra"><b>$10.000</b>Cada 20 productos más en el catálogo, cargados y con sus fotos.</div>
-      <div class="extra"><b>$15.000</b>Bloque de hasta 5 cambios, una vez usadas las 2 rondas incluidas.</div>
-      <div class="extra"><b>A cotizar</b>Dominio propio, textos y fotos, más idiomas o funciones nuevas.</div>
-    </div>
+      <fieldset>
+        <legend>Qué necesitás</legend>
+        <div class="opciones">
+          <label><input type="radio" name="tipo" value="Catálogo interactivo"> Catálogo</label>
+          <label><input type="radio" name="tipo" value="Catálogo o tienda con carrito"> Tienda con carrito</label>
+          <label><input type="radio" name="tipo" value="Ebook o menú digital"> Ebook o menú</label>
+          <label><input type="radio" name="tipo" value="No sé, quiero que me asesores"> No sé, asesorame</label>
+        </div>
+        <label for="cantidad">¿Cuántos productos o servicios más o menos?</label>
+        <select id="cantidad">
+          <option value="">Elegí una opción</option>
+          <option>Menos de 20</option><option>Entre 20 y 60</option><option>Entre 60 y 150</option><option>Más de 150</option><option>No aplica</option>
+        </select>
+        <label for="objetivo">¿Qué querés que haga la gente cuando entre?</label>
+        <textarea id="objetivo" placeholder="Ej: que vean los precios y me manden el pedido por WhatsApp"></textarea>
+      </fieldset>
 
-    <p class="condiciones"><b>Forma de pago:</b> 50% para arrancar y 50% al publicar. Incluye 2 rondas de cambios. ¿No sabés qué plan te sirve? <a href="brief/">Contame tu proyecto</a> y te paso un presupuesto exacto.</p>
+      <fieldset>
+        <legend>Lo que ya tenés</legend>
+        <div class="opciones">
+          <label><input type="checkbox" name="tiene" value="Logo"> Logo</label>
+          <label><input type="checkbox" name="tiene" value="Fotos de productos"> Fotos</label>
+          <label><input type="checkbox" name="tiene" value="Lista de precios"> Lista de precios</label>
+          <label><input type="checkbox" name="tiene" value="Dominio propio"> Dominio</label>
+          <label><input type="checkbox" name="tiene" value="Colores de marca"> Colores de marca</label>
+        </div>
+        <label for="gusta">¿Alguna página que te guste? <small>(link o descripción)</small></label>
+        <input type="text" id="gusta">
+      </fieldset>
+
+      <fieldset>
+        <legend>Tiempos</legend>
+        <label for="cuando">¿Para cuándo la necesitás?</label>
+        <select id="cuando">
+          <option value="">Elegí una opción</option>
+          <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option>
+        </select>
+        <label for="extra">¿Algo más que quieras contarme?</label>
+        <textarea id="extra"></textarea>
+      </fieldset>
+
+      <button type="submit" class="btn btn-principal">Enviar por WhatsApp →</button>
+      <p class="aviso">No se guarda nada: el mensaje se arma en tu navegador y lo mandás vos.</p>
+    </form>
   </div>
 </section>
 
@@ -448,7 +433,7 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   <div class="wrap">
     <div class="etiqueta">Qué incluye</div>
     <h2 class="titulo">Todo lo que tu página necesita, sin costos extra.</h2>
-    <p class="intro">Viene en todos los planes, porque es parte de entregar una página bien hecha.</p>
+    <p class="intro">Viene en todas las páginas, porque es parte de entregar una página bien hecha.</p>
 
     <div class="incluye">
       <div class="item"><div class="icono"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg></div><div><h4>Pensada para el celular</h4><p>Se ve y se usa perfecto donde entra la mayoría de tus clientes.</p></div></div>
@@ -530,7 +515,7 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
       <h4>Secciones</h4>
       <ul>
         <li><a href="#trabajos">Trabajos</a></li>
-        <li><a href="#precios">Precios</a></li>
+        <li><a href="#presupuesto">Presupuesto</a></li>
         <li><a href="#incluye">Qué incluye</a></li>
         <li><a href="#proceso">Cómo trabajo</a></li>
       </ul>
@@ -554,5 +539,6 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   </a>
 </div>
 
+<script src="brief/brief.js"></script>
 </body>
 </html>
