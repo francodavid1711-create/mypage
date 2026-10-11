@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Parrilla Don Bianchi · Pilar</title>
+<meta name="description" content="Muestra de página web para Parrilla Don Bianchi, hecha por FW Diseño Web.">
+<meta name="theme-color" content="#2B1A14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oscuro:#2B1A14;--oscuro-2:#3A241B;--acento:#B5402A;--acento-2:#96331F;--oro:#E0A85E;
+  --crema:#F6EFE6;--papel:#FFFBF5;--texto:#2A2622;--gris:#6F675D;--linea:#E6DCCB;
+  --titulos:"Playfair Display",Georgia,serif;--sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{font-family:var(--sans);background:var(--crema);color:var(--texto);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+@media(max-width:600px){.wrap{padding:0 16px}}
+.aviso{background:#14140f;color:#e9e4da;font-size:12.5px;text-align:center;padding:7px 12px}
+.aviso b,.aviso a{color:#fff}
+
+.cabecera{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--crema) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.cabecera .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{text-decoration:none;display:flex;flex-direction:column;line-height:1;min-width:0}
+.marca b{font-family:var(--titulos);font-size:26px;color:var(--oscuro);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.marca span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--acento);margin-top:5px;font-weight:600}
+.menu-nav{display:flex;gap:26px;font-size:14.5px;font-weight:500}
+.menu-nav a{text-decoration:none}.menu-nav a:hover{color:var(--acento)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,background .15s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-acento{background:var(--acento);color:#fff}.btn-acento:hover{background:var(--acento-2)}
+.btn-claro{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-borde{border:1.5px solid var(--oscuro);color:var(--oscuro)}
+.cabecera .btn{padding:10px 18px;font-size:14px}
+@media(max-width:860px){.menu-nav{display:none}}
+
+.portada{position:relative;min-height:min(80vh,660px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.portada>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portada::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,15,12,.35) 0%,rgba(15,15,12,.6) 45%,rgba(15,15,12,.9) 100%);z-index:1}
+.portada .wrap{position:relative;z-index:2;padding-bottom:56px;padding-top:120px;width:100%}
+.etiqueta{display:inline-block;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--oro);font-weight:600;margin-bottom:14px}
+.portada h1{font-family:var(--titulos);font-weight:700;font-size:clamp(40px,7vw,74px);line-height:1.02;max-width:780px}
+.portada h1 em{color:var(--oro);font-style:italic}
+.portada p{font-size:clamp(16px,2vw,19px);max-width:580px;margin-top:18px;color:#efe9de}
+.chips-portada{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip-p{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 13px;font-size:13.5px;display:inline-flex;gap:7px;align-items:center}
+.chip-p .punto{width:8px;height:8px;border-radius:50%;background:#4ade80}
+.chip-p.cerrado .punto{background:#f87171}
+.portada .botones{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+section{padding:80px 0}
+@media(max-width:600px){section{padding:56px 0}}
+.titulo{text-align:center;max-width:640px;margin:0 auto 44px}
+.titulo .etiqueta{color:var(--acento)}
+.titulo h2{font-family:var(--titulos);font-size:clamp(32px,5vw,46px);line-height:1.06;color:var(--oscuro);font-weight:700}
+.titulo p{color:var(--gris);margin-top:12px;font-size:16.5px}
+
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:760px){.pasos{grid-template-columns:1fr}}
+.paso{background:var(--papel);border:1px solid var(--linea);border-radius:18px;padding:26px}
+.paso .n{font-family:var(--titulos);font-size:42px;color:var(--oro);line-height:1;font-weight:700}
+.paso h3{font-size:18px;margin:10px 0 6px;color:var(--oscuro)}
+.paso p{color:var(--gris);font-size:15px}
+
+.menu{background:var(--papel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.buscador{max-width:560px;margin:-14px auto 22px;position:relative}
+.buscador input{width:100%;font:inherit;font-size:16px;padding:14px 18px 14px 46px;border:1px solid var(--linea);border-radius:999px;background:#fff}
+.buscador::before{content:"";position:absolute;left:18px;top:50%;width:16px;height:16px;transform:translateY(-50%);background:no-repeat center/16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236F675D' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E")}
+.filtros{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.filtros button{padding:7px 14px;border-radius:999px;border:1px solid var(--linea);font-size:13.5px;background:#fff}
+.filtros button.sel{background:var(--acento);border-color:var(--acento);color:#fff}
+.pestanas{position:sticky;top:68px;z-index:20;background:var(--papel);margin:0 -20px 28px;padding:10px 20px;border-bottom:1px solid var(--linea);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas a{flex:none;padding:9px 18px;border-radius:999px;border:1px solid var(--linea);text-decoration:none;font-size:14.5px;font-weight:500;background:var(--crema)}
+.pestanas a.activa{background:var(--oscuro);border-color:var(--oscuro);color:#fff}
+.cat{margin-bottom:46px}
+.cat h3{font-family:var(--titulos);font-size:30px;color:var(--oscuro);margin-bottom:4px}
+.cat>p{color:var(--gris);margin-bottom:18px}
+.sin-resultados{text-align:center;color:var(--gris);padding:30px 0}
+.grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.grilla{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grilla{grid-template-columns:1fr}}
+.prod{background:#fff;border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.prod .foto{aspect-ratio:4/3;overflow:hidden;background:var(--crema);position:relative}
+.prod .foto img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod:hover .foto img{transform:scale(1.04)}
+.tags{position:absolute;left:10px;top:10px;display:flex;gap:5px;flex-wrap:wrap}
+.tag{background:rgba(255,255,255,.93);color:var(--oscuro);font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px}
+.prod .cuerpo{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.prod h4{font-size:17px;font-weight:600}
+.prod .desc{color:var(--gris);font-size:14px;margin-top:3px;flex:1}
+.variantes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.var{border:1px solid var(--linea);border-radius:999px;padding:5px 12px;font-size:13px;background:var(--crema)}
+.var.sel{border-color:var(--oscuro);background:var(--oscuro);color:#fff}
+.prod .pie{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px}
+.precio{font-family:var(--titulos);font-variant-numeric:lining-nums;font-size:25px;font-weight:700;color:var(--oscuro);line-height:1}
+.precio small{font-family:var(--sans);font-size:12px;color:var(--gris);font-weight:500;margin-left:4px}
+.agregar{background:var(--acento);color:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px}
+.cant{display:flex;align-items:center;background:var(--crema);border:1px solid var(--linea);border-radius:999px}
+.cant button{width:36px;height:36px;font-size:19px;font-weight:600;color:var(--oscuro)}
+.cant span{min-width:20px;text-align:center;font-weight:600}
+@media(max-width:560px){
+  .grilla{gap:12px}
+  .prod{flex-direction:row}
+  .prod .foto{width:104px;height:104px;aspect-ratio:auto;flex:none;margin:14px 0 14px 14px;border-radius:14px}
+  .tags{display:none}
+  .prod .cuerpo{padding:14px}
+  .prod h4{font-size:16px}.prod .desc{font-size:13.5px}
+  .precio{font-size:22px}.agregar{padding:8px 15px}
+}
+
+.combos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.combos{grid-template-columns:1fr}}
+.combo{position:relative;border-radius:20px;overflow:hidden;min-height:290px;color:#fff;display:flex;align-items:flex-end}
+.combo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.combo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 15%,rgba(12,12,10,.9));z-index:1}
+.combo .txt{position:relative;z-index:2;padding:24px;width:100%}
+.combo .etiqueta{margin-bottom:6px}
+.combo h3{font-family:var(--titulos);font-size:31px;line-height:1.05}
+.combo p{color:#e9e2d6;font-size:14.5px;margin-top:6px}
+.combo .pie{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.combo .precio{color:var(--oro);font-size:31px}
+.combo .agregar{background:#fff;color:var(--oscuro)}
+
+.banda{position:relative;color:#fff;overflow:hidden}
+.banda>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banda::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,10,.92),rgba(12,12,10,.55));z-index:1}
+.banda .wrap{position:relative;z-index:2}
+.banda h2{font-family:var(--titulos);font-size:clamp(34px,5vw,50px);line-height:1.05;max-width:600px}
+.banda p{color:#e3ddd2;margin-top:14px;font-size:17px;max-width:520px}
+.banda .botones{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+.qr{background:var(--oscuro);color:#fff}
+.qr .caja{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+@media(max-width:820px){.qr .caja{grid-template-columns:1fr}}
+.qr h2{font-family:var(--titulos);font-size:clamp(34px,5vw,48px);line-height:1.05}
+.qr p{color:#dcdcd4;margin-top:14px;font-size:16.5px}
+.qr ul,.lista-check{list-style:none;margin-top:20px;display:grid;gap:10px}
+.qr li,.lista-check li{display:flex;gap:10px}
+.qr li::before,.lista-check li::before{content:"✓";color:var(--oro);font-weight:700}
+.tarjeta-qr{background:var(--papel);color:var(--texto);border-radius:22px;padding:28px;text-align:center;max-width:340px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.3);transform:rotate(-2deg)}
+.tarjeta-qr b{font-family:var(--titulos);font-size:30px;color:var(--oscuro);display:block;line-height:1.05}
+.tarjeta-qr small{display:block;letter-spacing:.24em;text-transform:uppercase;font-size:10px;color:var(--acento);font-weight:600;margin:6px 0 16px}
+.tarjeta-qr img{width:210px;height:210px;margin:0 auto}
+.tarjeta-qr p{color:var(--gris);font-size:14px;margin-top:12px}
+.qr .botones{margin-top:26px}
+
+.envios{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:760px){.envios{grid-template-columns:1fr}}
+.envio{background:var(--papel);border:1px solid var(--linea);border-radius:18px;padding:26px}
+.envio .ico{width:46px;height:46px;border-radius:14px;background:var(--oscuro);color:#fff;display:grid;place-items:center;font-size:22px}
+.envio h3{font-size:18px;margin:14px 0 6px;color:var(--oscuro)}
+.envio p{color:var(--gris);font-size:15px}
+
+.historia .caja{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:820px){.historia .caja{grid-template-columns:1fr;gap:28px}}
+.historia img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.historia h2{font-family:var(--titulos);font-size:clamp(32px,5vw,46px);color:var(--oscuro);line-height:1.06}
+.historia blockquote{font-family:var(--titulos);font-style:italic;font-size:23px;color:var(--acento);margin:20px 0;line-height:1.3;border-left:3px solid var(--oro);padding-left:18px}
+.historia p{color:var(--gris);font-size:16.5px;margin-top:14px}
+.google{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:12px 16px}
+.google b{font-size:22px;color:var(--oscuro)}
+.google .estrellas{color:#E8A317;letter-spacing:2px}
+.google small{display:block;color:var(--gris);font-size:13px}
+
+.ubicacion{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.ubicacion{grid-template-columns:1fr}}
+.caja-u{background:var(--papel);border:1px solid var(--linea);border-radius:20px;padding:28px}
+.caja-u h3{font-family:var(--titulos);font-size:28px;color:var(--oscuro)}
+.caja-u p{color:var(--gris);margin-top:6px}
+.caja-u .botones{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.caja-u .btn{padding:10px 18px;font-size:14px}
+.horarios{list-style:none;margin-top:10px}
+.horarios li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--linea);font-size:15px}
+.horarios li.hoy{font-weight:700;color:var(--oscuro)}
+.horarios li span:last-child{text-align:right;color:var(--gris)}
+.horarios li.hoy span:last-child{color:var(--oscuro)}
+
+footer{background:#16140f;color:#bdb6a9;padding:44px 0 110px;font-size:14px}
+footer .arriba{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .marca b{color:#fff}
+footer .legal{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer .legal button{color:#bdb6a9;text-decoration:underline;font-size:14px}
+footer .abajo{margin-top:26px;padding-top:18px;border-top:1px solid #2e2b25;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#fff}
+
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:35;padding:12px 16px calc(12px + env(safe-area-inset-bottom));pointer-events:none;transform:translateY(120%);transition:transform .25s}
+.barra.ver{transform:none}
+.barra button{pointer-events:auto;width:100%;max-width:560px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;background:var(--oscuro);color:#fff;border-radius:999px;padding:15px 22px;font-weight:600;font-size:16px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.burbuja{background:var(--acento);border-radius:999px;padding:2px 9px;margin-right:8px;font-size:14px}
+
+.fondo-modal{position:fixed;inset:0;background:rgba(15,14,11,.6);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.fondo-modal.ver{display:flex}
+.modal{background:var(--papel);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;border-radius:24px 24px 0 0;padding:22px 20px 26px}
+@media(min-width:640px){.fondo-modal{align-items:center}.modal{border-radius:24px}}
+.modal h2{font-family:var(--titulos);font-size:29px;color:var(--oscuro);display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;line-height:1.1}
+.cerrar{font-family:var(--sans);font-size:28px;line-height:1;color:var(--gris);padding:4px 8px}
+.linea{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.linea small{display:block;color:var(--gris);font-size:13px}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:19px;margin:16px 0 4px}
+.campo{margin-top:16px}
+.campo>label,.campo>span{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px}
+.campo input,.campo textarea{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--linea);border-radius:12px;background:#fff}
+.opciones{display:flex;gap:8px;flex-wrap:wrap}
+.opciones button{flex:1 1 auto;padding:10px 12px;border:1px solid var(--linea);border-radius:12px;font-size:14px;background:#fff;text-align:center;line-height:1.25}
+.opciones button small{display:block;color:var(--gris);font-size:12px}
+.opciones button.sel{border-color:var(--oscuro);background:var(--oscuro);color:#fff}
+.opciones button.sel small{color:rgba(255,255,255,.75)}
+.deslizar{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.deslizar button{flex:0 0 auto;min-width:66px}
+.enviar{width:100%;margin-top:20px;background:#1faa59;color:#fff;border-radius:999px;padding:16px;font-weight:700;font-size:16px}
+.error{color:var(--acento);font-size:14px;margin-top:10px}
+.wa{background:#e7ded3;border-radius:16px;padding:14px;margin:14px 0}
+.wa pre{background:#dcf8c6;border-radius:12px 12px 2px 12px;padding:12px 14px;font:14px/1.5 var(--sans);white-space:pre-wrap;margin-left:auto;max-width:94%;color:#1d1d1b}
+.nota{font-size:14.5px;color:var(--gris)}
+.fw{display:block;text-align:center;margin-top:16px;background:#5B4BD6;color:#fff;border-radius:999px;padding:15px;font-weight:700;text-decoration:none}
+.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--oscuro);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;z-index:60;display:none;max-width:90vw;text-align:center}
+</style>
+</head>
+<body>
+<div class="aviso"><b>Muestra gratuita</b> hecha por <a href="https://xn--fwdiseoweb-y9a.com.ar/" target="_blank" rel="noopener">FW Diseño Web</a> para Parrilla Don Bianchi · fotos ilustrativas y precios de ejemplo</div>
+
+<header class="cabecera">
+  <div class="wrap">
+    <a class="marca" href="#inicio"><b id="mNombre"></b><span id="mSub"></span></a>
+    <nav class="menu-nav" id="nav" aria-label="Secciones"></nav>
+    <a class="btn btn-acento" id="ctaCab" href="#menu"></a>
+  </div>
+</header>
+
+<div class="portada" id="inicio">
+  <img id="pImg" src="" alt="">
+  <div class="wrap">
+    <span class="etiqueta" id="pEtiqueta"></span>
+    <h1 id="pTitulo"></h1>
+    <p id="pLema"></p>
+    <div class="chips-portada" id="pChips"></div>
+    <div class="botones" id="pBotones"></div>
+  </div>
+</div>
+
+<section id="como">
+  <div class="wrap">
+    <div class="titulo"><span class="etiqueta" id="cEtiqueta"></span><h2 id="cTitulo"></h2><p id="cTexto"></p></div>
+    <div class="pasos" id="pasos"></div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="titulo"><span class="etiqueta" id="mEtiqueta"></span><h2 id="mTitulo"></h2><p id="mTexto"></p></div>
+    <div class="buscador" id="cajaBuscar" hidden><input id="buscar" type="search" placeholder="Buscar productos" aria-label="Buscar productos"></div>
+    <div class="filtros" id="filtros" hidden></div>
+    <nav class="pestanas" id="pestanas" aria-label="Categorías"></nav>
+    <div id="carta"></div>
+    <p class="sin-resultados" id="sinRes" hidden>No encontramos productos con esa búsqueda.</p>
+  </div>
+</section>
+
+<section id="combos" hidden>
+  <div class="wrap">
+    <div class="titulo"><span class="etiqueta" id="coEtiqueta"></span><h2 id="coTitulo"></h2></div>
+    <div class="combos" id="listaCombos"></div>
+  </div>
+</section>
+
+<section class="banda" id="reservas" hidden>
+  <img id="rImg" src="" alt="" loading="lazy">
+  <div class="wrap">
+    <span class="etiqueta">Reservas</span>
+    <h2 id="rTitulo"></h2>
+    <p id="rTexto"></p>
+    <div class="botones"><button class="btn btn-acento" data-abrir-reserva>Reservar mesa</button></div>
+  </div>
+</section>
+
+<section class="qr" id="qr" hidden>
+  <div class="wrap caja">
+    <div>
+      <span class="etiqueta">Menú QR</span>
+      <h2>La carta en un código QR</h2>
+      <p>Para las mesas, el mostrador o la vidriera. El cliente lo escanea con la cámara del celular y ve la carta completa con fotos y precios actualizados, sin descargar nada.</p>
+      <ul>
+        <li>Si cambia un precio, el QR no se reimprime: siempre muestra la carta al día</li>
+        <li>Desde ahí también pueden pedir para llevar o reservar</li>
+        <li>Cartel listo para imprimir incluido</li>
+      </ul>
+      <div class="botones"><a class="btn btn-acento" href="qr.html" target="_blank" rel="noopener">Ver el cartel para imprimir</a></div>
+    </div>
+    <div class="tarjeta-qr"><b id="qNombre"></b><small id="qSub"></small><img src="img/qr-menu.svg" alt="Código QR que lleva a la carta"><p>Escaneá y mirá la carta</p></div>
+  </div>
+</section>
+
+<section id="envios" hidden>
+  <div class="wrap">
+    <div class="titulo"><span class="etiqueta">Envíos y pagos</span><h2>Te lo llevamos a tu casa</h2><p>Hacé tu pedido desde acá y coordinamos la entrega por WhatsApp.</p></div>
+    <div class="envios" id="listaEnvios"></div>
+  </div>
+</section>
+
+<section class="historia" id="nosotros">
+  <div class="wrap caja">
+    <img id="hImg" src="" alt="" loading="lazy">
+    <div>
+      <span class="etiqueta" style="color:var(--acento)">Nosotros</span>
+      <h2 id="hTitulo"></h2>
+      <blockquote id="hCita" hidden></blockquote>
+      <p id="hTexto"></p>
+      <div class="google" id="google" hidden><b id="gNota"></b><div><span class="estrellas">★★★★★</span><small id="gResenas"></small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" style="padding-top:0">
+  <div class="wrap">
+    <div class="titulo"><span class="etiqueta">Dónde estamos</span><h2>Vení a visitarnos</h2></div>
+    <div class="ubicacion">
+      <div class="caja-u">
+        <h3>Dirección</h3>
+        <p id="uDir"></p>
+        <div class="botones"><a class="btn btn-borde" id="uMapa" target="_blank" rel="noopener">Cómo llegar</a><a class="btn btn-acento" href="#menu" id="uCta"></a></div>
+      </div>
+      <div class="caja-u" id="cajaHorarios"><h3>Horarios</h3><ul class="horarios" id="horarios"></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="arriba">
+      <div class="marca"><b id="fNombre"></b><span id="fSub"></span></div>
+      <div class="legal">
+        <button data-legal>Términos y condiciones</button>
+        <button data-legal>Política de privacidad</button>
+        <button data-legal>Política de cookies</button>
+        <button data-legal>Botón de arrepentimiento</button>
+      </div>
+    </div>
+    <div class="abajo">
+      <span>© Parrilla Don Bianchi · Fotos ilustrativas de Unsplash</span>
+      <span>Página hecha por <a href="https://xn--fwdiseoweb-y9a.com.ar/" target="_blank" rel="noopener">FW Diseño Web</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="barra" id="barra"><button id="abrirPedido"><span><span class="burbuja" id="cuenta">0</span>Ver mi pedido</span><span id="totalBarra">$0</span></button></div>
+
+<div class="fondo-modal" id="mPedido" role="dialog" aria-modal="true" aria-labelledby="tPedido">
+  <div class="modal">
+    <h2 id="tPedido">Tu pedido <button class="cerrar" data-cerrar aria-label="Cerrar">×</button></h2>
+    <div id="lineas"></div>
+    <div class="total"><span>Total</span><span id="total">$0</span></div>
+    <div class="campo"><span>¿Cómo lo querés?</span><div class="opciones" id="entrega"></div></div>
+    <div class="campo" id="campoDir" hidden><label for="dir">Dirección de entrega</label><input id="dir" autocomplete="off" placeholder="Calle, número y entre calles"></div>
+    <div class="campo"><span>Forma de pago</span><div class="opciones" id="pagos"></div></div>
+    <div class="campo"><label for="nombre">Tu nombre</label><input id="nombre" autocomplete="off" placeholder="Ej.: Laura"></div>
+    <div class="campo"><label for="nota">Aclaraciones</label><textarea id="nota" rows="2"></textarea></div>
+    <p class="error" id="errPedido" hidden>Completá la dirección para el envío.</p>
+    <button class="enviar" id="enviarPedido">Enviar pedido por WhatsApp</button>
+  </div>
+</div>
+
+<div class="fondo-modal" id="mReserva" role="dialog" aria-modal="true" aria-labelledby="tReserva">
+  <div class="modal">
+    <h2 id="tReserva">Reservar mesa <button class="cerrar" data-cerrar aria-label="Cerrar">×</button></h2>
+    <p class="nota">Elegí día, horario y cantidad de personas. Te confirmamos por WhatsApp.</p>
+    <div class="campo"><span>Día</span><div class="opciones deslizar" id="rDias"></div></div>
+    <div class="campo"><span>Horario</span><div class="opciones deslizar" id="rHoras"><p class="nota">Primero elegí el día.</p></div></div>
+    <div class="campo"><span>Personas</span><div class="opciones deslizar" id="rPersonas"></div></div>
+    <div class="campo"><label for="rNombre">A nombre de</label><input id="rNombre" autocomplete="off" placeholder="Ej.: Laura"></div>
+    <div class="campo"><label for="rNota">Algo que debamos saber</label><textarea id="rNota" rows="2" placeholder="Ej.: es un cumpleaños, vamos con un cochecito"></textarea></div>
+    <p class="error" id="errReserva" hidden>Elegí el día, el horario y la cantidad de personas.</p>
+    <button class="enviar" id="enviarReserva">Pedir reserva por WhatsApp</button>
+  </div>
+</div>
+
+<div class="fondo-modal" id="mDemo" role="dialog" aria-modal="true" aria-labelledby="tDemo">
+  <div class="modal">
+    <h2 id="tDemo">Así les llegaría el mensaje <button class="cerrar" data-cerrar aria-label="Cerrar">×</button></h2>
+    <p class="nota">En la página real, este mensaje llega directo al WhatsApp de <b>Parrilla Don Bianchi</b>. Como esto es una muestra, <b>no se envió a nadie</b>.</p>
+    <div class="wa"><pre id="mensaje"></pre></div>
+    <a class="fw" id="quiero" target="_blank" rel="noopener">Quiero esta página para mi negocio</a>
+    <p class="nota" style="text-align:center;margin-top:8px">Te responde Franco, de FW Diseño Web</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script id="datos" type="application/json">{"slug": "don-bianchi", "modo": "restaurante", "nombre": "Parrilla Don Bianchi", "marca_sub": "Parrilla · Pilar", "titulo_pestana": "Parrilla Don Bianchi · Pilar", "fuente": "Playfair+Display:ital,wght@0,700;1,700", "colores": {"oscuro": "#2B1A14", "oscuro2": "#3A241B", "acento": "#B5402A", "acento2": "#96331F", "oro": "#E0A85E", "crema": "#F6EFE6", "papel": "#FFFBF5"}, "portada": "parrilla-portada", "portada_alt": "Carne a la parrilla sobre las brasas", "etiqueta": "Parrilla en Pilar", "titular": "Carne a las brasas, <em>como tiene que ser<\/em>", "lema": "Cortes seleccionados, achuras y provoleta hechos a la leña. Pedí para llevar o reservá tu mesa desde el celular.", "direccion": "Saladillo 955, Pilar, Buenos Aires", "direccion_corta": "Saladillo 955, Pilar", "mapa": "Parrilla Don Bianchi, Saladillo 955, Pilar", "google": ["4,4", "2.100"], "horario": {"0": [["12:00", "15:45"]], "1": [["12:00", "15:45"]], "3": [["12:00", "15:45"]], "4": [["12:00", "15:45"]], "5": [["12:00", "15:45"], ["20:00", "23:30"]], "6": [["12:00", "15:45"], ["20:00", "23:30"]]}, "como": {"etiqueta": "Pedidos y reservas", "titulo": "Tu parrilla, sin llamar ni esperar", "texto": "Desde esta página pedís para llevar o reservás tu mesa en un minuto.", "pasos": [["Elegí de la carta", "Cortes, achuras, guarniciones y postres con foto y precio."], ["Para llevar o para la mesa", "Pedí para retirar o reservá día, horario y cantidad de personas."], ["Te confirmamos por WhatsApp", "El pedido llega completo y te respondemos al toque."]]}, "menu_textos": ["La carta", "Cortes a la parrilla", "Tocá \"Agregar\" para armar tu pedido para llevar."], "menu": [{"n": "Cortes", "d": "Todos a la leña, con el punto que elijas.", "items": [{"n": "Bife de chorizo", "d": "Corte grueso, jugoso, de 400 g", "f": "bife-chorizo", "p": 21500}, {"n": "Ojo de bife", "d": "El más tierno de la casa, 400 g", "f": "ojo-bife", "p": 23900}, {"n": "Asado de tira", "d": "Tira ancha, bien dorada", "f": "asado-tira", "p": 19800}, {"n": "Vacío", "d": "Crocante por fuera, tierno por dentro", "f": "vacio", "p": 19200}]}, {"n": "Para compartir", "d": "Ideales para arrancar.", "items": [{"n": "Provoleta", "d": "Con orégano y aceite de oliva", "f": "provoleta", "p": 8900}, {"n": "Chorizo", "d": "Casero, a la parrilla", "f": "chorizo", "p": 4200}, {"n": "Empanadas de carne", "d": "Cortadas a cuchillo, al horno", "f": "empanadas", "v": [{"n": "Unidad", "p": 2300}, {"n": "Media docena", "p": 13200}]}, {"n": "Verduras grilladas", "d": "Berenjena, zucchini, morrón y cebolla", "f": "verduras-grill", "p": 7800}]}, {"n": "Guarniciones", "items": [{"n": "Papas fritas", "d": "Caseras, cortadas a mano", "f": "papas-fritas", "v": [{"n": "Porción", "p": 6500}, {"n": "Para compartir", "p": 9800}]}]}, {"n": "Postres y bebidas", "items": [{"n": "Flan casero", "d": "Con dulce de leche o crema", "f": "flan", "p": 5800}, {"n": "Vino Malbec", "d": "Botella de 750 ml", "f": "vino-tinto", "p": 14000}]}], "combos_textos": ["Promos", "Para compartir en la mesa"], "combos": [{"n": "Parrillada para 2", "d": "Asado, vacío, chorizo, morcilla y provoleta, con papas fritas", "f": "parrillada", "p": 44900, "e": "2 personas"}, {"n": "Menú del mediodía", "d": "Corte del día con guarnición, bebida y postre. De miércoles a viernes", "f": "parrilla-ladrillo", "p": 15900, "e": "Al mediodía"}], "reservas": {"foto": "parrilla-fuego-c", "titulo": "Reservá tu mesa en un minuto", "texto": "Elegí el día, el horario y cuántos son. La reserva te llega confirmada por WhatsApp, sin llamar."}, "historia": {"foto": "parrilla-fuego", "alt": "Carne asándose sobre el fuego", "titulo": "La parrilla del barrio", "cita": "\"¡La mejor parrilla de Pilar sin dudas!\" — reseña en Google", "texto": "Acá va la historia de Don Bianchi contada por ustedes: desde cuándo están, quién está en la parrilla y qué hace distinto a su asado."}, "cartel_frase": "Escaneá y pedí desde la mesa", "entrega": ["Retiro en el local", "Delivery"], "pagos": ["Efectivo", "Transferencia", "Mercado Pago"], "nota_placeholder": "Ej.: el bife jugoso, sin sal"}</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('datos').textContent);
+const $ = s => document.querySelector(s);
+const plata = n => '$' + Math.round(n).toLocaleString('es-AR');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const foto = f => '../fotos/' + f + '.jpg';
+const RESTO = D.modo === 'restaurante';
+const DIAS = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const CORTO = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+
+// Textos generales
+$('#mNombre').textContent = $('#fNombre').textContent = $('#qNombre').textContent = D.nombre;
+$('#mSub').textContent = $('#fSub').textContent = $('#qSub').textContent = D.marca_sub;
+$('#pImg').src = foto(D.portada); $('#pImg').alt = D.portada_alt;
+$('#pEtiqueta').textContent = D.etiqueta;
+$('#pTitulo').innerHTML = D.titular;
+$('#pLema').textContent = D.lema;
+$('#cEtiqueta').textContent = D.como.etiqueta; $('#cTitulo').textContent = D.como.titulo; $('#cTexto').textContent = D.como.texto;
+$('#pasos').innerHTML = D.como.pasos.map((p, i) => `<div class="paso"><div class="n">${i + 1}</div><h3>${esc(p[0])}</h3><p>${esc(p[1])}</p></div>`).join('');
+$('#mEtiqueta').textContent = D.menu_textos[0]; $('#mTitulo').textContent = D.menu_textos[1]; $('#mTexto').textContent = D.menu_textos[2];
+$('#hImg').src = foto(D.historia.foto); $('#hImg').alt = D.historia.alt;
+$('#hTitulo').textContent = D.historia.titulo; $('#hTexto').textContent = D.historia.texto;
+if (D.historia.cita) { $('#hCita').hidden = false; $('#hCita').textContent = D.historia.cita; }
+if (D.google) { $('#google').hidden = false; $('#gNota').textContent = D.google[0]; $('#gResenas').textContent = D.google[1] + ' opiniones en Google'; }
+$('#uDir').textContent = D.direccion;
+$('#uMapa').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(D.mapa);
+const ctaTxt = RESTO ? 'Pedir para llevar' : 'Hacer mi pedido';
+$('#ctaCab').textContent = RESTO ? 'Pedir' : 'Comprar'; $('#uCta').textContent = ctaTxt;
+$('#nav').innerHTML = (RESTO
+  ? [['#menu','Carta'],['#reservas','Reservas'],['#qr','Menú QR'],['#ubicacion','Ubicación']]
+  : [['#menu','Productos'],['#envios','Envíos'],['#nosotros','Nosotros'],['#ubicacion','Ubicación']]
+).map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
+$('#pBotones').innerHTML = RESTO
+  ? `<a class="btn btn-acento" href="#menu">Ver la carta y pedir</a><button class="btn btn-claro" data-abrir-reserva>Reservar mesa</button>`
+  : `<a class="btn btn-acento" href="#menu">Ver productos y precios</a><a class="btn btn-claro" href="#envios">Envíos a domicilio</a>`;
+
+// Horarios
+const aMin = t => { const [h, m] = t.split(':'); return +h * 60 + +m; };
+const H = D.horario || null;
+const ahora = new Date(new Date().toLocaleString('en-US', {timeZone: 'America/Argentina/Buenos_Aires'}));
+function franjasDe(dia){ return (H && H[dia]) || []; }
+function abiertoAhora(){
+  const m = ahora.getHours() * 60 + ahora.getMinutes();
+  const hoy = franjasDe(ahora.getDay()).some(([a, c]) => { const ca = aMin(c) <= aMin(a) ? aMin(c) + 1440 : aMin(c); return m >= aMin(a) && m < ca; });
+  const ayer = franjasDe((ahora.getDay() + 6) % 7).some(([a, c]) => aMin(c) <= aMin(a) && m < aMin(c));
+  return hoy || ayer;
+}
+const fmtH = t => t.replace(/^0/, '').replace(':00', '') + (t.endsWith(':00') ? '' : '');
+const chips = [];
+if (H) {
+  const ab = abiertoAhora();
+  chips.push(`<span class="chip-p ${ab ? '' : 'cerrado'}"><span class="punto"></span>${ab ? 'Abierto ahora' : 'Cerrado ahora'}</span>`);
+  const orden = [1,2,3,4,5,6,0];
+  $('#horarios').innerHTML = orden.map(d => {
+    const fr = franjasDe(d);
+    return `<li class="${d === ahora.getDay() ? 'hoy' : ''}"><span>${DIAS[d]}</span><span>${fr.length ? fr.map(([a, c]) => fmtH(a) + ' a ' + fmtH(c) + ' h').join(' · ') : 'Cerrado'}</span></li>`;
+  }).join('');
+} else {
+  $('#horarios').innerHTML = `<li><span>${esc(D.horario_texto || 'Consultá horarios por WhatsApp')}</span><span></span></li>`;
+}
+if (D.google) chips.push(`<span class="chip-p">★ ${D.google[0]} · ${D.google[1]} opiniones</span>`);
+chips.push(`<span class="chip-p">📍 ${esc(D.direccion_corta || D.direccion)}</span>`);
+$('#pChips').innerHTML = chips.join('');
+
+// Carta / catálogo
+const MENU = D.menu, COMBOS = D.combos || [];
+const carrito = {};
+$('#pestanas').innerHTML = MENU.map((c, i) => `<a href="#cat${i}">${esc(c.n)}</a>`).join('');
+$('#carta').innerHTML = MENU.map((c, ci) => `
+  <div class="cat" id="cat${ci}"><h3>${esc(c.n)}</h3>${c.d ? `<p>${esc(c.d)}</p>` : ''}<div class="grilla">
+  ${c.items.map((it, ii) => `
+    <article class="prod" data-item="${ci}-${ii}" data-buscar="${esc((it.n + ' ' + (it.d || '') + ' ' + c.n).toLowerCase())}" data-tags="${esc((it.t || []).join('|'))}">
+      <div class="foto"><img src="${foto(it.f)}" alt="${esc(it.n)}" loading="lazy">${it.t ? `<div class="tags">${it.t.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}</div>
+      <div class="cuerpo"><h4>${esc(it.n)}</h4><p class="desc">${esc(it.d || '')}</p>
+        ${it.v ? `<div class="variantes">${it.v.map((v, vi) => `<button class="var${vi ? '' : ' sel'}" data-var="${vi}">${esc(v.n)}</button>`).join('')}</div>` : ''}
+        <div class="pie"><span class="precio"></span><span class="control"></span></div>
+      </div>
+    </article>`).join('')}
+  </div></div>`).join('');
+
+if (COMBOS.length) {
+  $('#combos').hidden = false;
+  $('#coEtiqueta').textContent = D.combos_textos[0]; $('#coTitulo').textContent = D.combos_textos[1];
+  $('#listaCombos').innerHTML = COMBOS.map((c, i) => `
+    <article class="combo"><img src="${foto(c.f)}" alt="${esc(c.n)}" loading="lazy">
+      <div class="txt"><span class="etiqueta">${esc(c.e)}</span><h3>${esc(c.n)}</h3><p>${esc(c.d)}</p>
+      <div class="pie"><span class="precio">${plata(c.p)}</span><button class="agregar" data-combo="${i}">Agregar</button></div></div>
+    </article>`).join('');
+}
+
+// Buscador y filtros (dietética)
+if (!RESTO) {
+  $('#cajaBuscar').hidden = false;
+  const tags = [...new Set(MENU.flatMap(c => c.items.flatMap(i => i.t || [])))];
+  if (tags.length) { $('#filtros').hidden = false; $('#filtros').innerHTML = `<button class="sel" data-filtro="">Todos</button>` + tags.map(t => `<button data-filtro="${esc(t)}">${esc(t)}</button>`).join(''); }
+}
+let filtro = '';
+function filtrar(){
+  const q = $('#buscar').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  let visibles = 0;
+  document.querySelectorAll('.cat').forEach(cat => {
+    let n = 0;
+    cat.querySelectorAll('.prod').forEach(p => {
+      const txt = p.dataset.buscar.normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const ok = (!q || txt.includes(q)) && (!filtro || p.dataset.tags.split('|').includes(filtro));
+      p.hidden = !ok; if (ok) n++;
+    });
+    cat.hidden = !n; visibles += n;
+  });
+  $('#sinRes').hidden = visibles > 0;
+}
+$('#buscar').addEventListener('input', filtrar);
+
+// Restaurante: reservas y QR
+if (RESTO) {
+  $('#reservas').hidden = false; $('#qr').hidden = false;
+  $('#rImg').src = foto(D.reservas.foto); $('#rTitulo').textContent = D.reservas.titulo; $('#rTexto').textContent = D.reservas.texto;
+} else {
+  $('#envios').hidden = false;
+  $('#listaEnvios').innerHTML = D.envios.map(e => `<div class="envio"><div class="ico">${e[0]}</div><h3>${esc(e[1])}</h3><p>${esc(e[2])}</p></div>`).join('');
+}
+
+// Opciones del pedido
+$('#entrega').innerHTML = D.entrega.map((e, i) => `<button class="${i ? '' : 'sel'}" data-entrega="${esc(e)}">${esc(e)}</button>`).join('');
+$('#pagos').innerHTML = D.pagos.map((e, i) => `<button class="${i ? '' : 'sel'}" data-pago="${esc(e)}">${esc(e)}</button>`).join('');
+$('#nota').placeholder = D.nota_placeholder;
+let entrega = D.entrega[0], pago = D.pagos[0];
+
+function datosDe(el){
+  const [ci, ii] = el.dataset.item.split('-').map(Number), it = MENU[ci].items[ii];
+  const sel = el.querySelector('.var.sel'), v = sel ? it.v[+sel.dataset.var] : null;
+  return {clave: el.dataset.item + ':' + (sel ? sel.dataset.var : ''), it, v};
+}
+function pintar(el){
+  const {clave, it, v} = datosDe(el);
+  el.querySelector('.precio').innerHTML = plata(v ? v.p : it.p) + (it.u ? `<small>${esc(it.u)}</small>` : '');
+  const n = carrito[clave] ? carrito[clave].cant : 0;
+  el.querySelector('.control').innerHTML = n
+    ? `<span class="cant"><button data-menos aria-label="Quitar uno">−</button><span>${n}</span><button data-mas aria-label="Agregar uno">+</button></span>`
+    : `<button class="agregar" data-mas>Agregar</button>`;
+}
+function sumar(clave, nombre, variante, precio, d){
+  const l = carrito[clave] || (carrito[clave] = {nombre, variante, precio, cant: 0});
+  l.cant += d; if (l.cant <= 0) delete carrito[clave];
+  actualizar();
+}
+function actualizar(){
+  document.querySelectorAll('.prod').forEach(pintar);
+  const ls = Object.values(carrito);
+  const cant = ls.reduce((a, l) => a + l.cant, 0), total = ls.reduce((a, l) => a + l.cant * l.precio, 0);
+  $('#barra').classList.toggle('ver', cant > 0);
+  $('#cuenta').textContent = cant;
+  $('#totalBarra').textContent = $('#total').textContent = plata(total);
+  $('#lineas').innerHTML = Object.entries(carrito).map(([k, l]) => `
+    <div class="linea"><div>${esc(l.nombre)}${l.variante ? `<small>${esc(l.variante)}</small>` : ''}<small>${plata(l.precio)} c/u</small></div>
+    <span class="cant"><button data-l="${k}" data-d="-1" aria-label="Quitar uno">−</button><span>${l.cant}</span><button data-l="${k}" data-d="1" aria-label="Agregar uno">+</button></span></div>`).join('');
+  if (!cant && $('#mPedido').classList.contains('ver')) cerrar();
+}
+function elegir(b){ b.parentNode.querySelectorAll('button').forEach(x => x.classList.toggle('sel', x === b)); }
+
+// Reservas: días abiertos y horarios
+let rDia = null, rHora = '', rPers = '';
+if (RESTO) {
+  let html = '';
+  for (let i = 0, n = 0; i < 14 && n < 10; i++) {
+    const f = new Date(ahora); f.setDate(ahora.getDate() + i);
+    if (H && !franjasDe(f.getDay()).length) continue;
+    const et = i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : CORTO[f.getDay()];
+    html += `<button data-rdia="${f.getDay()}" data-rtexto="${CORTO[f.getDay()]} ${f.getDate()}/${f.getMonth() + 1}" data-hoy="${i === 0 ? 1 : 0}">${et}<small>${f.getDate()}/${f.getMonth() + 1}</small></button>`;
+    n++;
+  }
+  $('#rDias').innerHTML = html;
+  $('#rPersonas').innerHTML = [1,2,3,4,5,6,7,8,'9+'].map(p => `<button data-rpers="${p}">${p}</button>`).join('');
+}
+function horasDe(dia, esHoy){
+  const out = [], m = ahora.getHours() * 60 + ahora.getMinutes();
+  franjasDe(dia).forEach(([a, c]) => {
+    let fin = aMin(c) <= aMin(a) ? aMin(c) + 1440 : aMin(c);
+    for (let t = aMin(a); t <= fin - 60; t += 30) {
+      if (esHoy && t < m + 30) continue;
+      const hh = Math.floor(t / 60) % 24, mm = t % 60;
+      out.push(`${hh}:${mm ? mm : '00'}`);
+    }
+  });
+  return out;
+}
+
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('button');
+  if (!b) { if (ev.target.classList.contains('fondo-modal')) cerrar(); return; }
+  const el = b.closest('.prod');
+  if (el && b.dataset.var !== undefined) { elegir(b); pintar(el); return; }
+  if (el && (b.hasAttribute('data-mas') || b.hasAttribute('data-menos'))) {
+    const {clave, it, v} = datosDe(el), mas = b.hasAttribute('data-mas');
+    sumar(clave, it.n, v ? v.n : '', v ? v.p : it.p, mas ? 1 : -1);
+    if (mas) aviso('Agregado: ' + it.n);
+    return;
+  }
+  if (b.dataset.combo !== undefined) { const c = COMBOS[+b.dataset.combo]; sumar('combo' + b.dataset.combo, c.n, '', c.p, 1); aviso('Agregado: ' + c.n); return; }
+  if (b.dataset.l) { const l = carrito[b.dataset.l]; sumar(b.dataset.l, l.nombre, l.variante, l.precio, +b.dataset.d); return; }
+  if (b.dataset.entrega) { entrega = b.dataset.entrega; elegir(b); $('#campoDir').hidden = !/env[ií]o|delivery/i.test(entrega); $('#errPedido').hidden = true; return; }
+  if (b.dataset.pago) { pago = b.dataset.pago; elegir(b); return; }
+  if (b.dataset.filtro !== undefined) { filtro = b.dataset.filtro; elegir(b); filtrar(); return; }
+  if (b.hasAttribute('data-abrir-reserva')) { abrir('#mReserva'); return; }
+  if (b.dataset.rdia) {
+    elegir(b); rDia = b.dataset.rtexto; rHora = '';
+    const hs = horasDe(+b.dataset.rdia, b.dataset.hoy === '1');
+    $('#rHoras').innerHTML = hs.length ? hs.map(h => `<button data-rhora="${h}">${h}</button>`).join('') : '<p class="nota">No quedan horarios para hoy.</p>';
+    return;
+  }
+  if (b.dataset.rhora) { rHora = b.dataset.rhora; elegir(b); $('#errReserva').hidden = true; return; }
+  if (b.dataset.rpers) { rPers = b.dataset.rpers; elegir(b); $('#errReserva').hidden = true; return; }
+  if (b.hasAttribute('data-legal')) { aviso('En la página final esta sección va completa, con los datos del negocio.'); return; }
+  if (b.hasAttribute('data-cerrar')) cerrar();
+});
+
+$('#abrirPedido').onclick = () => abrir('#mPedido');
+$('#enviarPedido').onclick = () => {
+  const dir = $('#dir').value.trim();
+  if (!$('#campoDir').hidden && !dir) { $('#errPedido').hidden = false; return; }
+  const ls = Object.values(carrito);
+  let m = `¡Hola ${D.nombre}! Quiero hacer este pedido:\n\n`;
+  ls.forEach(l => { m += `• ${l.cant} x ${l.nombre}${l.variante ? ' (' + l.variante + ')' : ''}: ${plata(l.cant * l.precio)}\n`; });
+  m += `\nTotal: ${plata(ls.reduce((a, l) => a + l.cant * l.precio, 0))}\n${entrega}${dir && !$('#campoDir').hidden ? ': ' + dir : ''}\nPago: ${pago}`;
+  const nom = $('#nombre').value.trim(), nota = $('#nota').value.trim();
+  if (nom) m += `\nA nombre de: ${nom}`;
+  if (nota) m += `\nAclaración: ${nota}`;
+  mostrarDemo(m);
+};
+$('#enviarReserva').onclick = () => {
+  if (!rDia || !rHora || !rPers) { $('#errReserva').hidden = false; return; }
+  let m = `¡Hola ${D.nombre}! Quiero reservar una mesa:\n\nDía: ${rDia}\nHorario: ${rHora} h\nPersonas: ${rPers}`;
+  const nom = $('#rNombre').value.trim(), nota = $('#rNota').value.trim();
+  if (nom) m += `\nA nombre de: ${nom}`;
+  if (nota) m += `\nAclaración: ${nota}`;
+  mostrarDemo(m);
+};
+function mostrarDemo(m){
+  $('#mensaje').textContent = m;
+  $('#quiero').href = 'https://wa.me/5491126474340?text=' + encodeURIComponent(`¡Hola Franco! Vi la muestra que armaste para ${D.nombre} y me interesa la página.`);
+  cerrar(); abrir('#mDemo');
+}
+function abrir(s){ $(s).classList.add('ver'); document.body.style.overflow = 'hidden'; }
+function cerrar(){ document.querySelectorAll('.fondo-modal').forEach(m => m.classList.remove('ver')); document.body.style.overflow = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrar(); });
+let t; function aviso(txt){ const x = $('#toast'); x.textContent = txt; x.style.display = 'block'; clearTimeout(t); t = setTimeout(() => x.style.display = 'none', 1800); }
+
+const pest = [...document.querySelectorAll('.pestanas a')];
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) pest.forEach(a => a.classList.toggle('activa', a.getAttribute('href') === '#' + e.target.id));
+}), {rootMargin: '-140px 0px -55% 0px'});
+document.querySelectorAll('.cat').forEach(c => obs.observe(c));
+
+actualizar();
+})();
+</script>
+</body>
+</html>
