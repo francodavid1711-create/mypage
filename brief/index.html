@@ -6,46 +6,47 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'">
 <meta name="robots" content="noindex">
 <title>Contame tu proyecto · FW diseño web</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230A0A0F'/><circle cx='50' cy='50' r='22' fill='%237C6AF7'/></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --negro:#0A0A0F; --card:#14141C; --borde:#242430; --crema:#F0EDE6; --gris:#8A8A9A; --gris-cl:#A8A8B8; --violeta:#7C6AF7; --violeta-cl:#9B8CFF; }
+:root { --fondo:#FAF9F6; --superficie:#FFFFFF; --tinta:#16161D; --texto:#3F3F49; --gris:#6B6B76; --borde:#E6E3DC; --acento:#5B4BD6; --acento-hov:#4A3BC2; --acento-cl:#EEEBFC; --r:14px; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Inter, sans-serif; background: var(--negro); color: var(--crema); line-height: 1.5;
-  background-image: radial-gradient(800px 600px at 100% 0%, rgba(124,106,247,.16), transparent 60%); min-height: 100vh; }
-.wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 120px; }
-.marca { display: inline-flex; align-items: center; gap: 8px; color: var(--gris-cl); font-size: 14px; text-decoration: none; }
-.marca i { width: 8px; height: 8px; border-radius: 50%; background: var(--violeta); }
-.marca b { font-family: 'Space Grotesk'; color: var(--crema); font-size: 18px; }
-h1 { font-family: 'Space Grotesk'; font-weight: 600; font-size: clamp(2rem, 7vw, 2.8rem); letter-spacing: -1px; line-height: 1.05; margin: 32px 0 12px; }
-h1 span { color: var(--violeta-cl); }
-.intro { color: var(--gris-cl); font-size: 15px; margin-bottom: 32px; }
-fieldset { border: 1px solid var(--borde); background: var(--card); border-radius: 20px; padding: 22px; margin-bottom: 16px; }
-legend { font-family: 'Space Grotesk'; font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--violeta-cl); padding: 0 8px; }
-label { display: block; font-size: 14px; font-weight: 500; margin: 14px 0 6px; }
-label:first-of-type { margin-top: 4px; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--fondo); color: var(--texto); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 128px; }
+.marca { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--tinta); font-family: 'Space Grotesk'; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+.marca i { width: 12px; height: 12px; border-radius: 50%; background: var(--acento); }
+.marca span { font-weight: 500; color: var(--gris); }
+.etiqueta { font-size: 14px; font-weight: 600; color: var(--acento); margin-top: 40px; }
+h1 { font-family: 'Space Grotesk'; color: var(--tinta); font-weight: 600; font-size: clamp(34px, 7vw, 46px); letter-spacing: -0.03em; line-height: 1.1; margin: 8px 0 14px; }
+.intro { color: var(--gris); font-size: 17px; margin-bottom: 32px; }
+fieldset { border: 1px solid var(--borde); background: var(--superficie); border-radius: var(--r); padding: 22px 24px 24px; margin-bottom: 16px; }
+legend { font-family: 'Space Grotesk'; font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--acento); padding: 0 8px; margin-left: -8px; }
+label { display: block; font-size: 15px; font-weight: 500; color: var(--tinta); margin: 16px 0 6px; }
+legend + label, legend + .opciones { margin-top: 4px; }
 label small { color: var(--gris); font-weight: 400; }
-input[type=text], input[type=tel], textarea, select { width: 100%; background: var(--negro); border: 1px solid var(--borde); color: var(--crema);
-  border-radius: 12px; padding: 12px 14px; font: inherit; font-size: 15px; }
-input:focus, textarea:focus, select:focus { outline: none; border-color: var(--violeta); }
+input[type=text], input[type=tel], textarea, select { width: 100%; background: var(--fondo); border: 1px solid var(--borde); color: var(--tinta); border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 16px; }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--acento); background: var(--superficie); }
 textarea { min-height: 84px; resize: vertical; }
 .opciones { display: flex; flex-wrap: wrap; gap: 8px; }
-.opciones label { margin: 0; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--borde); border-radius: 100px;
-  padding: 8px 14px; font-weight: 400; font-size: 14px; cursor: pointer; color: var(--gris-cl); }
-.opciones input { accent-color: var(--violeta); }
-.opciones label:has(input:checked) { border-color: var(--violeta); color: var(--crema); background: rgba(124,106,247,.12); }
-.enviar { position: fixed; left: 0; right: 0; bottom: 0; padding: 14px 20px 18px; background: linear-gradient(transparent, var(--negro) 35%); }
-.enviar button { display: block; width: 100%; max-width: 600px; margin: 0 auto; border: 0; border-radius: 100px; background: var(--violeta);
-  color: #fff; font-family: 'Space Grotesk'; font-weight: 600; font-size: 17px; padding: 16px; cursor: pointer; }
-.error { color: #F87171; font-size: 13px; margin-top: 6px; display: none; }
+.opciones label { margin: 0; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--borde); border-radius: 100px; padding: 8px 14px; font-weight: 400; font-size: 15px; color: var(--texto); cursor: pointer; }
+.opciones input { accent-color: var(--acento); }
+.opciones label:has(input:checked) { border-color: var(--acento); color: var(--tinta); background: var(--acento-cl); }
+.enviar { position: fixed; left: 0; right: 0; bottom: 0; padding: 24px 20px 18px; background: linear-gradient(rgba(250,249,246,0), var(--fondo) 40%); }
+.enviar button { display: block; width: 100%; max-width: 600px; margin: 0 auto; border: 0; border-radius: 10px; background: var(--acento); color: #fff; font: 600 17px/1 'Inter', sans-serif; padding: 17px 24px; cursor: pointer; box-shadow: 0 10px 30px rgba(22,22,29,.18); transition: background .15s; }
+.enviar button:hover { background: var(--acento-hov); }
+.error { color: #C2410C; font-size: 14px; margin-top: 6px; display: none; }
 .error.ver { display: block; }
 </style>
 </head>
 <body>
 <main class="wrap">
-  <a class="marca" href="../"><i></i><b>FW</b> · diseño web</a>
-  <h1>Contame tu <span>proyecto.</span></h1>
-  <p class="intro">Son 2 minutos. Al final se abre WhatsApp con todo ya escrito, vos solo apretás enviar y te respondo con una idea y un precio.</p>
+  <a class="marca" href="../"><i></i>FW <span>Diseño Web</span></a>
+  <div class="etiqueta">Presupuesto</div>
+  <h1>Contame tu proyecto.</h1>
+  <p class="intro">Son 2 minutos. Al final se abre WhatsApp con todo ya escrito, vos solo apretás enviar y te respondo con una idea y un precio exacto.</p>
 
   <form id="brief" novalidate>
     <fieldset>
