@@ -86,7 +86,7 @@ header.top {
 .logo i { width: 12px; height: 12px; border-radius: 50%; background: var(--acento); }
 .logo span { font-weight: 500; color: var(--gris); }
 .menu { display: flex; gap: 28px; margin-left: auto; }
-.menu a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--gris); }
+.menu a { white-space: nowrap; text-decoration: none; font-size: 15px; font-weight: 500; color: var(--gris); }
 .menu a:hover { color: var(--tinta); }
 .top .btn { padding: 11px 18px; font-size: 15px; white-space: nowrap; }
 .logo { white-space: nowrap; }
@@ -198,6 +198,8 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
 
 @media (max-width: 960px) {
   .portada .wrap { grid-template-columns: 1fr; }
+  .menu { gap: 18px; }
+  .top .wrap { gap: 20px; }
   .vitrina { height: 440px; max-width: 460px; }
   .telefono { width: 200px; }
   .telefono.uno { left: 0; right: auto; }
@@ -208,6 +210,10 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
   .incluye { grid-template-columns: 1fr 1fr; }
   .pasos { grid-template-columns: 1fr 1fr; }
   .contacto { grid-template-columns: 1fr; padding: 48px 32px; }
+}
+@media (max-width: 900px) {
+  .menu { display: none; }
+  .top .btn { margin-left: auto; }
 }
 @media (max-width: 720px) {
   body { font-size: 16px; }
@@ -416,8 +422,12 @@ footer.pie { padding: 56px 0 40px; margin-top: 104px; border-top: 1px solid var(
         <label for="cuando">¿Para cuándo la necesitás?</label>
         <select id="cuando">
           <option value="">Elegí una opción</option>
-          <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option>
+          <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option><option value="otra">Otra, te la escribo</option>
         </select>
+        <div id="fechaCaja" hidden>
+          <label for="fecha">Escribí para cuándo <small>(ej: 15 de noviembre, en 2 semanas, antes de las fiestas)</small></label>
+          <input type="text" id="fecha">
+        </div>
         <label for="extra">¿Algo más que quieras contarme?</label>
         <textarea id="extra"></textarea>
       </fieldset>

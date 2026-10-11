@@ -4,6 +4,13 @@
   var $ = function (id) { return document.getElementById(id); };
   var valor = function (id) { return $(id).value.trim(); };
 
+  // "Otra, te la escribo" muestra un campo para poner la fecha a mano.
+  $('cuando').addEventListener('change', function () {
+    var otra = this.value === 'otra';
+    $('fechaCaja').hidden = !otra;
+    if (otra) $('fecha').focus();
+  });
+
   $('brief').addEventListener('submit', function (e) {
     e.preventDefault();
     var ok = true;
@@ -30,7 +37,7 @@
     agregar('Objetivo', valor('objetivo'));
     agregar('Ya tengo', tiene.join(', '));
     agregar('Me gusta', valor('gusta'));
-    agregar('Para cuándo', valor('cuando'));
+    agregar('Para cuándo', valor('cuando') === 'otra' ? valor('fecha') : valor('cuando'));
     agregar('Además', valor('extra'));
 
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');

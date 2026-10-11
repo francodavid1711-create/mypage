@@ -97,8 +97,12 @@ textarea { min-height: 84px; resize: vertical; }
       <label for="cuando">¿Para cuándo la necesitás?</label>
       <select id="cuando">
         <option value="">Elegí una opción</option>
-        <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option>
+        <option>Lo antes posible</option><option>Este mes</option><option>El mes que viene</option><option>Sin apuro</option><option value="otra">Otra, te la escribo</option>
       </select>
+      <div id="fechaCaja" hidden>
+        <label for="fecha">Escribí para cuándo <small>(ej: 15 de noviembre, en 2 semanas, antes de las fiestas)</small></label>
+        <input type="text" id="fecha">
+      </div>
       <label for="extra">¿Algo más que quieras contarme?</label>
       <textarea id="extra"></textarea>
     </fieldset>
